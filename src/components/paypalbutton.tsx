@@ -20,40 +20,51 @@ interface PaypalButtonProps {
 
 export default function PaypalButton({ amount, tourData }: PaypalButtonProps) {
   const router = useRouter();
-  const [loading, setLoading] = useState(false);
+  const [loading] = useState(false);
 
-  const handleApprove = async (orderID: string) => {
-    try {
-      setLoading(true);
+const handleApprove = async (orderID: string) => {
+  try {
+    const reservationCode = `R-${Date.now().toString().slice(-5)}-${Math.random().toString(36).substring(2, 6).toUpperCase()}`;
+    const reservationData = { reservationCode, ...tourData };
+    localStorage.setItem("reservationData", JSON.stringify(reservationData));
+    console.log("ID de la orden:", orderID);
 
-      // Guarda en localStorage para la página /success
-      const reservationCode = `R-${Date.now().toString().slice(-5)}-${Math.random().toString(36).substring(2, 6).toUpperCase()}`;
-      const reservationData = {
-        reservationCode,
-        ...tourData,
-      };
-
-      localStorage.setItem("reservationData", JSON.stringify(reservationData));
-
-      // Llamadas al backend
-      await fetch("/api/create-calendar-event", {
+    const [res1, res2] = await Promise.allSettled([
+      fetch("/api/create-calendar-event", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(tourData),
-      });
-
-      await fetch("/api/send-confirmation-email", {
+      }),
+      fetch("/api/send-confirmation-email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(tourData),
-      });
+      }),
+    ]);
 
-      router.push("/excursiones/reservas/success");
-    } catch (error) {
-      console.error("Error al procesar reserva:", error);
-      setLoading(false);
+    // ✅ Log para saber cuál falló
+    if (res1.status === "rejected") {
+      console.warn("Calendario falló:", res1.reason);
     }
-  };
+    if (res2.status === "rejected") {
+      console.warn("Correo falló:", res2.reason);
+    }
+
+    // ✅ Puedes pasar flags a localStorage si lo necesitas
+    const warnings = {
+      calendarFailed: res1.status === "rejected",
+      emailFailed: res2.status === "rejected",
+    }
+    localStorage.setItem("reservationWarnings", JSON.stringify(warnings));
+
+    router.push("/excursiones/reservas/success");
+  } catch (error) {
+    console.error("Error inesperado al procesar reserva:", error);
+    router.push("/excursiones/reservas/error");
+  }
+}
+
+
 
   return (
     <div className="relative">
@@ -79,11 +90,21 @@ export default function PaypalButton({ amount, tourData }: PaypalButtonProps) {
           });
         }}
         onApprove={async (data, actions) => {
-          if (actions.order) {
-            await actions.order.capture();
-            handleApprove(data.orderID!);
-          }
-        }}
+  if (!actions.order) return;
+
+  try {
+    const captured = await actions.order.capture();
+    console.log("Orden capturada:", captured);
+    
+    // ✅ Solo después de capturar, redirige
+    router.push("/excursiones/reservas/loading");
+
+    await handleApprove(data.orderID!); // este contiene tus fetch y push a success
+  } catch (error) {
+    console.error("Error después de capturar orden:", error);
+    router.push("/excursiones/reservas/error"); // ⛔ capturó pero algo falló
+  }
+}}
       />
     </div>
   );

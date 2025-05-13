@@ -1,11 +1,9 @@
 "use client"
 
 import Image from "next/image"
-import Link from "next/link"
 import { motion } from "framer-motion"
-import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { ChevronRight, Anchor, Heart, Shield, Users, Globe } from "lucide-react"
+import { Anchor, Heart, Shield, Users, Globe } from "lucide-react"
 
 export default function SobreNosotros() {
   // Animaciones
@@ -62,7 +60,7 @@ export default function SobreNosotros() {
               >
                 Sobre Nosotros
               </motion.h1>
-              <motion.p variants={fadeInUp} className="text-white/90 text-lg md:text-xl mb-8 max-w-2xl mx-auto">
+              <motion.p variants={fadeInUp} className="text-white/90 text-lg md:text-xl mb-8 max-w-2x2 mx-auto">
                 Conoce la historia detrás de Soraya y Leonardo Tours, una empresa familiar dedicada a crear experiencias
                 inolvidables en el mar de Montecristi.
               </motion.p>
@@ -86,7 +84,7 @@ export default function SobreNosotros() {
           <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
             Lo que nos define
           </motion.h2>
-          <motion.p variants={fadeInUp} className="text-gray-600 max-w-2xl mx-auto text-lg">
+          <motion.p variants={fadeInUp} className="text-gray-600 max-w-2x2 mx-auto text-lg">
             Estos principios guían cada excursión y cada interacción con nuestros clientes
           </motion.p>
         </motion.div>
@@ -163,7 +161,7 @@ export default function SobreNosotros() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
               <div className="absolute bottom-6 left-6 bg-white/90 backdrop-blur-sm rounded-lg px-4 py-2 text-sky-700 font-medium">
-                Desde 2010
+                Desde 2002
               </div>
             </motion.div>
 
@@ -172,7 +170,7 @@ export default function SobreNosotros() {
               <Badge className="px-3 py-1 bg-sky-100 text-sky-700 border-none mb-4">NUESTRA HISTORIA</Badge>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Nuestros Inicios</h2>
               <p className="text-gray-700 text-lg leading-relaxed">
-                En el año 2010, Soraya y Leonardo decidieron unir su amor por el mar y su pasión por el turismo para
+                En el año 2002, Soraya y Leonardo decidieron unir su amor por el mar y su pasión por el turismo para
                 crear una empresa que ofreciera excursiones únicas en la costa de Montecristi. Lo que comenzó como un
                 pequeño negocio familiar, rápidamente se convirtió en una referencia para los amantes del mar en la
                 región.
@@ -188,7 +186,7 @@ export default function SobreNosotros() {
                   </div>
                   <div>
                     <h4 className="font-bold text-gray-900">Experiencia Náutica</h4>
-                    <p className="text-gray-600">Más de 13 años navegando las aguas de Montecristi</p>
+                    <p className="text-gray-600">Más de 20 años navegando las aguas de Montecristi</p>
                   </div>
                 </div>
               </div>

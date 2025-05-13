@@ -32,7 +32,7 @@ export default function FeaturedTours() {
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
             Experiencias Marítimas Exclusivas
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-600 max-w-2x2 mx-auto">
             Descubre nuestras excursiones más populares, diseñadas para ofrecerte una experiencia única en el paraíso de Montecristi
           </p>
         </motion.div>

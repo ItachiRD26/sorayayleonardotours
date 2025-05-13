@@ -10,77 +10,78 @@ import { MapPin, Calendar, Users, Compass } from "lucide-react"
 
 export default function ExcursionesPage() {
   const excursions = [
-    {
-      id: 1,
-      title: "Playa Gran Grosier",
-      description: "Explora los arrecifes de coral y nada entre peces tropicales en una de las playas más hermosas de Montecristi.",
-      image: "/images/gran-grocier.jpg",
-      price: 25,
-      duration: "4 hours",
-      location: "Monte Cristi",
-      groupSize: "2-12",
-    },
-    {
-      id: 2,
-      title: "Isla Cabra",
-      description: "Aventúrate en esta pequeña isla paradisíaca con playas de arena blanca y aguas turquesas perfectas para nadar y relajarse.",
-      image: "/images/isla-cabra.jpg",
-      price: 9,
-      duration: "5 hours",
-      location: "Monte Cristi",
-      groupSize: "2-12",
-    },
-    {
-      id: 3,
-      title: "Cayos 7 Hermanos",
-      description: "Disfruta de un viaje inolvidable a este archipiélago de siete pequeñas islas con aguas cristalinas y paisajes impresionantes.",
-      image: "/images/seven-brothers.jpg",
-      price: 42,
-      duration: "6 hours",
-      location: "Monte Cristi",
-      groupSize: "2-12",
-    },
-    {
-      id: 4,
-      title: "Plataforma Ecoturística",
-      description: "Experience eco-tourism at its finest with guided tours and nature.",
-      image: "/images/plataforma-ecoturistica.jpg",
-      price: 15,
-      duration: "3 hours",
-      location: "Monte Cristi",
-      groupSize: "2-12",
-    },
-    {
-      id: 5,
-      title: "Piscina Natural",
-      description: "Relax in a giant natural pool in the middle of the sea.",
-      image: "/images/piscina-natural.jpg",
-      price: 20,
-      duration: "3 hours",
-      location: "Monte Cristi",
-      groupSize: "2-12",
-    },
-    {
-      id: 6,
-      title: "Pesca Deportiva",
-      description: "Enjoy a thrilling sport fishing adventure with experienced guides.",
-      image: "/images/pesca-deportiva.jpg",
-      price: 70,
-      duration: "5 hours",
-      location: "Monte Cristi",
-      groupSize: "2-12",
-    },
-    {
-      id: 7,
-      title: "Scuba Diving",
-      description: "Dive into an underwater world full of colorful reefs and marine life.",
-      image: "/images/scuba-diving.jpg",
-      price: 80,
-      duration: "4 hours",
-      location: "Monte Cristi",
-      groupSize: "2-12",
-    },
-  ]
+  {
+    id: 1,
+    title: "Playa Gran Grosier",
+    description: "Explora los arrecifes de coral y nada entre peces tropicales en una de las playas más hermosas de Montecristi.",
+    image: "/images/gran-grocier.jpg",
+    price: 25,
+    duration: "4 horas",
+    location: "Monte Cristi",
+    groupSize: "2-12",
+  },
+  {
+    id: 2,
+    title: "Isla Cabra",
+    description: "Aventúrate en esta pequeña isla paradisíaca con playas de arena blanca y aguas turquesas perfectas para nadar y relajarse.",
+    image: "/images/isla-cabra.jpg",
+    price: 9,
+    duration: "5 horas",
+    location: "Monte Cristi",
+    groupSize: "2-12",
+  },
+  {
+    id: 3,
+    title: "Cayos 7 Hermanos",
+    description: "Disfruta de un viaje inolvidable a este archipiélago de siete pequeñas islas con aguas cristalinas y paisajes impresionantes.",
+    image: "/images/seven-brothers.jpg",
+    price: 42,
+    duration: "6 horas",
+    location: "Monte Cristi",
+    groupSize: "2-12",
+  },
+  {
+    id: 4,
+    title: "Plataforma Ecoturística",
+    description: "Vive el ecoturismo en su máxima expresión con recorridos guiados por la naturaleza y paisajes únicos.",
+    image: "/images/plataforma-ecoturistica.jpg",
+    price: 15,
+    duration: "3 horas",
+    location: "Monte Cristi",
+    groupSize: "2-12",
+  },
+  {
+    id: 5,
+    title: "Piscina Natural",
+    description: "Relájate en una gigantesca piscina natural en medio de los manglares, ideal para descansar y disfrutar del agua cristalina.",
+    image: "/images/piscina-natural.jpg",
+    price: 20,
+    duration: "3 horas",
+    location: "Monte Cristi",
+    groupSize: "2-12",
+  },
+  {
+    id: 6,
+    title: "Pesca Deportiva",
+    description: "Vive una emocionante aventura de pesca deportiva con guías expertos y el mejor equipo.",
+    image: "/images/pesca-deportiva.jpg",
+    price: 70,
+    duration: "5 horas",
+    location: "Monte Cristi",
+    groupSize: "2-12",
+  },
+  {
+    id: 7,
+    title: "Snorkeling",
+    description: "Sumérgete en un mundo submarino lleno de arrecifes coloridos y vida marina practicando snorkeling en aguas cristalinas.",
+    image: "/images/scuba-diving.jpg",
+    price: 80,
+    duration: "4 horas",
+    location: "Monte Cristi",
+    groupSize: "2-12",
+  },
+]
+
 
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
@@ -110,7 +111,7 @@ export default function ExcursionesPage() {
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
                 Experiencias Inolvidables en el Paraíso
               </h1>
-              <p className="text-white/90 text-lg md:text-xl mb-4 max-w-2xl mx-auto">
+              <p className="text-white/90 text-lg md:text-xl mb-4 max-w-2x2 mx-auto">
                 Explora nuestras excursiones exclusivas y vive momentos únicos en los destinos más hermosos de República
                 Dominicana.
               </p>
@@ -183,7 +184,7 @@ export default function ExcursionesPage() {
             Nuestras Excursiones
           </motion.h2>
           <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}>
-            <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+            <p className="text-gray-600 max-w-2x2 mx-auto text-lg">
               Elige entre una variedad de experiencias diseñadas para crear recuerdos inolvidables.
             </p>
           </motion.div>

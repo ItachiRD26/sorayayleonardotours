@@ -37,7 +37,7 @@ export default function TourSummary({ title, description, imageUrl, duration }: 
           {duration}
         </Badge>
       </div>
-      <p className="text-gray-600 max-w-2xl mx-auto">
+      <p className="text-gray-600 max-w-2x2 mx-auto">
         {description}
       </p>
     </motion.div>

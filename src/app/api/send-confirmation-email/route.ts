@@ -41,15 +41,39 @@ export async function POST(req: Request) {
       to: data.email,
       subject: "Confirmación de tu reserva",
       html: `
-        <h2>Gracias por reservar con nosotros, ${data.name}!</h2>
-        <p>Hemos recibido tu reserva para:</p>
-        <p><strong>Tour:</strong> ${data.tourName}</p>
-        <p><strong>Fecha:</strong> ${data.selectedDate}</p>
-        <p><strong>Hora:</strong> ${data.selectedTime}</p>
-        <p>Te contactaremos pronto para confirmar todos los detalles.</p>
-        <br/>
-        <p>Equipo de Soraya & Leonardo Tours</p>
-      `,
+  <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f3f4f6; border-radius: 10px;">
+    <div style="text-align: center;">
+      <img src="https://sorayayleonardotours.com/images/logo.png" alt="Soraya & Leonardo Tours" style="max-width: 150px; margin-bottom: 20px;" />
+      <h2 style="color: #0a2540;">🎉 ¡Gracias por tu reserva, ${data.name}!</h2>
+    </div>
+
+    <p style="font-size: 16px; color: #333;">Hemos recibido tu reserva con los siguientes detalles:</p>
+
+    <ul style="list-style: none; padding: 0; font-size: 15px; color: #444;">
+      <li><strong>Tour:</strong> ${data.tourName}</li>
+      <li><strong>Fecha:</strong> ${data.selectedDate}</li>
+      <li><strong>Hora:</strong> ${data.selectedTime}</li>
+      <li><strong>Adultos:</strong> ${data.adults}</li>
+      <li><strong>Niños:</strong> ${data.children}</li>
+    </ul>
+
+    <p style="font-size: 15px; color: #333;">
+      Si tienes alguna duda o deseas realizar cambios, puedes contactarnos directamente por WhatsApp:
+    </p>
+
+    <div style="text-align: center; margin: 20px 0;">
+      <a href="https://wa.me/18099616343" target="_blank" style="display: inline-block; background-color: #25d366; color: white; padding: 12px 20px; border-radius: 6px; text-decoration: none; font-weight: bold;">
+        💬 Escribir por WhatsApp
+      </a>
+    </div>
+
+    <p style="font-size: 14px; color: #666; text-align: center;">
+      Te contactaremos pronto para confirmar todos los detalles.<br />
+      <br />
+      — Equipo de Soraya & Leonardo Tours
+    </p>
+  </div>
+`,
     });
 
     return NextResponse.json({ message: "Correos enviados con éxito." }, { status: 200 });

@@ -1,20 +1,50 @@
 "use client";
 
-import { useState } from "react";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
+import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
+import Datepicker from "flowbite-datepicker/Datepicker";
 
-export default function DatePickerComponent({
+export default function FlowbiteInlineDatepicker({
   selectedDate,
   setSelectedDate,
 }: {
   selectedDate: Date | null;
   setSelectedDate: (date: Date | null) => void;
 }) {
-  const today = new Date();
-  const minSelectableDate = new Date();
-  minSelectableDate.setDate(today.getDate() + 2); // 48 horas = 2 días
+  const datepickerRef = useRef<HTMLDivElement>(null);
+
+useEffect(() => {
+  const minDate = getMinDate();
+  const element = datepickerRef.current;
+
+  if (element) {
+    element.innerHTML = "";
+  }
+
+  new Datepicker(element!, {
+    autohide: true,
+    format: "yyyy-mm-dd",
+    defaultDate: selectedDate ?? minDate,
+    minDate,
+    inline: true,
+  });
+
+  const handleChange = (event: Event) => {
+    const customEvent = event as CustomEvent;
+    setSelectedDate(customEvent.detail.date);
+  };
+
+  element?.addEventListener("changeDate", handleChange);
+
+  return () => {
+    if (element) {
+      element.innerHTML = "";
+      element.removeEventListener("changeDate", handleChange);
+    }
+  };
+}, [selectedDate, setSelectedDate]);
+
+ // funciona bien como está
 
   return (
     <motion.div
@@ -25,14 +55,7 @@ export default function DatePickerComponent({
       <h2 className="text-2xl font-bold mb-6 text-center">Select Date</h2>
 
       <div className="flex justify-center">
-        <DatePicker
-          selected={selectedDate}
-          onChange={(date) => setSelectedDate(date)}
-          minDate={minSelectableDate}
-          inline // 🎯 Esto hace que el calendario ya se vea abierto
-          calendarStartDay={1} // Opcional: semana empieza lunes
-          className="w-full"
-        />
+        <div ref={datepickerRef} className="z-10" />
       </div>
 
       <p className="text-xs text-gray-500 mt-4 text-center">
@@ -40,4 +63,10 @@ export default function DatePickerComponent({
       </p>
     </motion.div>
   );
+}
+
+function getMinDate(): Date {
+  const date = new Date();
+  date.setDate(date.getDate() + 2);
+  return date;
 }

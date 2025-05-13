@@ -12,14 +12,6 @@ import { motion } from "framer-motion"
 import FeaturedTours from "@/components/featuredtours";
 import Link from "next/link"
 
-// Componente con conversión fija de moneda
-const CurrencyConverter = ({ amountInDOP }: { amountInDOP: number }) => {
-  const conversionRate = 60 // 60 DOP = 1 USD
-  const amountInUSD = amountInDOP / conversionRate
-
-  return <span className="text-sm text-gray-500">(~${amountInUSD.toFixed(2)} USD)</span>
-}
-
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
   visible: {
@@ -127,7 +119,7 @@ export default function Home() {
             <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
               ¿Por Qué Elegirnos?
             </motion.h2>
-            <motion.p variants={fadeInUp} className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <motion.p variants={fadeInUp} className="text-lg text-gray-600 max-w-2x2 mx-auto">
               Soraya y Leonardo Tours ofrece experiencias únicas en el mar, diseñadas para brindarte la mejor aventura
             </motion.p>
           </motion.div>
@@ -262,7 +254,7 @@ export default function Home() {
             <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
               Lo Que Dicen Nuestros Clientes
             </motion.h2>
-            <motion.p variants={fadeInUp} className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <motion.p variants={fadeInUp} className="text-lg text-gray-600 max-w-2x2 mx-auto">
               Experiencias reales de quienes han disfrutado de nuestras excursiones
             </motion.p>
           </motion.div>
@@ -296,11 +288,11 @@ export default function Home() {
                 </div>
               </div>
               <p className="text-gray-600 mb-6 italic leading-relaxed">
-                "Estuvimos en Montecristi en familia un grupo de 18 personas en Semana Santa y destinamos un día para
-                tomar un tour con Soraya y Leonardo Tours. A pesar de que el día estuvo muy nublado, la pasamos genial
-                con Soraya y el staff. Son muy responsables, se apegan a sus medidas de seguridad, el bote estaba en
-                excelentes condiciones y limpio, la comida espectacular."
-              </p>
+  &quot;Estuvimos en Montecristi en familia un grupo de 18 personas en Semana Santa y destinamos un día para
+  tomar un tour con Soraya y Leonardo Tours. A pesar de que el día estuvo muy nublado, la pasamos genial
+  con Soraya y el staff. Son muy responsables, se apegan a sus medidas de seguridad, el bote estaba en
+  excelentes condiciones y limpio, la comida espectacular.&quot;
+</p>
               <div className="flex items-center justify-between pt-4 border-t border-gray-100">
                 <div className="flex items-center">
                   <Image src="/images/tripadvisor-icon.png" alt="TripAdvisor" width={24} height={24} className="mr-2" />
@@ -346,11 +338,11 @@ export default function Home() {
                 </div>
               </div>
               <p className="text-gray-600 mb-6 italic leading-relaxed">
-                "Te sentirás como en casa con las atenciones de Doña Soraya, es un tour operador de la zona que te puede
-                armar un viaje en minutos a partir d tus necesidades. Además cuenta con una tienda con de todo lo que
-                puedas necesitar para tu viaje. Los tours son Per Friendly. Pregunta por el paseo en el morro, el banco
-                de arena o los cayos"
-              </p>
+  &quot;Te sentirás como en casa con las atenciones de Doña Soraya, es un tour operador de la zona que te puede
+  armar un viaje en minutos a partir d tus necesidades. Además cuenta con una tienda con de todo lo que
+  puedas necesitar para tu viaje. Los tours son Pet Friendly. Pregunta por el paseo en el morro, el banco
+  de arena o los cayos&quot;
+</p>
               <div className="flex items-center justify-between pt-4 border-t border-gray-100">
                 <div className="flex items-center">
                   <Image src="/images/google-map-icon.png" alt="Google Maps" width={24} height={24} className="mr-2" />
@@ -399,9 +391,9 @@ export default function Home() {
                 </div>
               </div>
               <p className="text-gray-600 mb-6 italic leading-relaxed">
-                "Excelente, el tour es bien organizado y privado, tienen diferentes lugares segun lo que desees hacer
-                durante tu estadia, super recomendado!!"
-              </p>
+  &quot;Excelente, el tour es bien organizado y privado, tienen diferentes lugares según lo que desees hacer
+  durante tu estadía, super recomendado!!&quot;
+</p>
               <div className="flex items-center justify-between pt-4 border-t border-gray-100">
                 <div className="flex items-center">
                   <Image src="/images/tripadvisor-icon.png" alt="TripAdvisor" width={24} height={24} className="mr-2" />
@@ -438,7 +430,7 @@ export default function Home() {
             <motion.h2 variants={fadeInUp} className="text-3xl md:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
               Síguenos en Redes Sociales
             </motion.h2>
-            <motion.p variants={fadeInUp} className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <motion.p variants={fadeInUp} className="text-lg text-gray-600 max-w-2x2 mx-auto">
               Mantente al día con nuestras últimas aventuras, ofertas especiales y descubre la belleza de Montecristi
             </motion.p>
           </motion.div>

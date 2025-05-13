@@ -2,12 +2,23 @@
 
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
-import { motion } from "framer-motion";
+import useScrollToTop from "@/hooks/usescrolltotop";
 import ReservationForm from "@/components/ui/reservationform";
 import TourSummary from "@/components/ui/toursummary"; // si ya tienes este componente
 
-export default function ReservacionesPage() {
-  const [tour, setTour] = useState<any>(null);
+type Tour = {
+  id: string;
+  name: string;
+  description: string;
+  price: number;
+  image: string;
+  duration: string;
+};
+
+
+  export default function ReservacionesPage() {
+  useScrollToTop("/excursiones/reservas");
+  const [tour, setTour] = useState<Tour | null>(null);
   const searchParams = useSearchParams();
 
   useEffect(() => {

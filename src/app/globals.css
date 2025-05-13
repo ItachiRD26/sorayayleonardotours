@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@import "react-datepicker/dist/react-datepicker.css";
+@import "flowbite";
 
 @theme {
   --color-primary: #2851a4;
