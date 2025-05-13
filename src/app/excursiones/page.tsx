@@ -97,7 +97,7 @@ export default function ExcursionesPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-sky-50 to-white">
-      /* Hero Section */
+      {/* Hero Section */}
       <section className="relative w-full bg-gradient-to-r from-sky-600 to-blue-600 py-20 md:py-28">
         <div className="absolute inset-0 overflow-hidden opacity-20">
           <div className="absolute inset-0 bg-[url('/images/gran-grocier.jpg?height=800&width=1600')] bg-cover bg-center" />
@@ -131,7 +131,7 @@ export default function ExcursionesPage() {
         </div>
       </section>
 
-      /* Features Section */
+      {/* Features Section */}
       <section className="py-12 container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           <motion.div
@@ -173,7 +173,7 @@ export default function ExcursionesPage() {
         </div>
       </section>
 
-      /* Excursions Section */
+      {/* Excursions Section */}
       <section className="py-16 container mx-auto px-4">
         <div className="text-center mb-16">
           <motion.h2
@@ -242,7 +242,7 @@ export default function ExcursionesPage() {
         </div>
       </section>
 
-      /* CTA Section */
+      {/* CTA Section */}
     </div>
   )
 }

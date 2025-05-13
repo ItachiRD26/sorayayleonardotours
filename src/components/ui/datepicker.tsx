@@ -12,7 +12,7 @@ export default function FlowbiteInlineDatepicker({
   setSelectedDate: (date: Date | null) => void
 }) {
   const datepickerRef = useRef<HTMLDivElement>(null)
-  const datepickerInstanceRef = useRef<any>(null)
+  const datepickerInstanceRef = useRef<Datepicker | null>(null)
 
   useEffect(() => {
     const minDate = getMinDate()
@@ -67,7 +67,7 @@ export default function FlowbiteInlineDatepicker({
     }
   }, []) // Solo se ejecuta una vez al montar el componente
 
-  // Efecto separado para actualizar la fecha seleccionada
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (!datepickerInstanceRef.current || !selectedDate) return
     
@@ -76,7 +76,7 @@ export default function FlowbiteInlineDatepicker({
     } catch (error) {
       console.error("Error updating selected date:", error)
     }
-  }, [selectedDate])
+  }, [selectedDate,setSelectedDate])
 
   return (
     <motion.div

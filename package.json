@@ -21,6 +21,7 @@
     "framer-motion": "^12.9.2",
     "googleapis": "^148.0.0",
     "html2canvas": "^1.4.1",
+    "js-datepicker": "^5.18.4",
     "jspdf": "^3.0.1",
     "lucide-react": "^0.510.0",
     "next": "^15.3.1",

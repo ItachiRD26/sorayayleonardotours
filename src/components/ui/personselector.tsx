@@ -52,7 +52,7 @@ export default function PersonSelector({
     >
       <h2 className="text-2xl font-bold mb-6 text-center">Reservation Details</h2>
 
-      /* Contact Details */
+      {/* Contact Details */}
       <div className="flex flex-col gap-6 mb-6">
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
@@ -89,10 +89,10 @@ export default function PersonSelector({
         </div>
       </div>
 
-      /* People Section */
+      {/* People Section */}
       <h2 className="text-2xl font-bold mb-6 text-center">Select People</h2>
 
-      /* Adults */
+      {/* Adults */}
       <div className="flex items-center justify-between mb-6">
         <p className="text-lg font-semibold">Adults:</p>
         <div className="flex items-center space-x-4">
@@ -106,7 +106,7 @@ export default function PersonSelector({
         </div>
       </div>
 
-      /* Children */
+      {/* Children */}
       <div className="flex flex-col gap-4">
         <div className="flex items-center justify-between">
           <p className="text-lg font-semibold">Children:</p>

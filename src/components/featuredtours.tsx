@@ -38,7 +38,7 @@ export default function FeaturedTours() {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          /* Featured Tour Cards */
+          {/* Featured Tour Cards */}
           {[
             {
               id: 1,
