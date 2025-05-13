@@ -2,7 +2,7 @@
 "use client"
 
 import React, { useEffect, useState } from "react";
-import styles from "./LoadingScreen.module.css"; // Crearemos este archivo CSS para las animaciones
+import styles from "./loadingscreen.module.css"; // Crearemos este archivo CSS para las animaciones
 
 const LoadingScreen = ({ onLoadingComplete }: { onLoadingComplete: () => void }) => {
   const [isLoading, setIsLoading] = useState(true);
