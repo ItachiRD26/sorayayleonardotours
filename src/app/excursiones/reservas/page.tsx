@@ -52,7 +52,7 @@ type Tour = {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-cyan-50 py-12">
       <div className="container mx-auto px-4">
-        {/* Usar TourSummary con duración */}
+        /* Usar TourSummary con duración */
         <TourSummary
           title={tour.name}
           description={tour.description}
@@ -60,7 +60,7 @@ type Tour = {
           duration={tour.duration}
         />
 
-        {/* Formulario de reserva */}
+        /* Formulario de reserva */
         <ReservationForm
           tourName={tour.name}
           price={tour.price}

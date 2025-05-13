@@ -34,10 +34,10 @@ const staggerContainer = {
 export default function Home() {
   return (
     <main className="flex flex-col min-h-screen overflow-x-hidden">
-      {/* Hero Section - Rediseñado con elementos más modernos */}
+      /* Hero Section - Rediseñado con elementos más modernos */
       <section className="relative h-[100vh] w-full overflow-hidden">
         <div className="absolute inset-0 z-0">
-          {/* Video para desktop, imagen para móviles */}
+          /* Video para desktop, imagen para móviles */
           <div className="hidden md:block">
             <video autoPlay muted loop className="object-cover w-full h-full transform scale-150">
               <source src="/videos/hero-vid2.webm" type="video/webm" />
@@ -47,7 +47,7 @@ export default function Home() {
           <div className="md:hidden">
             <Image src="/images/hero-mobile-image.jpeg" alt="Soraya y Leonardo Tours" layout="fill" objectFit="cover" />
           </div>
-          {/* Overlay con gradiente más sofisticado */}
+          /* Overlay con gradiente más sofisticado */
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent"></div>
         </div>
 
@@ -92,18 +92,18 @@ export default function Home() {
           </motion.div>
         </div>
 
-        {/* Indicador de scroll */}
+        /* Indicador de scroll */
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
           <ChevronRight className="h-8 w-8 text-white rotate-90" />
         </div>
       </section>
 
-      {/* Featured Tours Section - Rediseñado con tarjetas más elegantes */}
+      /* Featured Tours Section - Rediseñado con tarjetas más elegantes */
       <section className="py- bg-white">
       <FeaturedTours />
       </section>
 
-      {/* Why Choose Us Section - Rediseñado con elementos más modernos */}
+      /* Why Choose Us Section - Rediseñado con elementos más modernos */
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4 md:px-6">
           <motion.div
@@ -125,7 +125,7 @@ export default function Home() {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Card 1 - Rediseñado */}
+            /* Card 1 - Rediseñado */
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -142,7 +142,7 @@ export default function Home() {
               </p>
             </motion.div>
 
-            {/* Card 2 - Rediseñado */}
+            /* Card 2 - Rediseñado */
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -159,7 +159,7 @@ export default function Home() {
               </p>
             </motion.div>
 
-            {/* Card 3 - Rediseñado */}
+            /* Card 3 - Rediseñado */
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -176,7 +176,7 @@ export default function Home() {
               </p>
             </motion.div>
 
-            {/* Card 4 - Rediseñado */}
+            /* Card 4 - Rediseñado */
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -196,9 +196,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Call to Action - Rediseñado con elementos más impactantes */}
+      /* Call to Action - Rediseñado con elementos más impactantes */
       <section className="py-20 relative overflow-hidden">
-        {/* Background Image with Overlay */}
+        /* Background Image with Overlay */
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/gran-grocier.jpg"
@@ -238,7 +238,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials - Rediseñado con un diseño más profesional */}
+      /* Testimonials - Rediseñado con un diseño más profesional */
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 md:px-6">
           <motion.div
@@ -260,7 +260,7 @@ export default function Home() {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Testimonio 1 - Rediseñado */}
+            /* Testimonio 1 - Rediseñado */
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -310,7 +310,7 @@ export default function Home() {
               </div>
             </motion.div>
 
-            {/* Testimonio 2 - Rediseñado */}
+            /* Testimonio 2 - Rediseñado */
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -360,7 +360,7 @@ export default function Home() {
               </div>
             </motion.div>
 
-            {/* Testimonio 3 - Rediseñado */}
+            /* Testimonio 3 - Rediseñado */
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -414,7 +414,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Follow Us on Social Media - Rediseñado con un aspecto más moderno */}
+      /* Follow Us on Social Media - Rediseñado con un aspecto más moderno */
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4 md:px-6">
           <motion.div
@@ -436,7 +436,7 @@ export default function Home() {
           </motion.div>
 
           <div className="flex flex-col md:flex-row justify-center gap-6 md:gap-10">
-            {/* Instagram - Rediseñado */}
+            /* Instagram - Rediseñado */
             <motion.a
               initial="hidden"
               whileInView="visible"
@@ -454,7 +454,7 @@ export default function Home() {
               <span className="text-sm text-gray-500">@sorayayleonardotours</span>
             </motion.a>
 
-            {/* TikTok - Rediseñado */}
+            /* TikTok - Rediseñado */
             <motion.a
               initial="hidden"
               whileInView="visible"
@@ -472,7 +472,7 @@ export default function Home() {
               <span className="text-sm text-gray-500">@sorayaleonardotou</span>
             </motion.a>
 
-            {/* Facebook - Rediseñado */}
+            /* Facebook - Rediseñado */
             <motion.a
               initial="hidden"
               whileInView="visible"

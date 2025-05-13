@@ -41,7 +41,7 @@ export default function SobreNosotros() {
 
   return (
     <div className="bg-gradient-to-b from-sky-50 to-white min-h-screen">
-      {/* Hero Section */}
+      /* Hero Section */
       <section className="relative w-full bg-gradient-to-r from-sky-600 to-blue-600 py-24 md:py-32">
         <div className="absolute inset-0 overflow-hidden opacity-20">
           <div className="absolute inset-0 bg-[url('/images/isla-cabra.jpg?height=800&width=1600')] bg-cover bg-center" />
@@ -69,7 +69,7 @@ export default function SobreNosotros() {
         </div>
       </section>
 
-      {/* Valores Section */}
+      /* Valores Section */
       <section className="py-20 container mx-auto px-4">
         <motion.div
           initial="hidden"
@@ -140,7 +140,7 @@ export default function SobreNosotros() {
         </div>
       </section>
 
-      {/* Sección 1: Nuestros Inicios */}
+      /* Sección 1: Nuestros Inicios */
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <motion.div
@@ -150,7 +150,7 @@ export default function SobreNosotros() {
             variants={staggerContainer}
             className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
           >
-            {/* Imagen */}
+            /* Imagen */
             <motion.div variants={fadeInUp} className="relative h-[450px] w-full rounded-2xl overflow-hidden shadow-xl">
               <Image
                 src="/images/about-1.jpg"
@@ -165,7 +165,7 @@ export default function SobreNosotros() {
               </div>
             </motion.div>
 
-            {/* Texto */}
+            /* Texto */
             <motion.div variants={fadeInUp} className="space-y-6">
               <Badge className="px-3 py-1 bg-sky-100 text-sky-700 border-none mb-4">NUESTRA HISTORIA</Badge>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Nuestros Inicios</h2>
@@ -195,7 +195,7 @@ export default function SobreNosotros() {
         </div>
       </section>
 
-      {/* Sección 2: Nuestra Misión */}
+      /* Sección 2: Nuestra Misión */
       <section className="py-20 bg-gradient-to-b from-sky-50 to-white">
         <div className="container mx-auto px-4">
           <motion.div
@@ -205,7 +205,7 @@ export default function SobreNosotros() {
             variants={staggerContainer}
             className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
           >
-            {/* Texto */}
+            /* Texto */
             <motion.div variants={fadeInUp} className="space-y-6 order-2 md:order-1">
               <Badge className="px-3 py-1 bg-sky-100 text-sky-700 border-none mb-4">NUESTRA MISIÓN</Badge>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Lo Que Nos Impulsa</h2>
@@ -231,7 +231,7 @@ export default function SobreNosotros() {
               </div>
             </motion.div>
 
-            {/* Imagen */}
+            /* Imagen */
             <motion.div
               variants={fadeInUp}
               className="relative h-[450px] w-full rounded-2xl overflow-hidden shadow-xl order-1 md:order-2"
@@ -252,7 +252,7 @@ export default function SobreNosotros() {
         </div>
       </section>
 
-      {/* Sección 3: Nuestra Filosofía */}
+      /* Sección 3: Nuestra Filosofía */
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <motion.div
@@ -262,7 +262,7 @@ export default function SobreNosotros() {
             variants={staggerContainer}
             className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
           >
-            {/* Imagen */}
+            /* Imagen */
             <motion.div variants={fadeInUp} className="relative h-[450px] w-full rounded-2xl overflow-hidden shadow-xl">
               <Image
                 src="/images/about-3.jpg"
@@ -277,7 +277,7 @@ export default function SobreNosotros() {
               </div>
             </motion.div>
 
-            {/* Texto */}
+            /* Texto */
             <motion.div variants={fadeInUp} className="space-y-6">
               <Badge className="px-3 py-1 bg-sky-100 text-sky-700 border-none mb-4">NUESTRA FILOSOFÍA</Badge>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Compromiso con el Entorno</h2>
@@ -305,7 +305,7 @@ export default function SobreNosotros() {
         </div>
       </section>
 
-      {/* Call to Action Section */}
+      /* Call to Action Section */
     </div>
   )
 }
