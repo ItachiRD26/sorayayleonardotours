@@ -1,20 +1,18 @@
 @import "tailwindcss";
 @import "flowbite";
 
-@theme {
+:root {
   --color-primary: #2851a4;
   --color-primary-light: #325fb9;
-
   --color-theme-sea-light: #23b7d5;
   --color-theme-celeste: #83dbee;
   --color-theme-green: #389211;
   --color-theme-green-light: #59d523;
-
   --font-family-poppins: 'Poppins', sans-serif;
   --font-family-smooch: 'Smooch', cursive;
 }
 
-{/* Fuentes */}
+/* Fuentes */
 
 /* poppins-latin-600-normal */
 @font-face {
@@ -55,20 +53,11 @@
   unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
 }
 
-
-
-
 main {
   font-family: 'Poppins', sans-serif;
 }
 
-{/* Fuentes */}
-
-
-
-
-
-{/* Estilos personalizados para react-datepicker */}
+/* Estilos personalizados para react-datepicker */
 
 .react-datepicker-custom {
   font-family: inherit;
@@ -91,6 +80,3 @@ main {
 .react-datepicker-custom .react-datepicker__day--selected:hover {
   background-color: #2563eb;
 }
-
-{/* Estilos personalizados para react-datepicker */}
-
