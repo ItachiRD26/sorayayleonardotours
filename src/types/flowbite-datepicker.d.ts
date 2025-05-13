@@ -9,6 +9,9 @@ declare module "flowbite-datepicker/Datepicker" {
   }
 
   export default class Datepicker {
+    setDate(selectedDate: Date) {
+      throw new Error("Method not implemented.");
+    }
     constructor(element: HTMLElement, options?: DatepickerOptions)
   }
 }
