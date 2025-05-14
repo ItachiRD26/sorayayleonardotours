@@ -229,9 +229,13 @@ export default function Home() {
               </motion.p>
 
               <motion.div variants={fadeInUp}>
-                <Button size="lg" className="bg-white text-primary hover:bg-white/90 text-base font-medium px-8">
-                  Reservar Ahora <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
+                <Link
+    href="/excursiones/reservas?tourId=1&name=Playa%20Gran%20Grosier&description=Explora%20los%20arrecifes%20de%20coral%20y%20nada%20entre%20peces%20tropicales%20en%20una%20de%20las%20playas%20más%20hermosas%20de%20Montecristi.&price=25&image=%2Fimages%2Fgran-grocier.jpg&duration=4%20hours"
+  >
+    <Button size="lg" variant="default" className="hover:bg-blue-400 text-base font-medium">
+      Reservar Ahora <ArrowRight className="ml-2 h-4 w-4" />
+    </Button>
+  </Link>
               </motion.div>
             </motion.div>
           </div>

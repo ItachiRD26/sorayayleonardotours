@@ -66,10 +66,6 @@ export default function RootLayout({
     <html lang="es" className="overflow-x-hidden">
       <body className={`${inter.className} overflow-x-hidden`}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
-          <Script
-  src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"
-  strategy="afterInteractive"
-/>
           <LoadingScreenWrapper>
             <div className="overflow-x-hidden w-full">
               <Header />
