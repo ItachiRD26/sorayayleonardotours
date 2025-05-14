@@ -8,6 +8,7 @@ interface Child {
 }
 
 interface PersonSelectorProps {
+  tourName: string
   name: string
   setName: (value: string) => void
   email: string
@@ -21,6 +22,7 @@ interface PersonSelectorProps {
 }
 
 export default function PersonSelector({
+  tourName,
   name,
   setName,
   email,
@@ -32,6 +34,10 @@ export default function PersonSelector({
   childGuests,
   setChildGuests,
 }: PersonSelectorProps) {
+  const totalPeople = adults + childGuests.length
+  const maxPeople = tourName === "Pesca Deportiva" ? 4 : 20
+  const showLimitMsg = totalPeople >= maxPeople
+
   const addChild = () => {
     setChildGuests([...childGuests, { id: Date.now(), age: null }])
   }
@@ -52,7 +58,7 @@ export default function PersonSelector({
     >
       <h2 className="text-2xl font-bold mb-6 text-center">Reservation Details</h2>
 
-      {/* Contact Details */}
+      {/* Contact */}
       <div className="flex flex-col gap-6 mb-6">
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
@@ -89,7 +95,6 @@ export default function PersonSelector({
         </div>
       </div>
 
-      {/* People Section */}
       <h2 className="text-2xl font-bold mb-6 text-center">Select People</h2>
 
       {/* Adults */}
@@ -100,7 +105,12 @@ export default function PersonSelector({
             -
           </button>
           <span className="text-xl">{adults}</span>
-          <button className="px-3 py-1 bg-gray-200 rounded-lg" onClick={() => setAdults(adults + 1)}>
+          <button
+            className="px-3 py-1 bg-gray-200 rounded-lg"
+            onClick={() => {
+              if (totalPeople < maxPeople) setAdults(adults + 1)
+            }}
+          >
             +
           </button>
         </div>
@@ -110,7 +120,12 @@ export default function PersonSelector({
       <div className="flex flex-col gap-4">
         <div className="flex items-center justify-between">
           <p className="text-lg font-semibold">Children:</p>
-          <button onClick={addChild} className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600">
+          <button
+            onClick={() => {
+              if (totalPeople < maxPeople) addChild()
+            }}
+            className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600"
+          >
             Add Child
           </button>
         </div>
@@ -138,6 +153,12 @@ export default function PersonSelector({
               </div>
             ))}
           </div>
+        )}
+
+        {showLimitMsg && (
+          <p className="text-sm text-red-600 font-medium mt-4">
+            Máximo permitido: {maxPeople} personas para este tour.
+          </p>
         )}
       </div>
     </motion.div>

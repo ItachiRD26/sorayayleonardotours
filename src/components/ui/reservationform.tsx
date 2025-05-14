@@ -29,67 +29,69 @@ export default function ReservationForm({
   const [selectedMinute, setSelectedMinute] = useState<number | null>(null)
   const [selectedPeriod, setSelectedPeriod] = useState<"AM" | "PM">("AM")
 
-  const totalPeople = adults + childGuests.length
-
-  const getBasePrice = (tour: string, people: number): number | null => {
+  const getBasePrice = (tour: string, adults: number): number => {
     switch (tour) {
       case "Banco de Arena Gran Grosier":
-        if (people <= 2) return 125
-        if (people === 3) return 135
-        if (people <= 5) return 142
-        break
+        if (adults <= 2) return 125
+        if (adults === 3) return 140
+        if (adults <= 5) return 150
+        return 150 + (adults - 5) * 25
+
       case "Isla Cabra":
-        if (people <= 2) return 42
-        if (people <= 5) return 50
-        break
+        if (adults <= 2) return 50
+        if (adults <= 5) return 60
+        return 60 + (adults - 5) * 10
+
       case "Cayos 7 Hermanos":
-        if (people <= 2) return 170
-        if (people === 3) return 200
-        if (people <= 5) return 233
-        break
+        if (adults <= 2) return 200
+        if (adults === 3) return 250
+        if (adults <= 5) return 270
+        return 270 + (adults - 5) * 50
+
       case "Plataforma Ecoturística":
-        if (people <= 2) return 110
-        if (people <= 5) return 120
-        break
+        if (adults <= 2) return 100
+        if (adults === 3) return 110
+        if (adults <= 5) return 125
+        return 125 + (adults - 5) * 15
+
       case "Piscina Natural":
-        if (people <= 2) return 120
-        if (people <= 5) return 140
-        break
+        if (adults <= 2) return 120
+        if (adults === 3) return 130
+        if (adults <= 5) return 140
+        return 140 + (adults - 5) * 17
+
       case "Pesca Deportiva":
-        if (people <= 2) return 200
-        if (people === 3) return 300
-        if (people <= 6) return 400
-        break
-      case "Scuba Diving":
-        if (people <= 2) return 100
-        if (people <= 3) return 150
-        if (people <= 6) return 400
-        break
+        if (adults <= 2) return 200
+        if (adults === 3) return 300
+        if (adults <= 5) return 400
+        return 400 + (adults - 6) * 35
+
+      case "Snorkeling":
+        if (adults <= 2) return 100
+        if (adults == 3) return 120
+        if (adults <= 5) return 150
+        return 150 + (adults - 5) * 30
+
+      default:
+        return adults * price
     }
-    return null // Aplicar precio por persona
   }
 
   const calculateDynamicPrice = (): { total: number; note: string } => {
-    const basePrice = getBasePrice(tourName, totalPeople)
+    const basePrice = getBasePrice(tourName, adults)
 
-    if (basePrice !== null) {
-      return {
-        total: basePrice,
-        note: "Tarifa base aplicada para grupos pequeños.",
+    let total = basePrice
+    childGuests.forEach((child) => {
+      if (child.age !== null) {
+        if (child.age <= 4) total += 0
+        else if (child.age <= 7) total += (basePrice / adults) * 0.5
+        else total += basePrice / adults
       }
-    } else {
-      let total = adults * price
-      childGuests.forEach((child) => {
-        if (child.age !== null) {
-          if (child.age <= 4) total += 0
-          else if (child.age <= 7) total += price * 0.5
-          else total += price
-        }
-      })
-      return {
-        total,
-        note: "Precio por persona aplicado.",
-      }
+    })
+
+    return {
+      total: Math.round(total),
+      note: "Tarifa calculada según tamaño del grupo y edades.",
     }
   }
 
@@ -97,9 +99,9 @@ export default function ReservationForm({
 
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-      {/* Left side: Formulario */}
       <div className="flex flex-col gap-8">
         <PersonSelector
+          tourName={tourName}
           name={name}
           setName={setName}
           email={email}
@@ -122,7 +124,6 @@ export default function ReservationForm({
         />
       </div>
 
-      {/* Right side: Resumen + Pago */}
       <div className="flex flex-col items-center justify-start">
         <PaymentCard
           name={name}
