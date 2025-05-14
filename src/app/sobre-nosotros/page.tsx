@@ -44,7 +44,7 @@ export default function SobreNosotros() {
       {/* Hero Section */}
       <section className="relative w-full bg-gradient-to-r from-sky-600 to-blue-600 py-24 md:py-32">
         <div className="absolute inset-0 overflow-hidden opacity-20">
-          <div className="absolute inset-0 bg-[url('/images/isla-cabra.jpg?height=800&width=1600')] bg-cover bg-center" />
+          <div className="absolute inset-0 bg-[url('/images/isla-cabra.webp?height=800&width=1600')] bg-cover bg-center" />
         </div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
@@ -153,7 +153,7 @@ export default function SobreNosotros() {
             {/* Imagen */}
             <motion.div variants={fadeInUp} className="relative h-[450px] w-full rounded-2xl overflow-hidden shadow-xl">
               <Image
-                src="/images/about-1.jpg"
+                src="/images/about-1.webp"
                 alt="Historia de Soraya y Leonardo Tours"
                 layout="fill"
                 objectFit="cover"
@@ -237,7 +237,7 @@ export default function SobreNosotros() {
               className="relative h-[450px] w-full rounded-2xl overflow-hidden shadow-xl order-1 md:order-2"
             >
               <Image
-                src="/images/about-2.jpg"
+                src="/images/about-2.webp"
                 alt="Misión de Soraya y Leonardo Tours"
                 layout="fill"
                 objectFit="cover"
@@ -265,7 +265,7 @@ export default function SobreNosotros() {
             {/* Imagen */}
             <motion.div variants={fadeInUp} className="relative h-[450px] w-full rounded-2xl overflow-hidden shadow-xl">
               <Image
-                src="/images/about-3.jpg"
+                src="/images/about-3.webp"
                 alt="Filosofía de Soraya y Leonardo Tours"
                 layout="fill"
                 objectFit="cover"

@@ -30,7 +30,7 @@ export default function WhatsAppButton() {
         className="flex items-center justify-center w-16 h-16 bg-green-500 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 animate-bounce" // Añade animate-bounce aquí
       >
         <Image
-          src="/images/whatsapp-icon.png" // Asegúrate de tener este ícono en tu carpeta de imágenes
+          src="/images/whatsapp-icon.webp" // Asegúrate de tener este ícono en tu carpeta de imágenes
           alt="WhatsApp"
           width={32}
           height={32}

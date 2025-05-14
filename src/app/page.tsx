@@ -45,7 +45,7 @@ export default function Home() {
             </video>
           </div>
           <div className="md:hidden">
-            <Image src="/images/hero-mobile-image.jpeg" alt="Soraya y Leonardo Tours" layout="fill" objectFit="cover" />
+            <Image src="/images/hero-mobile-image.webp" alt="Soraya y Leonardo Tours" layout="fill" objectFit="cover" />
           </div>
           {/* Overlay con gradiente más sofisticado */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent"></div>
@@ -76,7 +76,7 @@ export default function Home() {
 
             <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
   <Link
-    href="/excursiones/reservas?tourId=1&name=Banco%20de%20Arena%20Gran%20Grosier&description=Explora%20los%20arrecifes%20de%20coral%20y%20nada%20entre%20peces%20tropicales%20en%20una%20de%20las%20playas%20más%20hermosas%20de%20Montecristi.&price=25&image=%2Fimages%2Fgran-grocier.jpg&duration=4%20horas"
+    href="/excursiones/reservas?tourId=1&name=Banco%20de%20Arena%20Gran%20Grosier&description=Explora%20los%20arrecifes%20de%20coral%20y%20nada%20entre%20peces%20tropicales%20en%20una%20de%20las%20playas%20más%20hermosas%20de%20Montecristi.&price=25&image=%2Fimages%2Fgran-grocier.webp&duration=4%20horas"
   >
     <Button size="lg" variant="default" className="hover:bg-blue-400 text-base font-medium">
       Reservar Ahora <ArrowRight className="ml-2 h-4 w-4" />
@@ -201,7 +201,7 @@ export default function Home() {
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/gran-grocier.jpg"
+            src="/images/gran-grocier.webp"
             alt="Fondo marino"
             layout="fill"
             objectFit="cover"
@@ -230,7 +230,7 @@ export default function Home() {
 
               <motion.div variants={fadeInUp}>
                 <Link
-    href="/excursiones/reservas?tourId=1&name=Banco%20de%20Arena%20Gran%20Grosier&description=Explora%20los%20arrecifes%20de%20coral%20y%20nada%20entre%20peces%20tropicales%20en%20una%20de%20las%20playas%20más%20hermosas%20de%20Montecristi.&price=25&image=%2Fimages%2Fgran-grocier.jpg&duration=4%20horas"
+    href="/excursiones/reservas?tourId=1&name=Banco%20de%20Arena%20Gran%20Grosier&description=Explora%20los%20arrecifes%20de%20coral%20y%20nada%20entre%20peces%20tropicales%20en%20una%20de%20las%20playas%20más%20hermosas%20de%20Montecristi.&price=25&image=%2Fimages%2Fgran-grocier.webp&duration=4%20horas"
   >
     <Button size="lg" variant="default" className="hover:bg-blue-400 text-base font-medium">
       Reservar Ahora <ArrowRight className="ml-2 h-4 w-4" />
@@ -275,7 +275,7 @@ export default function Home() {
               <div className="flex items-center mb-6">
                 <div className="w-16 h-16 rounded-full overflow-hidden mr-4 border-2 border-primary">
                   <Image
-                    src="/images/testimonial.jpg"
+                    src="/images/testimonial.webp"
                     alt="Foto de Elysa M."
                     width={64}
                     height={64}
@@ -299,7 +299,7 @@ export default function Home() {
 </p>
               <div className="flex items-center justify-between pt-4 border-t border-gray-100">
                 <div className="flex items-center">
-                  <Image src="/images/tripadvisor-icon.png" alt="TripAdvisor" width={24} height={24} className="mr-2" />
+                  <Image src="/images/tripadvisor-icon.webp" alt="TripAdvisor" width={24} height={24} className="mr-2" />
                   <span className="text-sm text-gray-600">TripAdvisor</span>
                 </div>
                 <a
@@ -325,7 +325,7 @@ export default function Home() {
               <div className="flex items-center mb-6">
                 <div className="w-16 h-16 rounded-full overflow-hidden mr-4 border-2 border-primary">
                   <Image
-                    src="/images/testimonial3.png"
+                    src="/images/testimonial3.webp"
                     alt="Foto de José Enrique Perez German"
                     width={64}
                     height={64}
@@ -349,7 +349,7 @@ export default function Home() {
 </p>
               <div className="flex items-center justify-between pt-4 border-t border-gray-100">
                 <div className="flex items-center">
-                  <Image src="/images/google-map-icon.png" alt="Google Maps" width={24} height={24} className="mr-2" />
+                  <Image src="/images/google-map-icon.webp" alt="Google Maps" width={24} height={24} className="mr-2" />
                   <span className="text-sm text-gray-600">Google Maps</span>
                 </div>
                 <a
@@ -375,7 +375,7 @@ export default function Home() {
               <div className="flex items-center mb-6">
                 <div className="w-16 h-16 rounded-full overflow-hidden mr-4 border-2 border-primary">
                   <Image
-                    src="/images/testimonial2.jpg"
+                    src="/images/testimonial2.webp"
                     alt="Foto de Angee A"
                     width={64}
                     height={64}
@@ -400,7 +400,7 @@ export default function Home() {
 </p>
               <div className="flex items-center justify-between pt-4 border-t border-gray-100">
                 <div className="flex items-center">
-                  <Image src="/images/tripadvisor-icon.png" alt="TripAdvisor" width={24} height={24} className="mr-2" />
+                  <Image src="/images/tripadvisor-icon.webp" alt="TripAdvisor" width={24} height={24} className="mr-2" />
                   <span className="text-sm text-gray-600">TripAdvisor</span>
                 </div>
                 <a
@@ -452,7 +452,7 @@ export default function Home() {
               className="flex flex-col items-center justify-center p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:translate-y-[-8px] group"
             >
               <div className="mb-6 p-4 bg-gradient-to-br from-pink-500 via-purple-500 to-orange-400 rounded-full group-hover:scale-110 transition-transform duration-300">
-                <Image src="/images/instagram-icon.png" alt="Instagram" width={40} height={40} className="text-white" />
+                <Image src="/images/instagram-icon.webp" alt="Instagram" width={40} height={40} className="text-white" />
               </div>
               <span className="text-xl font-bold text-gray-900 mb-2">Instagram</span>
               <span className="text-sm text-gray-500">@sorayayleonardotours</span>
@@ -470,7 +470,7 @@ export default function Home() {
               className="flex flex-col items-center justify-center p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:translate-y-[-8px] group"
             >
               <div className="mb-6 p-4 bg-gradient-to-br from-black via-gray-800 to-gray-700 rounded-full group-hover:scale-110 transition-transform duration-300">
-                <Image src="/images/tiktok-icon.png" alt="TikTok" width={40} height={40} className="text-white" />
+                <Image src="/images/tiktok-icon.webp" alt="TikTok" width={40} height={40} className="text-white" />
               </div>
               <span className="text-xl font-bold text-gray-900 mb-2">TikTok</span>
               <span className="text-sm text-gray-500">@sorayaleonardotou</span>
@@ -488,7 +488,7 @@ export default function Home() {
               className="flex flex-col items-center justify-center p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:translate-y-[-8px] group"
             >
               <div className="mb-6 p-4 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 rounded-full group-hover:scale-110 transition-transform duration-300">
-                <Image src="/images/facebook-icon.png" alt="Facebook" width={40} height={40} className="text-white" />
+                <Image src="/images/facebook-icon.webp" alt="Facebook" width={40} height={40} className="text-white" />
               </div>
               <span className="text-xl font-bold text-gray-900 mb-2">Facebook</span>
               <span className="text-sm text-gray-500">@sorayayleonardo</span>

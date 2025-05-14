@@ -22,14 +22,14 @@ export default function CookieBanner() {
   if (!showBanner) return null; // No muestra el banner si el usuario ya ha aceptado las cookies
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 bg-primary text-white p-4 flex flex-col md:flex-row items-center justify-between z-50">
+    <div className="fixed bottom-0 left-0 right-0 bg-blue-700 text-white p-4 flex flex-col md:flex-row items-center justify-between z-50">
       <div className="text-sm mb-4 md:mb-0">
         Utilizamos cookies para mejorar tu experiencia en nuestro sitio web. Al continuar, aceptas el uso de cookies.
       </div>
       <Button
         variant="default"
         onClick={handleAcceptCookies}
-        className="bg-primary-custom hover:bg-primary-custom/90 animate-pulse"
+        className="bg-blue-500 text-white hover:bg-primary-custom/90 animate-pulse"
       >
         Aceptar cookies
       </Button>

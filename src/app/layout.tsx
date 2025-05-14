@@ -84,7 +84,7 @@ export const metadata = {
     images: ["https://sorayayleonardotours.com/images/og-image.jpg"],
   },
   icons: {
-    icon: "/images/logo.png",
+    icon: "/images/logo.webp",
   },
 };
 

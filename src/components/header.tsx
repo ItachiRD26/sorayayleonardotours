@@ -44,7 +44,7 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             <Image
-              src="/images/logo.png"
+              src="/images/logo.webp"
               alt="Logo de la empresa"
               width={200}
               height={200}
@@ -83,7 +83,7 @@ export default function Header() {
                 className="text-gray-700 hover:text-sea-light-custom transition-colors duration-300 animate-bounce"
               >
                 <Image
-                  src="/images/facebook-icon.png"
+                  src="/images/facebook-icon.webp"
                   alt="Facebook"
                   width={24}
                   height={24}
@@ -96,7 +96,7 @@ export default function Header() {
                 className="text-gray-700 hover:text-sea-light-custom transition-colors duration-300 animate-bounce"
               >
                 <Image
-                  src="/images/instagram-icon.png"
+                  src="/images/instagram-icon.webp"
                   alt="Instagram"
                   width={24}
                   height={24}
@@ -109,7 +109,7 @@ export default function Header() {
                 className="text-gray-700 hover:text-sea-light-custom transition-colors duration-300 animate-bounce"
               >
                 <Image
-                  src="/images/tiktok-icon.png"
+                  src="/images/tiktok-icon.webp"
                   alt="TikTok"
                   width={24}
                   height={24}
@@ -121,7 +121,7 @@ export default function Header() {
 
             {/* CTA Button */}
             <Link
-  href="/excursiones/reservas?tourId=1&name=Banco%20de%20Arena%20Gran%20Grosier&description=Explora%20los%20arrecifes%20de%20coral%20y%20nada%20entre%20peces%20tropicales%20en%20una%20de%20las%20playas%20más%20hermosas%20de%20Montecristi.&price=25&image=%2Fimages%2Fgran-grocier.jpg&duration=4%20horas"
+  href="/excursiones/reservas?tourId=1&name=Banco%20de%20Arena%20Gran%20Grosier&description=Explora%20los%20arrecifes%20de%20coral%20y%20nada%20entre%20peces%20tropicales%20en%20una%20de%20las%20playas%20más%20hermosas%20de%20Montecristi.&price=25&image=%2Fimages%2Fgran-grocier.webp&duration=4%20horas"
 >
   <Button variant="default" className="font-bold">
     Reservar Ahora
@@ -172,7 +172,7 @@ export default function Header() {
                 Contacto
               </Link>
               <Link
-  href="/excursiones/reservas?tourId=1&name=Banco%20de%20Arena%20Gran%20Grosier&description=Explora%20los%20arrecifes%20de%20coral%20y%20nada%20entre%20peces%20tropicales%20en%20una%20de%20las%20playas%20más%20hermosas%20de%20Montecristi.&price=25&image=%2Fimages%2Fgran-grocier.jpg&duration=4%20horas"
+  href="/excursiones/reservas?tourId=1&name=Banco%20de%20Arena%20Gran%20Grosier&description=Explora%20los%20arrecifes%20de%20coral%20y%20nada%20entre%20peces%20tropicales%20en%20una%20de%20las%20playas%20más%20hermosas%20de%20Montecristi.&price=25&image=%2Fimages%2Fgran-grocier.webp&duration=4%20horas"
 >
   <Button variant="default" className="font-bold">
     Reservar Ahora
@@ -187,7 +187,7 @@ export default function Header() {
                   className="text-gray-700 hover:text-sea-light-custom transition-colors duration-300"
                 >
                   <Image
-                    src="/images/facebook-icon.png"
+                    src="/images/facebook-icon.webp"
                     alt="Facebook"
                     width={24}
                     height={24}
@@ -200,7 +200,7 @@ export default function Header() {
                   className="text-gray-700 hover:text-sea-light-custom transition-colors duration-300"
                 >
                   <Image
-                    src="/images/instagram-icon.png"
+                    src="/images/instagram-icon.webp"
                     alt="Instagram"
                     width={24}
                     height={24}
@@ -213,7 +213,7 @@ export default function Header() {
                   className="text-gray-700 hover:text-sea-light-custom transition-colors duration-300"
                 >
                   <Image
-                    src="/images/tiktok-icon.png"
+                    src="/images/tiktok-icon.webp"
                     alt="TikTok"
                     width={24}
                     height={24}
