@@ -94,7 +94,7 @@ export default function Header() {
                 <span className="sr-only">Facebook</span>
               </Link>
               <Link
-                href=""
+                href="https://www.instagram.com/sorayayleonardotours/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-700 hover:text-sea-light-custom transition-colors duration-300 animate-bounce"
