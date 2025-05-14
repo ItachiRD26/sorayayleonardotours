@@ -12,7 +12,7 @@ export default function ExcursionesPage() {
   const excursions = [
   {
     id: 1,
-    title: "Playa Gran Grosier",
+    title: "Banco de Arena Gran Grosier",
     description: "Explora los arrecifes de coral y nada entre peces tropicales en una de las playas más hermosas de Montecristi.",
     image: "/images/gran-grocier.jpg",
     price: 25,

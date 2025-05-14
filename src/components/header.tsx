@@ -121,7 +121,7 @@ export default function Header() {
 
             {/* CTA Button */}
             <Link
-  href="/excursiones/reservas?tourId=1&name=Playa%20Gran%20Grosier&description=Explora%20los%20arrecifes%20de%20coral%20y%20nada%20entre%20peces%20tropicales%20en%20una%20de%20las%20playas%20más%20hermosas%20de%20Montecristi.&price=25&image=%2Fimages%2Fgran-grocier.jpg&duration=4%20hours"
+  href="/excursiones/reservas?tourId=1&name=Banco%20de%20Arena%20Gran%20Grosier&description=Explora%20los%20arrecifes%20de%20coral%20y%20nada%20entre%20peces%20tropicales%20en%20una%20de%20las%20playas%20más%20hermosas%20de%20Montecristi.&price=25&image=%2Fimages%2Fgran-grocier.jpg&duration=4%20horas"
 >
   <Button variant="default" className="font-bold">
     Reservar Ahora
@@ -172,7 +172,7 @@ export default function Header() {
                 Contacto
               </Link>
               <Link
-  href="/excursiones/reservas?tourId=1&name=Playa%20Gran%20Grosier&description=Explora%20los%20arrecifes%20de%20coral%20y%20nada%20entre%20peces%20tropicales%20en%20una%20de%20las%20playas%20más%20hermosas%20de%20Montecristi.&price=25&image=%2Fimages%2Fgran-grocier.jpg&duration=4%20hours"
+  href="/excursiones/reservas?tourId=1&name=Banco%20de%20Arena%20Gran%20Grosier&description=Explora%20los%20arrecifes%20de%20coral%20y%20nada%20entre%20peces%20tropicales%20en%20una%20de%20las%20playas%20más%20hermosas%20de%20Montecristi.&price=25&image=%2Fimages%2Fgran-grocier.jpg&duration=4%20horas"
 >
   <Button variant="default" className="font-bold">
     Reservar Ahora

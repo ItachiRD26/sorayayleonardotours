@@ -33,7 +33,7 @@ export default function ReservationForm({
 
   const getBasePrice = (tour: string, people: number): number | null => {
     switch (tour) {
-      case "Playa Gran Grosier":
+      case "Banco de Arena Gran Grosier":
         if (people <= 2) return 125
         if (people === 3) return 135
         if (people <= 5) return 142

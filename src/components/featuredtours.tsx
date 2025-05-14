@@ -6,16 +6,10 @@ import { Calendar, MapPin, Users, ArrowRight } from "lucide-react"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 
-const CurrencyConverter = ({ amountInDOP }: { amountInDOP: number }) => {
-  const conversionRate = 60;
-  const amountInUSD = amountInDOP / conversionRate;
-  return <span className="text-sm text-gray-500">(~${amountInUSD.toFixed(2)} USD)</span>;
-};
-
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-};
+}
 
 export default function FeaturedTours() {
   return (
@@ -38,14 +32,12 @@ export default function FeaturedTours() {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Featured Tour Cards */}
           {[
             {
               id: 1,
-              title: "Playa Gran Grosier",
+              title: "Banco de Arena Gran Grosier",
               description: "Explora los arrecifes de coral y nada entre peces tropicales en una de las playas más hermosas de Montecristi.",
               image: "/images/gran-grocier.jpg",
-              price: 1500,
               priceUSD: 25,
               duration: "4 horas",
               location: "Monte Cristi",
@@ -57,7 +49,6 @@ export default function FeaturedTours() {
               title: "Cayos 7 Hermanos",
               description: "Disfruta de un viaje inolvidable a este archipiélago de siete pequeñas islas con aguas cristalinas y paisajes impresionantes.",
               image: "/images/seven-brothers.jpg",
-              price: 2500,
               priceUSD: 42,
               duration: "6 horas",
               location: "Monte Cristi",
@@ -69,8 +60,7 @@ export default function FeaturedTours() {
               title: "Isla Cabra",
               description: "Aventúrate en esta pequeña isla paradisíaca con playas de arena blanca y aguas turquesas perfectas para nadar y relajarse.",
               image: "/images/isla-cabra.jpg",
-              price: 550,
-              priceUSD: 9,
+              priceUSD: 10,
               duration: "5 horas",
               location: "Monte Cristi",
               groupSize: "2-12",
@@ -112,12 +102,9 @@ export default function FeaturedTours() {
                   </div>
                 </CardContent>
                 <CardFooter className="flex items-center justify-between">
-                  <div className="flex flex-col">
-                    <span className="text-primary font-bold text-lg">${tour.price} DOP</span>
-                    <CurrencyConverter amountInDOP={tour.price} />
-                  </div>
+                  <span className="text-primary font-bold text-lg">USD {tour.priceUSD.toFixed(2)} <span className="text-sm text-gray-500">(por persona)</span></span>
                   <Link
-                    href={`/excursiones/reservas?tourId=${tour.id}&name=${encodeURIComponent(tour.title)}&description=${encodeURIComponent(tour.description)}&price=${tour.priceUSD}&image=${encodeURIComponent(tour.image)}&duration=${encodeURIComponent(tour.duration)}`}
+                    href={`/excursiones/reservas?tourId=${tour.id}&name=${encodeURIComponent(tour.title)}&description=${encodeURIComponent(tour.description)}&price=${tour.priceUSD.toFixed(2)}&image=${encodeURIComponent(tour.image)}&duration=${encodeURIComponent(tour.duration)}`}
                   >
                     <Button variant="default">Reservar</Button>
                   </Link>
@@ -140,5 +127,5 @@ export default function FeaturedTours() {
         </div>
       </div>
     </section>
-  );
+  )
 }
