@@ -79,7 +79,9 @@ export default function Header() {
             {/* Social Icons */}
             <div className="flex space-x-4">
               <Link
-                href="#"
+                href="https://www.facebook.com/sorayayleonardo/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-700 hover:text-sea-light-custom transition-colors duration-300 animate-bounce"
               >
                 <Image
@@ -92,7 +94,9 @@ export default function Header() {
                 <span className="sr-only">Facebook</span>
               </Link>
               <Link
-                href="#"
+                href=""
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-700 hover:text-sea-light-custom transition-colors duration-300 animate-bounce"
               >
                 <Image
@@ -105,7 +109,9 @@ export default function Header() {
                 <span className="sr-only">Instagram</span>
               </Link>
               <Link
-                href="#"
+                href="https://www.tiktok.com/@sorayaleonardotou"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-700 hover:text-sea-light-custom transition-colors duration-300 animate-bounce"
               >
                 <Image
@@ -183,7 +189,7 @@ export default function Header() {
               {/* Social Icons in Mobile Menu */}
               <div className="flex space-x-4 pt-4">
                 <Link
-                  href="#"
+                  href="https://www.facebook.com/sorayayleonardo/"
                   className="text-gray-700 hover:text-sea-light-custom transition-colors duration-300"
                 >
                   <Image
@@ -196,7 +202,7 @@ export default function Header() {
                   <span className="sr-only">Facebook</span>
                 </Link>
                 <Link
-                  href="#"
+                  href="https://www.instagram.com/sorayayleonardotours/"
                   className="text-gray-700 hover:text-sea-light-custom transition-colors duration-300"
                 >
                   <Image
@@ -209,7 +215,7 @@ export default function Header() {
                   <span className="sr-only">Instagram</span>
                 </Link>
                 <Link
-                  href="#"
+                  href="https://www.tiktok.com/@sorayaleonardotou"
                   className="text-gray-700 hover:text-sea-light-custom transition-colors duration-300"
                 >
                   <Image
