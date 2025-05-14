@@ -203,7 +203,7 @@ export default function ExcursionesPage() {
                     className="transition-transform duration-500 hover:scale-105"
                   />
                   <div className="absolute top-4 right-4">
-                    <Badge className="bg-white/90 text-sky-700 hover:bg-white">Desde ${excursion.price} USD p/p (min 6 personas)</Badge>
+                    <Badge className="bg-white/90 text-sky-700 hover:bg-white"><MapPin className="h-4 w-4 mr-2" /> Monte Cristi</Badge>
                   </div>
                 </div>
                 <CardHeader className="pb-2">

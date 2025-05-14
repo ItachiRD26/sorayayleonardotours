@@ -102,11 +102,10 @@ export default function FeaturedTours() {
                   </div>
                 </CardContent>
                 <CardFooter className="flex items-center justify-between">
-                  <span className="text-primary font-bold text-lg">USD {tour.priceUSD.toFixed(2)} <span className="text-sm text-gray-500">(por persona)</span></span>
                   <Link
                     href={`/excursiones/reservas?tourId=${tour.id}&name=${encodeURIComponent(tour.title)}&description=${encodeURIComponent(tour.description)}&price=${tour.priceUSD.toFixed(2)}&image=${encodeURIComponent(tour.image)}&duration=${encodeURIComponent(tour.duration)}`}
                   >
-                    <Button variant="default">Reservar</Button>
+                    <Button variant="default" className="items items-center justify-center">Reservar</Button>
                   </Link>
                 </CardFooter>
               </Card>
