@@ -8,7 +8,6 @@ import Footer from "@/components/footer"
 import LoadingScreenWrapper from "@/components/loadingscreen-wrapper"
 import CookieBanner from "@/components/cookiebanner"
 import WhatsAppButton from "@/components/whatsappbutton"
-import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] })
 
