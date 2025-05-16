@@ -25,8 +25,6 @@ export default function Footer() {
           <h3 className="font-semibold mb-3">Legales</h3>
           <ul className="space-y-2 text-sm text-gray-300">
             <li><Link href="/terminos-y-condiciones">Términos y Condiciones</Link></li>
-            <li><Link href="/politica-de-privacidad">Política de Privacidad</Link></li>
-            <li><Link href="/politica-de-reembolsos">Política de Reembolsos</Link></li>
           </ul>
         </div>
 
