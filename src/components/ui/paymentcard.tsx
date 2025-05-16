@@ -65,7 +65,7 @@ export default function PaymentCard({
       animate={{ opacity: 1, y: 0 }}
       className="bg-white p-8 rounded-2xl shadow-2xl w-full max-w-md"
     >
-      <h2 className="text-2xl font-bold text-primary mb-6 text-center">Your Reservation</h2>
+      <h2 className="text-2xl font-bold text-primary mb-6 text-center">Tu Reservacion</h2>
 
       <div className="space-y-4 text-gray-700 text-center mb-6">
         <p>
