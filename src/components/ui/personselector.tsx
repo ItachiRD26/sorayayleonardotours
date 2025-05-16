@@ -35,7 +35,7 @@ export default function PersonSelector({
   setChildGuests,
 }: PersonSelectorProps) {
   const totalPeople = adults + childGuests.length
-  const maxPeople = tourName === "Pesca Deportiva" ? 4 : 20
+  const maxPeople = tourName === "Pesca Deportiva" ? 4 : 30
   const showLimitMsg = totalPeople >= maxPeople
 
   const addChild = () => {
@@ -56,50 +56,50 @@ export default function PersonSelector({
       animate={{ opacity: 1, y: 0 }}
       className="bg-white rounded-xl shadow-lg p-6 mb-8"
     >
-      <h2 className="text-2xl font-bold mb-6 text-center">Reservation Details</h2>
+      <h2 className="text-2xl font-bold mb-6 text-center">Detalles de la Reserva</h2>
 
       {/* Contact */}
       <div className="flex flex-col gap-6 mb-6">
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
+          <label className="block text-sm font-medium text-gray-700 mb-2">Nombre Completo *</label>
           <input
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            placeholder="Enter your name"
+            placeholder="Ingresa tu nombre completo"
             required
             className="w-full border rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-primary"
           />
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">Email (optional)</label>
+          <label className="block text-sm font-medium text-gray-700 mb-2">Correo Electronico (optional)</label>
           <input
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="Enter your email"
+            placeholder="Ingresa tu correo electronico"
             className="w-full border rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-primary"
           />
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">Phone (optional)</label>
+          <label className="block text-sm font-medium text-gray-700 mb-2">Numero de telefono (optional)</label>
           <input
             type="tel"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
-            placeholder="Enter your phone number"
+            placeholder="Ingresa tu numero de telefono"
             className="w-full border rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-primary"
           />
         </div>
       </div>
 
-      <h2 className="text-2xl font-bold mb-6 text-center">Select People</h2>
+      <h2 className="text-2xl font-bold mb-6 text-center">Selecciona las Personas</h2>
 
       {/* Adults */}
       <div className="flex items-center justify-between mb-6">
-        <p className="text-lg font-semibold">Adults:</p>
+        <p className="text-lg font-semibold">Adultos:</p>
         <div className="flex items-center space-x-4">
           <button className="px-3 py-1 bg-gray-200 rounded-lg" onClick={() => setAdults(Math.max(1, adults - 1))}>
             -
@@ -119,14 +119,14 @@ export default function PersonSelector({
       {/* Children */}
       <div className="flex flex-col gap-4">
         <div className="flex items-center justify-between">
-          <p className="text-lg font-semibold">Children:</p>
+          <p className="text-lg font-semibold">Niños:</p>
           <button
             onClick={() => {
               if (totalPeople < maxPeople) addChild()
             }}
             className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600"
           >
-            Add Child
+            Agregar Niño
           </button>
         </div>
 

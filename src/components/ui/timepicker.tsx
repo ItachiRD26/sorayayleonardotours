@@ -77,11 +77,11 @@ if (period === "PM" && (hour12 > 3 || (hour12 === 3 && minute > 30))) {
       animate={{ opacity: 1, y: 0 }}
       className="bg-white rounded-xl shadow-lg p-6 mb-8"
     >
-      <h2 className="text-2xl font-bold mb-6 text-center">Select Time</h2>
+      <h2 className="text-2xl font-bold mb-6 text-center">Selecciona la hora de Salida</h2>
 
       <form className="max-w-[10rem] mx-auto w-full">
         <label htmlFor="time" className="block mb-2 text-sm font-medium text-gray-900">
-          Choose time:
+          Selecciona la Hora:
         </label>
         <div className="relative">
           <div className="absolute inset-y-0 end-0 top-0 flex items-center pe-3.5 pointer-events-none">
@@ -107,7 +107,7 @@ if (period === "PM" && (hour12 > 3 || (hour12 === 3 && minute > 30))) {
       </form>
 
       <p className="text-xs text-gray-500 mt-4 text-center">
-        Reservations must be between <strong>7:00 AM</strong> and <strong>3:30 PM</strong>.
+        Las reservas deben ser entre <strong>7:00 AM</strong> y <strong>3:30 PM</strong>.
       </p>
     </motion.div>
   )

@@ -72,16 +72,16 @@ export default function PaymentCard({
           <strong>Tour:</strong> {tourName}
         </p>
         <p>
-          <strong>Date:</strong> {formatDate()}
+          <strong>Fecha:</strong> {formatDate()}
         </p>
         <p>
-          <strong>Time:</strong> {formatTime()}
+          <strong>Ahora de Salida:</strong> {formatTime()}
         </p>
         <p>
-          <strong>Adults:</strong> {adults}
+          <strong>Adultos:</strong> {adults}
         </p>
         <p>
-          <strong>Children:</strong> {childrenData.length}
+          <strong>Niños:</strong> {childrenData.length}
         </p>
         {pricingNote && <p className="text-sm text-blue-600">{pricingNote}</p>}
         <p className="text-xl font-bold mt-4">Total: ${total} USD</p>
