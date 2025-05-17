@@ -74,3 +74,28 @@ main {
 .react-datepicker-custom .react-datepicker__day--selected:hover {
   background-color: #2563eb;
 }
+
+.chat-bubble::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -10px; 
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 10px solid white;
+
+}.chat-bubble::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -10px;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 10px solid white;
+}

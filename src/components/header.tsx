@@ -82,7 +82,7 @@ export default function Header() {
                 href="https://www.facebook.com/sorayayleonardo/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-700 hover:text-sea-light-custom transition-colors duration-300 animate-bounce"
+                className="text-gray-700 hover:text-sea-light-custom transition-colors duration-300"
               >
                 <Image
                   src="/images/facebook-icon.webp"
@@ -97,7 +97,7 @@ export default function Header() {
                 href="https://www.instagram.com/sorayayleonardotours/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-700 hover:text-sea-light-custom transition-colors duration-300 animate-bounce"
+                className="text-gray-700 hover:text-sea-light-custom transition-colors duration-300"
               >
                 <Image
                   src="/images/instagram-icon.webp"
@@ -112,7 +112,7 @@ export default function Header() {
                 href="https://www.tiktok.com/@sorayaleonardotou"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-700 hover:text-sea-light-custom transition-colors duration-300 animate-bounce"
+                className="text-gray-700 hover:text-sea-light-custom transition-colors duration-300"
               >
                 <Image
                   src="/images/tiktok-icon.webp"
