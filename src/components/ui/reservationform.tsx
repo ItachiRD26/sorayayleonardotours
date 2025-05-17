@@ -3,9 +3,9 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
 import PersonSelector from "@/components/ui/personselector"
-import DatePickerComponent from "@/components/ui/datepicker"
 import TimePicker from "@/components/ui/timepicker"
 import PaymentCard from "@/components/ui/paymentcard"
+import DatePickerWrapper from "./date-picker-wrapper"
 
 interface Child {
   id: number
@@ -113,15 +113,104 @@ export default function ReservationForm({
           childGuests={childGuests}
           setChildGuests={setChildGuests}
         />
-        <DatePickerComponent selectedDate={selectedDate} setSelectedDate={setSelectedDate} />
-        <TimePicker
-          selectedHour={selectedHour}
-          setSelectedHour={setSelectedHour}
-          selectedMinute={selectedMinute}
-          setSelectedMinute={setSelectedMinute}
-          selectedPeriod={selectedPeriod}
-          setSelectedPeriod={setSelectedPeriod}
-        />
+
+        {/* Contenedor combinado para DatePicker y TimePicker */}
+    <motion.div
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      className="bg-white rounded-xl shadow-lg overflow-hidden"
+    >
+      <div className="bg-gradient-to-r from-blue-600 to-blue-800 p-4">
+        <h2 className="text-2xl font-bold text-center text-white">Fecha y Hora de Salida</h2>
+      </div>
+
+      <div className="p-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* DatePicker */}
+          <div className="bg-blue-50 rounded-lg p-4 transition-all hover:shadow-md">
+            <h3 className="text-lg font-semibold mb-3 text-blue-800 flex items-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5 mr-2"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                />
+              </svg>
+              Selecciona una fecha
+            </h3>
+            <DatePickerWrapper selectedDate={selectedDate} setSelectedDate={setSelectedDate} />
+          </div>
+
+          {/* TimePicker */}
+          <div className="bg-blue-50 rounded-lg p-4 transition-all hover:shadow-md">
+            <h3 className="text-lg font-semibold mb-3 text-blue-800 flex items-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5 mr-2"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+              Selecciona la hora
+            </h3>
+            <TimePicker
+              selectedHour={selectedHour}
+              setSelectedHour={setSelectedHour}
+              selectedMinute={selectedMinute}
+              setSelectedMinute={setSelectedMinute}
+              selectedPeriod={selectedPeriod}
+              setSelectedPeriod={setSelectedPeriod}
+            />
+          </div>
+        </div>
+
+        <div className="mt-6 relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-blue-600 to-blue-400"></div>
+          <div className="bg-gradient-to-r from-blue-50 to-white rounded-lg p-4 pl-6 shadow-sm border border-blue-100">
+            <div className="flex items-start">
+              <div className="flex-shrink-0 bg-blue-100 rounded-full p-1.5 mr-3">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5 text-blue-600"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+              </div>
+              <div>
+                <h4 className="text-sm font-semibold text-blue-800 mb-1">Información importante</h4>
+                <p className="text-sm text-blue-700">
+                  Las reservas deben hacerse con mínimo 48 horas de anticipación y están disponibles entre{" "}
+                  <strong className="font-medium bg-blue-100 px-1.5 py-0.5 rounded text-blue-800">7:00 AM</strong> y{" "}
+                  <strong className="font-medium bg-blue-100 px-1.5 py-0.5 rounded text-blue-800">3:30 PM</strong>.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </motion.div>
       </div>
 
       <div className="flex flex-col items-center justify-start">

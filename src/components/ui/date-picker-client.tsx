@@ -1,9 +1,10 @@
 "use client"
+
 import DatePicker from "react-datepicker"
 import "react-datepicker/dist/react-datepicker.css"
 import { useEffect } from "react"
 
-export default function CustomDatePicker({
+export default function DatePickerClient({
   selectedDate,
   setSelectedDate,
 }: {
@@ -29,9 +30,7 @@ export default function CustomDatePicker({
         className="text-center"
         wrapperClassName="!block"
         calendarClassName="border border-blue-200 shadow-sm !font-sans"
-        dayClassName={(date) =>
-        date.getDay() === 0 || date.getDay() === 6 ? "text-blue-500 hover:bg-blue-100" : ""
-    }
+        dayClassName={(date) => (date.getDay() === 0 || date.getDay() === 6 ? "text-blue-500 hover:bg-blue-100" : "")}
       />
     </div>
   )
