@@ -97,7 +97,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className="overflow-x-hidden">
+      <meta name="google-adsense-account" content="ca-pub-6618092093224881"></meta>
       <body className={`${inter.className} overflow-x-hidden`}>
+        {/* Google AdSense Script */}
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6618092093224881"
+          crossOrigin="anonymous"
+        ></script>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           <LoadingScreenWrapper>
             <div className="overflow-x-hidden w-full">
