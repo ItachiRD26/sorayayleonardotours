@@ -76,7 +76,7 @@ export default function Home() {
 
             <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
   <Link
-    href="/excursiones/reservas?tourId=1&name=Banco%20de%20Arena%20Gran%20Grosier&description=Explora%20los%20arrecifes%20de%20coral%20y%20nada%20entre%20peces%20tropicales%20en%20una%20de%20las%20playas%20más%20hermosas%20de%20Montecristi.&price=25&image=%2Fimages%2Fgran-grocier.webp&duration=4%20horas"
+    href="/excursiones/reservas?tourId=1&name=Banco%20de%20Arena%20Gran%20Grosier&description=Descubre%20un%20paraíso%20escondido%20en%20medio%20del%20océano%3A%20el%20Banco%20de%20Arena%20Grand%20Grossier.%20Este%20banco%20de%20arena%2C%20rodeado%20por%20aguas%20cristalinas%20y%20poco%20profundas%2C%20es%20perfecto%20para%20relajarse%2C%20nadar%20y%20tomar%20fotografías%20inolvidables.%20Un%20lugar%20ideal%20para%20escapar%20del%20bullicio%20y%20conectar%20con%20la%20naturaleza%20en%20su%20estado%20más%20puro.&price=25&image=%2Fimages%2Fgran-grocier.webp&duration=4%20horas"
   >
     <Button size="lg" variant="default" className="hover:bg-blue-400 text-base font-medium">
       Reservar Ahora <ArrowRight className="ml-2 h-4 w-4" />
@@ -230,7 +230,7 @@ export default function Home() {
 
               <motion.div variants={fadeInUp}>
                 <Link
-    href="/excursiones/reservas?tourId=1&name=Banco%20de%20Arena%20Gran%20Grosier&description=Explora%20los%20arrecifes%20de%20coral%20y%20nada%20entre%20peces%20tropicales%20en%20una%20de%20las%20playas%20más%20hermosas%20de%20Montecristi.&price=25&image=%2Fimages%2Fgran-grocier.webp&duration=4%20horas"
+    href="/excursiones/reservas?tourId=1&name=Banco%20de%20Arena%20Gran%20Grosier&description=Descubre%20un%20paraíso%20escondido%20en%20medio%20del%20océano%3A%20el%20Banco%20de%20Arena%20Grand%20Grossier.%20Este%20banco%20de%20arena%2C%20rodeado%20por%20aguas%20cristalinas%20y%20poco%20profundas%2C%20es%20perfecto%20para%20relajarse%2C%20nadar%20y%20tomar%20fotografías%20inolvidables.%20Un%20lugar%20ideal%20para%20escapar%20del%20bullicio%20y%20conectar%20con%20la%20naturaleza%20en%20su%20estado%20más%20puro.&price=25&image=%2Fimages%2Fgran-grocier.webp&duration=4%20horas"
   >
     <Button size="lg" variant="default" className="hover:bg-blue-400 text-base font-medium">
       Reservar Ahora <ArrowRight className="ml-2 h-4 w-4" />
