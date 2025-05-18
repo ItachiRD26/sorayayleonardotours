@@ -14,13 +14,56 @@ import "./globals.css"
 
 const inter = Inter({ subsets: ["latin"] })
 
-// SEO y metadata
-export const metadata: Metadata = {
-  title: "Soraya y Leonardo Tours | Excursiones Marítimas en Montecristi",
-  description:
-    "Descubre las maravillas de Montecristi con Soraya y Leonardo Tours. Ofrecemos excursiones en bote, snorkel, visitas a manglares y más, brindando experiencias inolvidables en el mar.",
-  icons: { icon: "/images/logo.webp" }
+export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
+  const isEnglish = params.locale === "en";
+
+  return {
+    title: isEnglish
+      ? "Soraya y Leonardo Tours | Maritime Excursions in Montecristi"
+      : "Soraya y Leonardo Tours | Excursiones Marítimas en Montecristi",
+    description: isEnglish
+      ? "Discover Montecristi like never before with Soraya y Leonardo Tours. Enjoy boat tours, snorkeling, mangrove visits, and more."
+      : "Explora Montecristi con Soraya y Leonardo Tours. Disfruta excursiones en bote, snorkel, manglares y más.",
+    keywords: isEnglish
+      ? [
+          "Montecristi boat tours",
+          "snorkeling Dominican Republic",
+          "Soraya y Leonardo Tours",
+          "Goat Island",
+          "Gran Grosier Sandbank"
+        ]
+      : [
+          "excursiones en Montecristi",
+          "snorkel República Dominicana",
+          "Soraya y Leonardo Tours",
+          "Isla Cabra",
+          "Banco de Arena Gran Grosier"
+        ],
+    openGraph: {
+      title: isEnglish
+        ? "Soraya y Leonardo Tours | Maritime Excursions in Montecristi"
+        : "Soraya y Leonardo Tours | Excursiones Marítimas en Montecristi",
+      description: isEnglish
+        ? "Best maritime tours in Montecristi, Dominican Republic."
+        : "Las mejores excursiones marítimas en Montecristi, República Dominicana.",
+      images: [
+        {
+          url: "/images/og-default.webp",
+          alt: "Soraya y Leonardo Tours",
+        }
+      ],
+      locale: isEnglish ? "en_US" : "es_DO",
+      type: "website",
+      url: isEnglish
+        ? "https://sorayayleonardotours.com/en"
+        : "https://sorayayleonardotours.com",
+    },
+    icons: {
+      icon: "/images/logo.webp"
+    }
+  };
 }
+
 
 export function generateStaticParams() {
   return [{ locale: "es" }, { locale: "en" }]
