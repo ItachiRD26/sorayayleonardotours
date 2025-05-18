@@ -1,23 +1,45 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { PayPalScriptProvider } from "@paypal/react-paypal-js"
-import PaypalButton from "../paypalbutton"
+import { motion } from "framer-motion";
+import { PayPalScriptProvider } from "@paypal/react-paypal-js";
+import PaypalButton from "../paypalbutton";
+import { useTranslations } from "next-intl";
 
 interface PaymentCardProps {
-  name: string
-  email: string
-  phone: string
-  tourName: string
-  adults: number
-  childrenData: { age: number }[]
-  selectedDate: Date | null
-  selectedHour: string
-  selectedMinute: string
-  selectedPeriod: "AM" | "PM"
-  price: number
-  pricingNote?: string
+  name: string;
+  email: string;
+  phone: string;
+  tourName: string;
+  adults: number;
+  childrenData: { age: number }[];
+  selectedDate: Date | null;
+  selectedHour: string;
+  selectedMinute: string;
+  selectedPeriod: "AM" | "PM";
+  price: number;
+  pricingNote?: string;
 }
+
+const translateTourNameToSpanish = (name: string): string => {
+  switch (name) {
+    case "Great Grosier Sandbank":
+      return "Banco de Arenas Gran Grossier";
+    case "Goat Island":
+      return "Isla Cabra";
+    case "Seven Brothers Islands":
+      return "Cayos 7 Hermanos";
+    case "Ecotourism Platform":
+      return "Plataforma Ecoturística";
+    case "Natural Pool":
+      return "Piscina Natural";
+    case "Sport Fishing":
+      return "Pesca Deportiva";
+    case "Snorkeling Adventure":
+      return "Aventura de Snorkeling";
+    default:
+      return name;
+  }
+};
 
 export default function PaymentCard({
   name,
@@ -33,20 +55,21 @@ export default function PaymentCard({
   price,
   pricingNote,
 }: PaymentCardProps) {
-  const total = price.toFixed(2)
+  const t = useTranslations("Reservations");
+  const total = price.toFixed(2);
 
   const formatDate = () => {
-    if (!selectedDate) return "Fecha no especificada"
-    return selectedDate.toLocaleDateString()
-  }
+    if (!selectedDate) return t("unspecified-date");
+    return selectedDate.toLocaleDateString();
+  };
 
   const formatTime = () => {
-    const validHour = selectedHour?.trim()
-    const validMinute = selectedMinute?.trim()
+    const validHour = selectedHour?.trim();
+    const validMinute = selectedMinute?.trim();
 
-    if (!validHour || !validMinute) return "Hora no especificada"
-    return `${validHour.padStart(2, "0")}:${validMinute.padStart(2, "0")} ${selectedPeriod}`
-  }
+    if (!validHour || !validMinute) return t("unspecified-time");
+    return `${validHour.padStart(2, "0")}:${validMinute.padStart(2, "0")} ${selectedPeriod}`;
+  };
 
   const isPaymentDisabled = () => {
     return (
@@ -56,8 +79,10 @@ export default function PaymentCard({
       !selectedDate ||
       !selectedHour ||
       !selectedMinute
-    )
-  }
+    );
+  };
+
+  const spanishTourName = translateTourNameToSpanish(tourName);
 
   return (
     <motion.div
@@ -65,26 +90,28 @@ export default function PaymentCard({
       animate={{ opacity: 1, y: 0 }}
       className="bg-white p-8 rounded-2xl shadow-2xl w-full max-w-md"
     >
-      <h2 className="text-2xl font-bold text-primary mb-6 text-center">Tu Reservacion</h2>
+      <h2 className="text-2xl font-bold text-primary mb-6 text-center">{t("summary-title")}</h2>
 
       <div className="space-y-4 text-gray-700 text-center mb-6">
         <p>
-          <strong>Tour:</strong> {tourName}
+          <strong>{t("tour-label")}</strong> {tourName}
         </p>
         <p>
-          <strong>Fecha:</strong> {formatDate()}
+          <strong>{t("date-label")}</strong> {formatDate()}
         </p>
         <p>
-          <strong>Ahora de Salida:</strong> {formatTime()}
+          <strong>{t("time-label")}</strong> {formatTime()}
         </p>
         <p>
-          <strong>Adultos:</strong> {adults}
+          <strong>{t("adults-label")}</strong> {adults}
         </p>
         <p>
-          <strong>Niños:</strong> {childrenData.length}
+          <strong>{t("children-label")}</strong> {childrenData.length}
         </p>
         {pricingNote && <p className="text-sm text-blue-600">{pricingNote}</p>}
-        <p className="text-xl font-bold mt-4">Total: ${total} USD</p>
+        <p className="text-xl font-bold mt-4">
+          {t("total-label")} {`$${total} USD`}
+        </p>
       </div>
 
       <PayPalScriptProvider
@@ -102,7 +129,7 @@ export default function PaymentCard({
               name,
               email,
               phone,
-              tourName,
+              tourName: spanishTourName,
               selectedDate: formatDate(),
               selectedTime: formatTime(),
               adults,
@@ -112,5 +139,5 @@ export default function PaymentCard({
         </div>
       </PayPalScriptProvider>
     </motion.div>
-  )
+  );
 }

@@ -1,0 +1,405 @@
+{
+  "Home": {
+    "hero-title": "Soraya y Leonardo Tours",
+    "hero-description": "Explore the wonders of the Montecristi sea with exclusive excursions designed to create unforgettable memories.",
+    "book-button":"Book Now",
+    "hero-button-two":"View Tours",
+    "why-choose-us-title":"Why Choose Us?",
+    "why-choose-us-subtitle":"Soraya and Leonardo Tours offers unique experiences at sea, designed to give you the best adventure",
+    "call-action-title":"Ready for a Marine Adventure?",
+    "call-action-description":"Book now and get ready for an unforgettable experience with Soraya and Leonardo Tours. Our experts are ready to guide you through the paradise of Montecristi.",
+    "testimonials-title":"What Our Customers Say",
+    "testimonials-subtitle":"Real experiences from those who have enjoyed our excursions",
+    "view-review": "View review",
+    "social-title": "Follow Us on Social Media",
+    "social-subtitle": "Stay updated with our latest adventures, special offers, and discover the beauty of Montecristi.",
+    "instagram": "Instagram",
+    "tiktok": "TikTok",
+    "facebook": "Facebook",
+
+    "card-1":{
+      "title":"Modern Boats",
+      "description":"Fleet of boats equipped with the latest technology and amenities for your safety and comfort."
+
+    },
+    "card-2":{
+      "title":"Expert Guides",
+      "description":"Our staff is highly trained and knows every corner of the sea and the region."
+
+    },
+    "card-3":{
+      "title":"Exclusive Trips",
+      "description":"Access to little-known places, full of natural beauty and tranquility."
+
+    },
+    "card-4":{
+      "title":"Flexibility",
+      "description":"We offer private tours and schedules tailored to your needs for a personalized experience."
+
+    },
+    "testimonials-1":{
+      "name":"Elysa M.",
+      "description":"We were in Montecristi as a family, a group of 18 people, during Holy Week, and we set aside a day to take a tour with Soraya and Leonardo Tours. Despite the cloudy day, we had a wonderful time with Soraya and the staff. They are very responsible, adhere to their safety measures, the boat was in excellent condition and clean, and the food was spectacular."
+    },
+    "testimonials-2":{
+      "name":"José Enrique Perez German",
+      "description":"You'll feel right at home with the attention of Doña Soraya. She's a local tour operator who can put together a trip in minutes based on your needs. She also has a shop with everything you might need for your trip. The tours are pet-friendly. Ask about the tour of the hill, the sandbar, or the keys."
+    },
+    "testimonials-3":{
+      "name":"Angee A",
+      "description":"Excellent! The tour is well-organized and private. They have different locations depending on what you want to do during your stay. Highly recommended!"
+    }
+  },
+  "FeaturedTours":{
+    "featured-title":"Exclusive Maritime Experiences",
+    "featured-subtitle":"Discover our most popular excursions, designed to offer you a unique experience in the paradise of Montecristi",
+    "featured-button":"View All Tours",
+    "book-button":"Book Now",
+    "badges": {
+      "popular": "Most Popular",
+      "adventure": "Adventure",
+      "budget": "Budget Friendly"
+    },
+    "tour-1": {
+    "title": "Great Grosier Sandbank",
+    "description": "Explore coral reefs and swim among tropical fish on one of Montecristi's most beautiful beaches.",
+    "duration": "4 hours",
+    "group-size": "1-12 people"
+  },
+  "tour-3": {
+    "title": "Seven Brothers Islands",
+    "description": "Enjoy an unforgettable trip to this archipelago of seven small islands with crystal-clear waters and breathtaking landscapes.",
+    "duration": "6 hours",
+    "group-size": "1-12 people"
+  },
+  "tour-2": {
+    "title": "Goat Island",
+    "description": "Venture to this small island paradise with white sand beaches and turquoise waters perfect for swimming and relaxing.",
+    "duration": "5 hours",
+    "group-size": "1-12 people"
+  }
+  },
+  "Header": {
+    "excursions": "Excursions",
+    "about-us": "About Us",
+    "contact": "Contact",
+    "book-now": "Book Now"
+  },
+  "Footer": {
+    "title": "Soraya y Leonardo Tours",
+    "description": "Since 2002, offering unique sea experiences for the whole family.",
+    "explore": "Explore",
+    "home": "Home",
+    "excursions": "Excursions",
+    "about-us": "About Us",
+    "contact": "Contact",
+    "legal": "Legal",
+    "terms": "Terms and Conditions",
+    "contact-title": "Contact",
+    "location": "Montecristi, D.R.",
+    "phone": "+1-809-961-6343 / +1-809-962-2259",
+    "email": "administracion@sorayayleonardotours.com",
+    "copyright": "All rights reserved.",
+    "privacy-policy":"Privacy Policy"
+  },
+  "ExcursionesPage": {
+    "badge": "Discover Monte Cristi",
+    "hero-title": "Unforgettable Experiences in Paradise",
+    "hero-subtitle": "Explore exclusive excursions and create lasting memories in the most beautiful Dominican destinations.",
+    "badge-available": "Available All Year",
+    "badge-small-groups": "Small Groups",
+    "badge-location": "Monte Cristi",
+    "features": {
+      "one-title": "Exclusive Destinations",
+      "one-desc": "Access hidden gems with expert local guides.",
+      "two-title": "Small Groups",
+      "two-desc": "Personalized experiences with individual attention.",
+      "three-title": "Flexible Booking",
+      "three-desc": "Plan your adventure with ease and confidence."
+    },
+    "section-title": "Our Excursions",
+    "section-subtitle": "Choose from a variety of options to enjoy Monte Cristi at its best.",
+    "book-button": "Book Now",
+
+    "tour-1": {
+      "title": "Great Grossier Sandbank",
+      "description": "Relax and swim in crystal-clear shallow waters at this hidden paradise.",
+      "duration": "4 hours",
+      "group-size": "1-12 people"
+    },
+    "tour-2": {
+      "title": "Goat Island",
+      "description": "Enjoy a peaceful escape with turquoise beaches and a scenic lighthouse.",
+      "duration": "5 hours",
+      "group-size": "1-12 people"
+    },
+    "tour-3": {
+      "title": "Seven Brothers Islands",
+      "description": "Discover virgin beaches and wildlife across seven untouched islets.",
+      "duration": "6 hours",
+      "group-size": "1-12 people"
+    },
+    "tour-4": {
+      "title": "Ecotourism Platform",
+      "description": "Walk through mangroves and take in the views from this scenic wooden platform.",
+      "duration": "3 hours",
+      "group-size": "1-12 people"
+    },
+    "tour-5": {
+      "title": "Natural Pool",
+      "description": "Bathe in peaceful, shallow waters hidden among the mangroves.",
+      "duration": "3 hours",
+      "group-size": "1-12 people"
+    },
+    "tour-6": {
+      "title": "Sport Fishing",
+      "description": "Catch sailfish, dorado, and more in one of DR’s top fishing spots.",
+      "duration": "5 hours",
+      "group-size": "1-4 people"
+    },
+    "tour-7": {
+      "title": "Snorkeling Adventure",
+      "description": "Explore vibrant coral reefs and marine life near Isla Cabra.",
+      "duration": "4 hours",
+      "group-size": "1-12 people"
+    }
+  },
+  "SobreNosotros": {
+  "badge": "OUR STORY",
+  "hero-title": "About Us",
+  "hero-subtitle": "Discover the story behind Soraya and Leonardo Tours, a family business devoted to creating unforgettable sea experiences in Montecristi.",
+
+  "values-badge": "OUR VALUES",
+  "values-title": "What Defines Us",
+  "values-subtitle": "These principles guide every excursion and every interaction with our clients.",
+  "value-1-title": "Passion for the Sea",
+  "value-1-desc": "Our love for the ocean drives us to share its wonders with every visitor.",
+  "value-2-title": "Safety First",
+  "value-2-desc": "We implement the highest safety standards in all our excursions.",
+  "value-3-title": "Sustainable Tourism",
+  "value-3-desc": "We are committed to protecting the marine environment and promoting responsible practices.",
+
+  "start-badge": "OUR BEGINNINGS",
+  "start-title": "How It All Started",
+  "start-desc-1": "In 2002, Soraya and Leonardo decided to combine their love for the sea and passion for tourism to create a business offering unique excursions along the Montecristi coast.",
+  "start-desc-2": "With a fleet of modern boats and a team of expert guides, we deliver experiences that blend adventure, safety, and fun.",
+  "start-subtitle-title": "Nautical Experience",
+  "start-subtitle-desc": "Over 20 years sailing the waters of Montecristi",
+
+  "mission-badge": "OUR MISSION",
+  "mission-title": "What Drives Us",
+  "mission-desc-1": "At Soraya and Leonardo Tours, our mission is to connect people with the beauty of the sea through authentic and memorable experiences.",
+  "mission-desc-2": "We strive to offer personalized service, prioritizing safety and customer satisfaction.",
+  "mission-subtitle-title": "Personalized Service",
+  "mission-subtitle-desc": "Individual attention for every group",
+
+  "philosophy-badge": "OUR PHILOSOPHY",
+  "philosophy-title": "Commitment to Nature",
+  "philosophy-desc-1": "We believe in responsible and sustainable tourism. That’s why we’re committed to protecting the marine environment and promoting practices that respect local flora and fauna.",
+  "philosophy-desc-2": "Each excursion is designed to minimize environmental impact while maximizing fun and learning.",
+  "philosophy-subtitle-title": "Marine Conservation",
+  "philosophy-subtitle-desc": "We protect the ecosystems we visit",
+  "image-one-label":"Since 2002",
+  "image-two-label":"Authentic Experiences",
+  "image-three-label":"Sustainable Tourism"
+},
+
+"ContactPage": {
+  "hero-title": "Contact Us",
+  "hero-subtitle": "Get in touch with Soraya and Leonardo Tours for personalized assistance and booking information.",
+  "form-title": "Send Us a Message",
+  "name": "Your Name",
+  "email": "Your Email",
+  "message": "Your Message",
+  "send-button": "Send Message",
+  "sending": "Sending...",
+  "success-message": "Message sent successfully!",
+  "error-name": "Please enter your name.",
+  "error-email": "Please enter your email.",
+  "error-email-invalid": "Please enter a valid email.",
+  "error-message": "Please enter a message.",
+  "contact-title": "Contact Information",
+  "phone-label": "Phone",
+  "email-label": "Email",
+  "address-label": "Address",
+  "address-text": "Montecristi, Dominican Republic"
+},
+"Reservations": {
+  "reservation-title": "Reservation Form",
+  "reservation-subtitle": "Please complete the following information to reserve your excursion.",
+  "name-label": "Name *",
+  "name-placeholder": "Full name",
+  "email-label": "Email",
+  "email-placeholder": "Your email address(Optional)",
+  "phone-label": "Phone Number",
+  "phone-placeholder": "Your phone number(Optional)",
+  "adults-label": "Adults:",
+  "children-label": "Children:",
+  "add-child": "Add Child",
+  "remove-child": "Remove",
+  "child-age-label": "Child Age",
+  "child-placeholder": "e.g. 5 years",
+  "tour-summary-title": "Tour Summary",
+  "tour-name": "Tour Name:",
+  "price-label": "Price",
+  "duration-label": "Duration",
+  "departure-datetime-title": "Departure Date & Time",
+  "date-label": "Select a date:",
+  "time-label": "Select a time:",
+  "notes-title": "Important Notes",
+  "notes-content": "We recommend arriving 15 minutes before departure. Please bring sunscreen and water.",
+  "requirement-sunscreen": "Sunscreen recommended for your comfort.",
+  "instructions-title": "Special Instructions",
+  "instructions-placeholder": "Tell us anything we should know (optional)",
+  "next-button": "Next",
+  "back-button": "Back",
+  "confirm-button": "Confirm Reservation",
+  "payment-info-title": "Payment Information",
+  "cardholder-name": "Cardholder Name",
+  "card-number": "Card Number",
+  "expiration": "MM/YY",
+  "cvc": "CVC",
+  "success-message": "Reservation confirmed successfully!",
+  "date-missing": "No date selected",
+  "time-missing": "No time selected",
+  "requirements-title": "Tour Requirements",
+  "requirement-clothing": "Comfortable clothing and swimsuit (available for purchase at our store)",
+  "requirement-towel": "Towel and change of clothes (optional)",
+  "requirement-camera": "Camera (optional)",
+  "instruction-arrive-early": "Arrive 15 minutes before the scheduled time",
+  "instruction-payment-confirmation": "Reservations are confirmed upon receiving payment",
+  "instruction-reschedule": "Tours can be rescheduled with 24h notice",
+  "tour-label": "Tour:",
+  "payment-title": "Confirm and Pay",
+  "payment-description": "Please complete your details and confirm to proceed with the reservation.",
+  "button-submit": "Book Now",
+  "summary-title": "Booking Summary",
+  "summary-tour": "Tour",
+  "summary-date": "Date",
+  "summary-time": "Time",
+  "summary-adults": "Adults:",
+  "summary-children": "Children:",
+  "summary-total": "Total",
+  "payment-processing": "Processing payment...",
+  "payment-success": "Reservation completed successfully!",
+  "payment-error": "There was an error processing your payment.",
+  "dynamic-rate-note":"Rate calculated according to group size and age.",
+  "select-date":"Select a date:",
+  "select-time":"Select an arrive time:",
+  "important-info-title":"Important Information",
+  "advance-notice-begin":"Reservations must be made at least 48 hours in advance and are available between",
+  "advance-notice-and":"and",
+  "child":"Child",
+  "title":"Reservation Details",
+  "name":"Name",
+  "email":"Email",
+  "phone":"Phone",
+  "adults":"Adults",
+  "children":"Children",
+  "unspecified-date":"No date selected",
+  "unspecified-time":"No time selected",
+  "total-label":"Total:",
+  "custom-time-label":"Custom Time",
+  "age":"Age",
+  "remove":"Remove Child",
+  "select-people-label":"Select the number of people",
+  "children-button":"Add Child"
+},
+"TermsConditions": {
+  "title": "📄 Terms and Conditions",
+  "intro": "These terms govern the use of our services. By booking a tour with us, you agree to the conditions detailed below.",
+  "participation-title": "✅ Responsible Participation",
+  "participation-list": [
+    "🚤 Participants must always follow staff instructions.",
+    "🛟 Use of the provided safety equipment is mandatory throughout the tour.",
+    "❌ Violation of rules may result in removal without refund."
+  ],
+  "booking-title": "📅 Bookings",
+  "booking-list": [
+    "📨 Bookings are subject to availability and will be confirmed by email.",
+    "💵 Prices may change without prior notice depending on season or demand."
+  ],
+  "additional-title": "📌 Additional Conditions",
+  "additional-list": [
+    "👨‍👩‍👧‍👦 Some tours may have age or physical condition requirements.",
+    "🕒 We recommend arriving at the meeting point at least 15 minutes early."
+  ]
+},
+"PrivacyPolicy": {
+  "title": "🔒 Privacy Policy",
+  "intro": "Your privacy is important to us. This policy details how we collect, use, and protect your information.",
+  "data-title": "📥 Data We Collect",
+  "data-list": [
+    "📧 Name, email, and phone number to manage your reservation.",
+    "🗓️ Tour reservation date and time.",
+    "🌐 IP address and browsing data (if applicable)."
+  ],
+  "protection-title": "🔐 How We Protect Your Data",
+  "protection-list": [
+    "🔒 We use secure protocols (HTTPS) across the site.",
+    "🛡️ We do not share your data with third parties without explicit consent.",
+    "🗑️ You may request data deletion at any time."
+  ],
+  "contact-title": "✉️ Contact",
+  "contact-text": "For questions or privacy-related requests, contact us at: administracion@sorayayleonardotours.com"
+},
+"Reservation": {
+    "successTitle": "Reservation Confirmed!",
+    "successThanks": "Thank you for your payment, {name}.",
+    "reservationCode": "Reservation Code",
+    "date": "Date",
+    "time": "Time",
+    "adults": "Adults",
+    "children": "Children",
+    "tour": "Tour",
+    "email": "Email",
+    "phone": "Phone",
+    "downloadPdf": "Download PDF",
+    "backToTours": "Back to Excursions",
+    "viewLocation": "View Location",
+    "emailInfo": "We have sent you an email with your reservation details.",
+    "calendarFail": "We couldn’t register your reservation in the internal calendar, but your payment was successful.",
+    "emailFail": "We couldn’t send the confirmation email. Please take a screenshot of this page.",
+    "errorTitle": "We couldn’t process your reservation",
+    "errorDescription": "An unexpected error occurred. Please try again or contact support.",
+    "loadingTitle": "We are processing your reservation...",
+    "loadingDescription": "Do not close or reload this page. This may take a few seconds.",
+    "loadingErrorTitle": "Something went wrong while processing your reservation",
+    "loadingErrorDescription": "Try going back or contact support if the issue persists.",
+    "goBack": "Go back",
+    "goToTours": "Go to Excursions"
+  },
+  "Tours": {
+  "tour-1": {
+    "title": "Great Grosier Sandbank",
+    "description": "Relax and swim in shallow, crystal-clear waters in this hidden paradise."
+  },
+  "tour-2": {
+    "title": "Goat Island",
+    "description": "Explore this island paradise with white sandy beaches and turquoise waters."
+  },
+  "tour-3": {
+    "title": "7 Brothers Islands",
+    "description": "Unforgettable trip to this archipelago of seven crystal-clear islets."
+  },
+  "tour-4": {
+    "title": "Ecotourism Platform",
+    "description": "Experience guided nature tours in unique landscapes."
+  },
+  "tour-5": {
+    "title": "Natural Pool",
+    "description": "Relax in a giant natural pool surrounded by mangroves and clear water."
+  },
+  "tour-6": {
+    "title": "Sport Fishing",
+    "description": "Exciting fishing experience with expert guides and top gear."
+  },
+  "tour-7": {
+    "title": "Snorkeling Adventure",
+    "description": "Dive into a colorful underwater world with vibrant marine life."
+  }
+}
+
+
+
+}

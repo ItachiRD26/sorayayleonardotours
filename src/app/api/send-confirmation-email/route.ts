@@ -1,84 +1,129 @@
-import { NextResponse } from "next/server";
-import nodemailer from "nodemailer";
+import { NextResponse } from 'next/server';
+import nodemailer from 'nodemailer';
 
-export async function POST(req: Request) {
+export async function POST(request: Request) {
   try {
-    const data = await req.json();
+    const data = await request.json();
+
+    // Validación básica
+    if (!data?.email || !data?.name || !data?.reservationCode) {
+      console.warn("❌ Datos incompletos para el envío de correo:", data);
+      return NextResponse.json({ error: 'Faltan datos requeridos para enviar el correo' }, { status: 400 });
+    }
 
     const transporter = nodemailer.createTransport({
-      host: "smtp.gmail.com",
-      port: 465,
-      secure: true,
+      service: 'gmail',
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
       },
     });
 
-    const htmlContent = `
-      <h2>🎉 Reserva Confirmada</h2>
-      <p><strong>Cliente:</strong> ${data.name}</p>
-      <p><strong>Teléfono:</strong> ${data.phone}</p>
-      <p><strong>Email:</strong> ${data.email}</p>
+    const clientName = data.name?.split?.(" ")?.[0] || "Cliente";
+
+    const adminMailOptions = {
+      from: `"Soraya y Leonardo Tours" <${process.env.EMAIL_USER}>`,
+      to: process.env.EMAIL_RECEIVER,
+      subject: `Nueva reserva: ${data.name} (${data.reservationCode})`,
+      html: `
+        <div style="font-family: Arial, sans-serif; background-color: #f8fafc; padding: 20px; border-radius: 10px;">
+          <h2 style="color: #1e293b;">📥 Nueva reserva recibida</h2>
+          <p style="font-size: 15px;"><strong>Código de reserva:</strong> ${data.reservationCode}</p>
+          <p><strong>Nombre:</strong> ${data.name}</p>
+          <p><strong>Teléfono:</strong> ${data.phone}</p>
+          <p><strong>Email:</strong> ${data.email}</p>
+          <p><strong>Tour:</strong> ${data.tourName}</p>
+          <p><strong>Fecha:</strong> ${data.selectedDate}</p>
+          <p><strong>Hora:</strong> ${data.selectedTime}</p>
+          <p><strong>Adultos:</strong> ${data.adults}</p>
+          <p><strong>Niños:</strong> ${data.children}</p>
+          <hr style="margin: 20px 0;" />
+          <p style="font-size: 14px; color: #475569;">
+            Puedes contactar al cliente directamente o revisar el panel interno para más detalles.
+          </p>
+        </div>
+      `,
+    };
+
+    const clientMailOptions = {
+      from: `"Soraya y Leonardo Tours" <${process.env.EMAIL_USER}>`,
+      to: data.email,
+      subject: "Confirmación de tu reserva",
+      html: `
+  <div style="font-family: Arial, sans-serif; background-color: #f9fafb; padding: 30px;">
+    <!-- LOGO CENTRADO -->
+    <div style="text-align: center; margin-bottom: 20px;">
+      <img src="https://sorayayleonardotours.com/images/logo.png" alt="Logo Soraya y Leonardo Tours" style="height: 60px;" />
+    </div>
+
+    <div style="background-color: #ffffff; padding: 25px 30px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+      <h2 style="color: #0f172a; text-align: center;">¡Gracias por tu reserva, ${clientName}!</h2>
+
+      <p style="font-size: 15px; margin-top: 20px;"><strong>Código de Reserva:</strong> ${data.reservationCode}</p>
       <p><strong>Tour:</strong> ${data.tourName}</p>
       <p><strong>Fecha:</strong> ${data.selectedDate}</p>
       <p><strong>Hora:</strong> ${data.selectedTime}</p>
       <p><strong>Adultos:</strong> ${data.adults}</p>
       <p><strong>Niños:</strong> ${data.children}</p>
-    `;
 
-    // ✅ Correo al administrador
-    await transporter.sendMail({
-      from: `"Reservas Soraya & Leonardo" <${process.env.EMAIL_USER}>`,
-      to: process.env.EMAIL_RECEIVER,
-      subject: `Nueva reserva: ${data.name}`,
-      html: htmlContent,
-    });
+      <hr style="margin: 20px 0;" />
 
-    // ✅ Correo al cliente
-    await transporter.sendMail({
-      from: `"Soraya & Leonardo Tours" <${process.env.EMAIL_USER}>`,
-      to: data.email,
-      subject: "Confirmación de tu reserva",
-      html: `
-  <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f3f4f6; border-radius: 10px;">
-    <div style="text-align: center;">
-      <img src="https://sorayayleonardotours.com/images/logo.webp" alt="Soraya & Leonardo Tours" style="max-width: 150px; margin-bottom: 20px;" />
-      <h2 style="color: #0a2540;">🎉 ¡Gracias por tu reserva, ${data.name}!</h2>
+      <p style="font-size: 14px; color: #334155;">
+        Te esperamos en el punto de encuentro a la hora acordada. No olvides presentarte con anticipación.
+      </p>
+
+      <p style="font-size: 13px; color: #64748b; margin-top: 10px;">
+        Si tienes alguna duda, puedes contactarnos directamente en WhatsApp.
+      </p>
+
+      <!-- BOTÓN WHATSAPP -->
+      <div style="text-align: center; margin-top: 20px;">
+        <a href="https://wa.me/18099616343" target="_blank" style="text-decoration: none;">
+          <button style="
+            background-color: #25d366;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            font-size: 15px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+          ">
+            <img src="https://www.sorayayleonardotours.com/images/whatsapp-icon.png" alt="WhatsApp" width="20" height="20" />
+            WhatsApp
+          </button>
+        </a>
+      </div>
     </div>
-
-    <p style="font-size: 16px; color: #333;">Hemos recibido tu reserva con los siguientes detalles:</p>
-
-    <ul style="list-style: none; padding: 0; font-size: 15px; color: #444;">
-      <li><strong>Tour:</strong> ${data.tourName}</li>
-      <li><strong>Fecha:</strong> ${data.selectedDate}</li>
-      <li><strong>Hora:</strong> ${data.selectedTime}</li>
-      <li><strong>Adultos:</strong> ${data.adults}</li>
-      <li><strong>Niños:</strong> ${data.children}</li>
-    </ul>
-
-    <p style="font-size: 15px; color: #333;">
-      Si tienes alguna duda o deseas realizar cambios, puedes contactarnos directamente por WhatsApp:
-    </p>
-
-    <div style="text-align: center; margin: 20px 0;">
-      <a href="https://wa.me/18099616343" target="_blank" style="display: inline-block; background-color: #25d366; color: white; padding: 12px 20px; border-radius: 6px; text-decoration: none; font-weight: bold;">
-        💬 Escribir por WhatsApp
-      </a>
-    </div>
-
-    <p style="font-size: 14px; color: #666; text-align: center;">
-      Te contactaremos pronto para confirmar todos los detalles.<br />
-      <br />
-      — Equipo de Soraya & Leonardo Tours
-    </p>
   </div>
 `,
-    });
 
-    return NextResponse.json({ message: "Correos enviados con éxito." }, { status: 200 });
+    };
+
+    const [adminResult, clientResult] = await Promise.allSettled([
+      transporter.sendMail(adminMailOptions),
+      transporter.sendMail(clientMailOptions),
+    ]);
+
+    if (adminResult.status === "rejected") {
+      console.error("❌ Error al enviar correo al administrador:", adminResult.reason);
+    }
+    if (clientResult.status === "rejected") {
+      console.error("❌ Error al enviar correo al cliente:", clientResult.reason);
+    }
+
+    if (adminResult.status === "fulfilled" && clientResult.status === "fulfilled") {
+      console.log("✅ Correos enviados correctamente a:", data.email);
+      return NextResponse.json({ message: 'Correos enviados' }, { status: 200 });
+    } else {
+      return NextResponse.json({ error: 'Uno o ambos correos fallaron' }, { status: 500 });
+    }
+
   } catch (error) {
-    console.error("Error al enviar correos:", error);
-    return NextResponse.json({ message: "Error al enviar correos." }, { status: 500 });
+    console.error("❌ Error general al procesar envío de correos:", error);
+    return NextResponse.json({ error: 'Fallo inesperado al enviar correos' }, { status: 500 });
   }
 }

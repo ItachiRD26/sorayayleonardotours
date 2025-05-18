@@ -1,8 +1,8 @@
 "use client"
 
 import type React from "react"
-
 import { useEffect, useState } from "react"
+import { useTranslations } from "next-intl"
 
 export default function TimePicker({
   selectedHour,
@@ -19,6 +19,7 @@ export default function TimePicker({
   selectedPeriod: "AM" | "PM"
   setSelectedPeriod: (value: "AM" | "PM") => void
 }) {
+  const t = useTranslations("Reservations")
   const [timeValue, setTimeValue] = useState("07:00")
 
   useEffect(() => {
@@ -27,9 +28,11 @@ export default function TimePicker({
         selectedPeriod === "PM" && selectedHour < 12
           ? selectedHour + 12
           : selectedPeriod === "AM" && selectedHour === 12
-            ? 0
-            : selectedHour
-      const formatted = `${hour24.toString().padStart(2, "0")}:${selectedMinute.toString().padStart(2, "0")}`
+          ? 0
+          : selectedHour
+      const formatted = `${hour24.toString().padStart(2, "0")}:${selectedMinute
+        .toString()
+        .padStart(2, "0")}`
       setTimeValue(formatted)
     }
   }, [selectedHour, selectedMinute, selectedPeriod])
@@ -80,7 +83,7 @@ export default function TimePicker({
     { label: "1:00 PM", value: "13:00" },
     { label: "2:00 PM", value: "14:00" },
     { label: "3:00 PM", value: "15:00" },
-    { label: "3:30 PM", value: "15:30" },
+    { label: "3:30 PM", value: "15:30" }
   ]
 
   return (
@@ -94,12 +97,11 @@ export default function TimePicker({
               onClick={() =>
                 handleTimeChange({ target: { value: option.value } } as React.ChangeEvent<HTMLInputElement>)
               }
-              className={`py-2 px-3 rounded-md text-sm font-medium transition-colors
-                ${
-                  timeValue === option.value
-                    ? "bg-blue-600 text-white"
-                    : "bg-white border border-blue-200 text-blue-800 hover:bg-blue-50"
-                }`}
+              className={`py-2 px-3 rounded-md text-sm font-medium transition-colors ${
+                timeValue === option.value
+                  ? "bg-blue-600 text-white"
+                  : "bg-white border border-blue-200 text-blue-800 hover:bg-blue-50"
+              }`}
             >
               {option.label}
             </button>
@@ -108,7 +110,7 @@ export default function TimePicker({
 
         <div className="relative mt-4">
           <label htmlFor="time" className="block mb-2 text-sm font-medium text-gray-700">
-            Hora personalizada:
+            {t("custom-time-label")}
           </label>
           <div className="relative">
             <div className="absolute inset-y-0 end-0 top-0 flex items-center pe-3.5 pointer-events-none">

@@ -1,6 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
+import { useTranslations } from "next-intl"
 
 interface Child {
   id: number
@@ -34,6 +35,7 @@ export default function PersonSelector({
   childGuests,
   setChildGuests,
 }: PersonSelectorProps) {
+  const t = useTranslations("Reservations")
   const totalPeople = adults + childGuests.length
   const maxPeople = tourName === "Pesca Deportiva" ? 4 : 30
   const showLimitMsg = totalPeople >= maxPeople
@@ -56,50 +58,50 @@ export default function PersonSelector({
       animate={{ opacity: 1, y: 0 }}
       className="bg-white rounded-xl shadow-lg p-6 mb-8"
     >
-      <h2 className="text-2xl font-bold mb-6 text-center">Detalles de la Reserva</h2>
+      <h2 className="text-2xl font-bold mb-6 text-center">{t('reservation-title')}</h2>
 
       {/* Contact */}
       <div className="flex flex-col gap-6 mb-6">
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">Nombre Completo *</label>
+          <label className="block text-sm font-medium text-gray-700 mb-2">{t('name-label')}</label>
           <input
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            placeholder="Ingresa tu nombre completo"
+            placeholder={t('name-placeholder')}
             required
             className="w-full border rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-primary"
           />
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">Correo Electronico (optional)</label>
+          <label className="block text-sm font-medium text-gray-700 mb-2">{t('email-label')}</label>
           <input
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="Ingresa tu correo electronico"
+            placeholder={(t('email-placeholder'))}
             className="w-full border rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-primary"
           />
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">Numero de telefono (optional)</label>
+          <label className="block text-sm font-medium text-gray-700 mb-2">{t("phone-label")}</label>
           <input
             type="tel"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
-            placeholder="Ingresa tu numero de telefono"
+            placeholder={t('phone-placeholder')}
             className="w-full border rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-primary"
           />
         </div>
       </div>
 
-      <h2 className="text-2xl font-bold mb-6 text-center">Selecciona las Personas</h2>
+      <h2 className="text-2xl font-bold mb-6 text-center">{t('select-people-label')}</h2>
 
       {/* Adults */}
       <div className="flex items-center justify-between mb-6">
-        <p className="text-lg font-semibold">Adultos:</p>
+        <p className="text-lg font-semibold">{t('adults')}</p>
         <div className="flex items-center space-x-4">
           <button className="px-3 py-1 bg-gray-200 rounded-lg" onClick={() => setAdults(Math.max(1, adults - 1))}>
             -
@@ -119,14 +121,14 @@ export default function PersonSelector({
       {/* Children */}
       <div className="flex flex-col gap-4">
         <div className="flex items-center justify-between">
-          <p className="text-lg font-semibold">Niños:</p>
+          <p className="text-lg font-semibold">{t('children')}</p>
           <button
             onClick={() => {
               if (totalPeople < maxPeople) addChild()
             }}
             className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600"
           >
-            Agregar Niño
+            {t('children-button')}
           </button>
         </div>
 

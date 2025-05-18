@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 import { Clock, CheckCircle, Info } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
+import { useTranslations } from "next-intl"
 
 interface TourSummaryProps {
   title: string
@@ -13,6 +14,8 @@ interface TourSummaryProps {
 }
 
 export default function TourSummary({ title, description, imageUrl, duration }: TourSummaryProps) {
+  const t = useTranslations("Reservations")
+
   return (
     <motion.div
       initial={{ opacity: 0, y: -20 }}
@@ -46,32 +49,32 @@ export default function TourSummary({ title, description, imageUrl, duration }: 
           <div className="mb-6">
             <h2 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
               <CheckCircle className="w-5 h-5 text-sky-600" />
-              Requerimientos del Tour
+              {t("requirements-title")}
             </h2>
             <ul className="space-y-3">
               <li className="flex items-start gap-2">
                 <div className="min-w-4 mt-1 h-4 rounded-full bg-sky-600 flex items-center justify-center">
                   <span className="text-white text-xs">✓</span>
                 </div>
-                <span className="text-gray-700">Ropa cómoda y traje de baño (puede comprarlos en nuestra tienda)</span>
+                <span className="text-gray-700">{t("requirement-clothing")}</span>
               </li>
               <li className="flex items-start gap-2">
                 <div className="min-w-4 mt-1 h-4 rounded-full bg-sky-600 flex items-center justify-center">
                   <span className="text-white text-xs">✓</span>
                 </div>
-                <span className="text-gray-700">Protector solar y gorra (puede comprarlos en nuestra tienda)</span>
+                <span className="text-gray-700">{t("requirement-sunscreen")}</span>
               </li>
               <li className="flex items-start gap-2">
                 <div className="min-w-4 mt-1 h-4 rounded-full bg-sky-600 flex items-center justify-center">
                   <span className="text-white text-xs">✓</span>
                 </div>
-                <span className="text-gray-700">Toalla y cambio de ropa (opcional)</span>
+                <span className="text-gray-700">{t("requirement-towel")}</span>
               </li>
               <li className="flex items-start gap-2">
                 <div className="min-w-4 mt-1 h-4 rounded-full bg-sky-600 flex items-center justify-center">
                   <span className="text-white text-xs">✓</span>
                 </div>
-                <span className="text-gray-700">Cámara (opcional)</span>
+                <span className="text-gray-700">{t("requirement-camera")}</span>
               </li>
             </ul>
           </div>
@@ -79,26 +82,26 @@ export default function TourSummary({ title, description, imageUrl, duration }: 
           <div>
             <h2 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
               <Info className="w-5 h-5 text-sky-600" />
-              Instrucciones Importantes
+              {t("instructions-title")}
             </h2>
             <ul className="space-y-3">
               <li className="flex items-start gap-2">
                 <div className="min-w-4 mt-1 h-4 rounded-full bg-sky-600 flex items-center justify-center">
                   <span className="text-white text-xs">!</span>
                 </div>
-                <span className="text-gray-700">Llegar 15 minutos antes de la hora programada</span>
+                <span className="text-gray-700">{t("instruction-arrive-early")}</span>
               </li>
               <li className="flex items-start gap-2">
                 <div className="min-w-4 mt-1 h-4 rounded-full bg-sky-600 flex items-center justify-center">
                   <span className="text-white text-xs">!</span>
                 </div>
-                <span className="text-gray-700">Las reservas son confirmadas al recibir el pago</span>
+                <span className="text-gray-700">{t("instruction-payment-confirmation")}</span>
               </li>
               <li className="flex items-start gap-2">
                 <div className="min-w-4 mt-1 h-4 rounded-full bg-sky-600 flex items-center justify-center">
                   <span className="text-white text-xs">!</span>
                 </div>
-                <span className="text-gray-700">Pospociciones de excursiones con 24h de anticipación</span>
+                <span className="text-gray-700">{t("instruction-reschedule")}</span>
               </li>
             </ul>
           </div>

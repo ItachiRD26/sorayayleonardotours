@@ -17,7 +17,7 @@ export default function DatePickerClient({
     if (selectedDate && selectedDate.getTime() < minDate.getTime()) {
       setSelectedDate(null) // borra fechas inválidas por si el usuario retrocede
     }
-  }, [selectedDate])
+  }, [selectedDate, minDate, setSelectedDate])
 
   return (
     <div className="flex flex-col items-center">

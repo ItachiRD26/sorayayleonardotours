@@ -1,0 +1,399 @@
+{
+  "Home": {
+    "hero-title": "Soraya y Leonardo Tours",
+    "hero-description": "Explora las maravillas del mar de Montecristi con excursiones exclusivas diseñadas para crear recuerdos inolvidables.",
+    "book-button": "Reservar Ahora",
+    "hero-button-two": "Ver Excursiones",
+    "why-choose-us-title": "¿Por Qué Elegirnos?",
+    "why-choose-us-subtitle": "Soraya y Leonardo Tours ofrece experiencias únicas en el mar, diseñadas para brindarte la mejor aventura.",
+    "call-action-title": "¿Listo para una Aventura Marina?",
+    "call-action-description": "Reserva ahora y prepárate para una experiencia inolvidable con Soraya y Leonardo Tours. Nuestros expertos están listos para guiarte por el paraíso de Montecristi.",
+    "testimonials-title": "Lo Que Dicen Nuestros Clientes",
+    "testimonials-subtitle": "Experiencias reales de quienes han disfrutado nuestras excursiones",
+    "view-review": "Ver reseña",
+    "social-title": "Síguenos en Redes Sociales",
+    "social-subtitle": "Mantente al día con nuestras aventuras, ofertas especiales y descubre la belleza de Montecristi.",
+    "instagram": "Instagram",
+    "tiktok": "TikTok",
+    "facebook": "Facebook",
+
+    "card-1": {
+      "title": "Embarcaciones Modernas",
+      "description": "Flota de barcos equipada con la última tecnología y comodidades para tu seguridad y confort."
+    },
+    "card-2": {
+      "title": "Guías Expertos",
+      "description": "Nuestro personal está altamente capacitado y conoce cada rincón del mar y la región."
+    },
+    "card-3": {
+      "title": "Rutas Exclusivas",
+      "description": "Acceso a lugares poco conocidos, llenos de belleza natural y tranquilidad."
+    },
+    "card-4": {
+      "title": "Flexibilidad",
+      "description": "Ofrecemos tours privados y horarios adaptados a tus necesidades para una experiencia personalizada."
+    },
+    "testimonials-1": {
+      "name": "Elysa M.",
+      "description": "Estuvimos en Montecristi en familia, un grupo de 18 personas, durante Semana Santa y tomamos un tour con Soraya y Leonardo Tours. A pesar de un día nublado, la pasamos genial con Soraya y su equipo. Son muy responsables, se apegan a las medidas de seguridad, el bote estaba en excelentes condiciones y limpio, y la comida espectacular."
+    },
+    "testimonials-2": {
+      "name": "José Enrique Perez German",
+      "description": "Te sentirás como en casa con las atenciones de Doña Soraya. Es una operadora local que puede organizar un viaje en minutos según tus necesidades. También cuenta con una tienda con todo lo necesario para tu aventura. Los tours son Pet Friendly. Pregunta por el paseo al morro, el banco de arena o los cayos."
+    },
+    "testimonials-3": {
+      "name": "Angee A",
+      "description": "¡Excelente! El tour está bien organizado y es privado. Tienen diferentes opciones según lo que quieras hacer durante tu estadía. ¡Super recomendado!"
+    }
+  },
+  "FeaturedTours": {
+    "featured-title": "Experiencias Marítimas Exclusivas",
+    "featured-subtitle": "Descubre nuestras excursiones más populares, diseñadas para ofrecerte una experiencia única en el paraíso de Montecristi.",
+    "featured-button": "Ver Todas las Excursiones",
+    "book-button": "Reservar Ahora",
+    "badges": {
+      "popular": "Más Popular",
+      "adventure": "Aventura",
+      "budget": "Económico"
+    },
+    "tour-1": {
+      "title": "Banco de Arenas Gran Grossier",
+      "description": "Explora arrecifes de coral y nada entre peces tropicales en una de las playas más hermosas de Montecristi.",
+      "duration": "4 horas",
+      "group-size": "1-12 personas"
+    },
+    "tour-3": {
+      "title": "Cayos 7 Hermanos",
+      "description": "Disfruta de un viaje inolvidable por este archipiélago con aguas cristalinas y paisajes impresionantes.",
+      "duration": "6 horas",
+      "group-size": "1-12 personas"
+    },
+    "tour-2": {
+      "title": "Isla Cabra",
+      "description": "Aventúrate en esta isla paradisíaca con playas de arena blanca y aguas turquesas para relajarte o nadar.",
+      "duration": "2 horas",
+      "group-size": "1-12 personas"
+    }
+  },
+  "Header": {
+    "excursions": "Excursiones",
+    "about-us": "Sobre Nosotros",
+    "contact": "Contacto",
+    "book-now": "Reservar Ahora"
+  },
+  "Footer": {
+    "title": "Soraya y Leonardo Tours",
+    "description": "Desde 200, ofreciendo experiencias únicas en el mar para toda la familia.",
+    "explore": "Explora",
+    "home": "Inicio",
+    "excursions": "Excursiones",
+    "about-us": "Sobre Nosotros",
+    "contact": "Contacto",
+    "legal": "Legales",
+    "terms": "Términos y Condiciones",
+    "contact-title": "Contacto",
+    "location": "Montecristi, R.D.",
+    "phone": "+1-809-961-6343 / +1-809-962-2259",
+    "email": "administracion@sorayayleonardotours.com",
+    "copyright": "Todos los derechos reservados.",
+    "privacy-policy":"Política de Privacidad"
+  },
+  "ExcursionesPage": {
+    "badge": "Descubre Monte Cristi",
+    "hero-title": "Experiencias Inolvidables en el Paraíso",
+    "hero-subtitle": "Explora excursiones exclusivas y crea recuerdos duraderos en los destinos más hermosos de República Dominicana.",
+    "badge-available": "Disponible Todo el Año",
+    "badge-small-groups": "Grupos Reducidos",
+    "badge-location": "Monte Cristi",
+    "features": {
+      "one-title": "Destinos Exclusivos",
+      "one-desc": "Accede a rincones ocultos con guías locales expertos.",
+      "two-title": "Grupos Reducidos",
+      "two-desc": "Experiencias personalizadas con atención individual.",
+      "three-title": "Reserva Flexible",
+      "three-desc": "Planifica tu aventura con facilidad y sin complicaciones."
+    },
+    "section-title": "Nuestras Excursiones",
+    "section-subtitle": "Elige entre una variedad de opciones para disfrutar al máximo de Monte Cristi.",
+    "book-button": "Reservar Ahora",
+
+    "tour-1": {
+      "title": "Banco de Arenas Gran Grossier",
+      "description": "Relájate y nada en aguas poco profundas y cristalinas en este paraíso escondido.",
+      "duration": "4 horas",
+      "group-size": "1-12 personas"
+    },
+    "tour-2": {
+      "title": "Isla Cabra",
+      "description": "Escápate a esta isla con playas turquesa y un pintoresco faro.",
+      "duration": "5 horas",
+      "group-size": "1-12 personas"
+    },
+    "tour-3": {
+      "title": "Cayos 7 Hermanos",
+      "description": "Descubre playas vírgenes y fauna marina en siete islotes únicos.",
+      "duration": "6 horas",
+      "group-size": "1-12 personas"
+    },
+    "tour-4": {
+      "title": "Plataforma Ecoturística",
+      "description": "Recorre los manglares y admira las vistas desde esta plataforma de madera.",
+      "duration": "3 horas",
+      "group-size": "1-12 personas"
+    },
+    "tour-5": {
+      "title": "Piscina Natural",
+      "description": "Báñate en aguas tranquilas y poco profundas entre los manglares.",
+      "duration": "3 horas",
+      "group-size": "1-12 personas"
+    },
+    "tour-6": {
+      "title": "Pesca Deportiva",
+      "description": "Captura peces vela, dorados y más en uno de los mejores destinos de pesca del país.",
+      "duration": "5 horas",
+      "group-size": "1-4 personas"
+    },
+    "tour-7": {
+      "title": "Aventura de Snorkeling",
+      "description": "Explora vibrantes arrecifes y vida marina cerca de Isla Cabra.",
+      "duration": "4 horas",
+      "group-size": "1-12 personas"
+    }
+  },
+  "SobreNosotros": {
+  "badge": "NUESTRA HISTORIA",
+  "hero-title": "Sobre Nosotros",
+  "hero-subtitle": "Conoce la historia detrás de Soraya y Leonardo Tours, una empresa familiar dedicada a crear experiencias inolvidables en el mar de Montecristi.",
+
+  "values-badge": "NUESTROS VALORES",
+  "values-title": "Lo que nos define",
+  "values-subtitle": "Estos principios guían cada excursión y cada interacción con nuestros clientes.",
+  "value-1-title": "Pasión por el Mar",
+  "value-1-desc": "Nuestro amor por el océano nos impulsa a compartir sus maravillas con cada visitante.",
+  "value-2-title": "Seguridad Primero",
+  "value-2-desc": "Aplicamos los más altos estándares de seguridad en todas nuestras excursiones.",
+  "value-3-title": "Turismo Sostenible",
+  "value-3-desc": "Estamos comprometidos con la protección del entorno marino y la promoción de prácticas responsables.",
+
+  "start-badge": "NUESTROS INICIOS",
+  "start-title": "Cómo Comenzamos",
+  "start-desc-1": "En 2002, Soraya y Leonardo decidieron unir su amor por el mar y su pasión por el turismo para crear un negocio que ofreciera excursiones únicas por la costa de Montecristi.",
+  "start-desc-2": "Con una flota de barcos modernos y un equipo de guías expertos, ofrecemos experiencias que combinan aventura, seguridad y diversión.",
+  "start-subtitle-title": "Experiencia Náutica",
+  "start-subtitle-desc": "Más de 20 años navegando las aguas de Montecristi",
+
+  "mission-badge": "NUESTRA MISIÓN",
+  "mission-title": "Lo que Nos Impulsa",
+  "mission-desc-1": "En Soraya y Leonardo Tours, nuestra misión es conectar a las personas con la belleza del mar a través de experiencias auténticas e inolvidables.",
+  "mission-desc-2": "Nos esforzamos por ofrecer un servicio personalizado, priorizando la seguridad y la satisfacción del cliente.",
+  "mission-subtitle-title": "Servicio Personalizado",
+  "mission-subtitle-desc": "Atención individualizada para cada grupo",
+
+  "philosophy-badge": "NUESTRA FILOSOFÍA",
+  "philosophy-title": "Compromiso con el Entorno",
+  "philosophy-desc-1": "Creemos en un turismo responsable y sostenible. Por eso, nos comprometemos a proteger el entorno marino y a promover prácticas que respeten la flora y fauna local.",
+  "philosophy-desc-2": "Cada excursión está diseñada para minimizar el impacto ambiental, mientras maximizamos la diversión y el aprendizaje.",
+  "philosophy-subtitle-title": "Conservación Marina",
+  "philosophy-subtitle-desc": "Protegemos los ecosistemas que visitamos",
+
+  "image-one-label": "Desde 2002",
+  "image-two-label": "Experiencias Auténticas",
+  "image-three-label": "Turismo Sostenible"
+},
+"ContactPage": {
+  "hero-title": "Contáctanos",
+  "hero-subtitle": "Comunícate con Soraya y Leonardo Tours para asistencia personalizada e información sobre reservas.",
+  "form-title": "Envíanos un Mensaje",
+  "name": "Tu Nombre",
+  "email": "Tu Correo Electrónico",
+  "message": "Tu Mensaje",
+  "send-button": "Enviar Mensaje",
+  "sending": "Enviando...",
+  "success-message": "¡Mensaje enviado con éxito!",
+  "error-name": "Por favor, ingresa tu nombre.",
+  "error-email": "Por favor, ingresa tu correo electrónico.",
+  "error-email-invalid": "Ingresa un correo electrónico válido.",
+  "error-message": "Por favor, escribe tu mensaje.",
+  "contact-title": "Información de Contacto",
+  "phone-label": "Teléfono",
+  "email-label": "Correo",
+  "address-label": "Dirección",
+  "address-text": "Montecristi, República Dominicana"
+},
+"Reservations": {
+  "reservation-title": "Formulario de Reservación",
+  "reservation-subtitle": "Por favor completa la siguiente información para reservar tu excursión.",
+  "name-label": "Nombre *",
+  "name-placeholder": "Nombre Completo",
+  "email-label": "Correo Electrónico",
+  "email-placeholder": "Tu Correo Electrónico (opcional)",
+  "phone-label": "Teléfono",
+  "phone-placeholder": "Número de Teléfono (opcional)",
+  "adults-label": "Adultos:",
+  "children-label": "Niños:",
+  "add-child": "Agregar Niño",
+  "remove-child": "Eliminar",
+  "child-age-label": "Edad del Niño",
+  "child-placeholder": "ej. 5 años",
+  "tour-summary-title": "Resumen del Tour",
+  "tour-name": "Nombre del Tour",
+  "price-label": "Precio",
+  "duration-label": "Duración",
+  "departure-datetime-title": "Fecha y Hora de Salida",
+  "date-label": "Selecciona una fecha:",
+  "time-label": "Selecciona una hora:",
+  "notes-title": "Notas Importantes",
+  "notes-content": "Recomendamos llegar 15 minutos antes de la salida. Por favor trae protector solar y agua.",
+  "requirement-sunscreen": "Recomendamos llevar protector solar para tu comodidad.",
+  "instructions-title": "Instrucciones Especiales",
+  "instructions-placeholder": "Cuéntanos si hay algo que debamos saber (opcional)",
+  "next-button": "Siguiente",
+  "back-button": "Atrás",
+  "confirm-button": "Confirmar Reservación",
+  "payment-info-title": "Información de Pago",
+  "cardholder-name": "Nombre del Titular",
+  "card-number": "Número de Tarjeta",
+  "expiration": "MM/AA",
+  "cvc": "CVC",
+  "success-message": "¡Reservación confirmada exitosamente!",
+  "date-missing": "Fecha no especificada",
+  "time-missing": "Hora no especificada",
+  "requirements-title": "Requerimientos del Tour",
+  "requirement-clothing": "Ropa cómoda y traje de baño (puede comprarlos en nuestra tienda)",
+  "requirement-towel": "Toalla y cambio de ropa (opcional)",
+  "requirement-camera": "Cámara (opcional)",
+  "instruction-arrive-early": "Llegar 15 minutos antes de la hora programada",
+  "instruction-payment-confirmation": "Las reservas son confirmadas al recibir el pago",
+  "instruction-reschedule": "Las excursiones se pueden reprogramar con 24 horas de anticipación",
+  "tour-label": "Excursión:",
+  "payment-title": "Confirmar y pagar",
+  "payment-description": "Completa tus datos y confirma para continuar con la reserva.",
+  "button-submit": "Reservar ahora",
+  "summary-title": "Resumen de Reserva",
+  "summary-tour": "Excursión:",
+  "summary-date": "Fecha:",
+  "summary-time": "Hora:",
+  "summary-adults": "Adultos:",
+  "summary-children": "Niños:",
+  "summary-total": "Total",
+  "payment-processing": "Procesando pago...",
+  "payment-success": "¡Reserva completada con éxito!",
+  "payment-error": "Hubo un error al procesar el pago.",
+  "dynamic-rate-note":"Tarifa calculada según tamaño del grupo y edades.",
+  "select-date":"Selecciona una fecha:",
+  "select-time":"Selecciona una hora de salida:",
+  "important-info-title":"Información Importante",
+  "advance-notice-begin":"Las reservas deben hacerse con mínimo 48 horas de anticipación y están disponibles entre",
+  "advance-notice-and":"y",
+  "child":"Niño",
+  "title":"Detalles de la Reserva",
+  "name":"Nombre",
+  "email":"Correo Electrónico",
+  "phone":"Teléfono",
+  "adults":"Adultos:",
+  "children":"Niños:",
+  "unspecified-date":"Fecha no especificada",
+  "unspecified-time":"Hora no especificada",
+  "total-label":"Total:",
+  "custom-time-label":"Hora personalizada",
+  "age":"Edad",
+  "remove":"Eliminar niño",
+  "select-people-label":"Selecciona el número de personas",
+  "children-button":"Agregar Niño"
+},
+"TermsConditions": {
+  "title": "📄 Términos y Condiciones",
+  "intro": "Estos términos rigen el uso de nuestros servicios. Al reservar un tour con nosotros, aceptas las condiciones detalladas a continuación.",
+  "participation-title": "✅ Participación Responsable",
+  "participation-list": [
+    "🚤 Los participantes deben seguir en todo momento las instrucciones del personal.",
+    "🛟 Se requiere el uso del equipo de seguridad provisto durante todo el tour.",
+    "❌ El incumplimiento de normas puede resultar en la expulsión sin derecho a reembolso."
+  ],
+  "booking-title": "📅 Reservas",
+  "booking-list": [
+    "📨 Las reservas están sujetas a disponibilidad y serán confirmadas por correo electrónico.",
+    "💵 Los precios pueden variar sin previo aviso según temporada o demanda."
+  ],
+  "additional-title": "📌 Condiciones Adicionales",
+  "additional-list": [
+    "👨‍👩‍👧‍👦 Algunos tours pueden tener requisitos de edad o condición física.",
+    "🕒 Se recomienda llegar al punto de encuentro con al menos 15 minutos de antelación."
+  ]
+},
+"PrivacyPolicy": {
+  "title": "🔒 Política de Privacidad",
+  "intro": "Tu privacidad es importante para nosotros. Esta política detalla cómo recopilamos, usamos y protegemos tu información.",
+  "data-title": "📥 Datos que recopilamos",
+  "data-list": [
+    "📧 Nombre, correo electrónico y número de teléfono para gestionar tu reserva.",
+    "🗓️ Fecha y hora del tour reservado.",
+    "🌐 Dirección IP y datos de navegación (si aplica)."
+  ],
+  "protection-title": "🔐 Cómo protegemos tus datos",
+  "protection-list": [
+    "🔒 Utilizamos protocolos seguros (HTTPS) en toda la web.",
+    "🛡️ No compartimos tu información con terceros sin tu consentimiento explícito.",
+    "🗑️ Puedes solicitar la eliminación de tus datos en cualquier momento."
+  ],
+  "contact-title": "✉️ Contacto",
+  "contact-text": "Para preguntas o solicitudes relacionadas con tu privacidad, puedes contactarnos por correo a: administracion@sorayayleonardotours.com"
+},
+"Reservation": {
+    "successTitle": "¡Reserva Confirmada!",
+    "successThanks": "Gracias por tu pago, {name}.",
+    "reservationCode": "Código de Reserva",
+    "date": "Fecha",
+    "time": "Hora",
+    "adults": "Adultos",
+    "children": "Niños",
+    "tour": "Tour",
+    "email": "Correo",
+    "phone": "Teléfono",
+    "downloadPdf": "Descargar PDF",
+    "backToTours": "Volver a Excursiones",
+    "viewLocation": "Ver Ubicación",
+    "emailInfo": "Te hemos enviado un correo con los detalles de tu reserva.",
+    "calendarFail": "No pudimos registrar tu reserva en el calendario interno, pero tu pago fue procesado con éxito.",
+    "emailFail": "No pudimos enviarte el correo de confirmación. Por favor toma una captura de esta pantalla.",
+    "errorTitle": "No pudimos procesar tu reserva",
+    "errorDescription": "Ocurrió un error inesperado durante el proceso. Puedes intentarlo nuevamente o contactar soporte.",
+    "loadingTitle": "Estamos procesando su reserva...",
+    "loadingDescription": "No cierre ni recargue esta página. Esta operación puede tardar unos segundos.",
+    "loadingErrorTitle": "Algo salió mal al procesar tu reserva",
+    "loadingErrorDescription": "Intenta volver atrás o contacta con soporte si el problema persiste.",
+    "goBack": "Volver",
+    "goToTours": "Ir a Excursiones"
+  },
+  "Tours": {
+  "tour-1": {
+    "title": "Banco de Arenas Gran Grosier",
+    "description": "Relájate y nada en aguas poco profundas y cristalinas en este paraíso escondido."
+  },
+  "tour-2": {
+    "title": "Isla Cabra",
+    "description": "Explora esta isla paradisíaca con playas de arena blanca y aguas turquesas."
+  },
+  "tour-3": {
+    "title": "Cayos 7 Hermanos",
+    "description": "Viaje inolvidable al archipiélago de siete islas con aguas cristalinas."
+  },
+  "tour-4": {
+    "title": "Plataforma Ecoturística",
+    "description": "Vive el ecoturismo con recorridos guiados por paisajes naturales únicos."
+  },
+  "tour-5": {
+    "title": "Piscina Natural",
+    "description": "Relájate en una gigantesca piscina natural rodeada de manglares."
+  },
+  "tour-6": {
+    "title": "Pesca Deportiva",
+    "description": "Aventura emocionante de pesca con guías expertos y buen equipo."
+  },
+  "tour-7": {
+    "title": "Aventura de Snorkeling",
+    "description": "Sumérgete en un mundo submarino lleno de arrecifes y vida marina."
+  }
+}
+
+}

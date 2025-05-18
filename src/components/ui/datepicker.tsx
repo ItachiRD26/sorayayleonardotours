@@ -14,7 +14,7 @@ export default function CustomDatePicker({
 
   useEffect(() => {
     if (selectedDate && selectedDate.getTime() < minDate.getTime()) {
-      setSelectedDate(null) // borra fechas inválidas por si el usuario retrocede
+      setSelectedDate(null) // borra fechas inválidas si el usuario retrocede
     }
   }, [selectedDate])
 
@@ -30,8 +30,10 @@ export default function CustomDatePicker({
         wrapperClassName="!block"
         calendarClassName="border border-blue-200 shadow-sm !font-sans"
         dayClassName={(date) =>
-        date.getDay() === 0 || date.getDay() === 6 ? "text-blue-500 hover:bg-blue-100" : ""
-    }
+          date.getDay() === 0 || date.getDay() === 6
+            ? "text-blue-500 hover:bg-blue-100"
+            : ""
+        }
       />
     </div>
   )
@@ -39,6 +41,6 @@ export default function CustomDatePicker({
 
 function getMinDate(): Date {
   const date = new Date()
-  date.setDate(date.getDate() + 2)
+  date.setDate(date.getDate() + 2) // Mínimo 48 horas
   return date
 }
