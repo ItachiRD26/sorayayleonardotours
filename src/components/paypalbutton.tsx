@@ -27,7 +27,7 @@ export default function PaypalButton({ amount, tourData }: PaypalButtonProps) {
   const handleApprove = async () => {
     try {
       const reservationCode = `R-${Date.now().toString().slice(-5)}-${Math.random().toString(36).substring(2, 6).toUpperCase()}`;
-      const reservationData = { reservationCode, ...tourData };
+      const reservationData = { reservationCode, ...tourData, amount, locale };
       localStorage.setItem("reservationData", JSON.stringify(reservationData));
 
       const [res1, res2] = await Promise.allSettled([

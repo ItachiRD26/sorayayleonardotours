@@ -5,7 +5,6 @@ export async function POST(request: Request) {
   try {
     const data = await request.json();
 
-    // Validación básica
     if (!data?.email || !data?.name || !data?.reservationCode) {
       console.warn("❌ Datos incompletos para el envío de correo:", data);
       return NextResponse.json({ error: 'Faltan datos requeridos para enviar el correo' }, { status: 400 });
@@ -20,10 +19,31 @@ export async function POST(request: Request) {
     });
 
     const clientName = data.name?.split?.(" ")?.[0] || "Cliente";
+    const encodedData = encodeURIComponent(JSON.stringify(data));
+    const lang = data.locale === "en" ? "en" : "es";
+
+    // Traducciones dinámicas
+    const subject = lang === "en" ? "Your Reservation Confirmation" : "Confirmación de tu reserva";
+    const thanksTitle = lang === "en"
+      ? `Thank you for your reservation, ${clientName}!`
+      : `¡Gracias por tu reserva, ${clientName}!`;
+    const reservationLabel = lang === "en" ? "Reservation Code" : "Código de Reserva";
+    const totalPaid = lang === "en" ? "Total Paid" : "Total Pagado";
+    const date = lang === "en" ? "Date" : "Fecha";
+    const time = lang === "en" ? "Time" : "Hora";
+    const adults = lang === "en" ? "Adults" : "Adultos";
+    const children = lang === "en" ? "Children" : "Niños";
+    const note = lang === "en"
+      ? "We look forward to seeing you at the meeting point. Please arrive early."
+      : "Te esperamos en el punto de encuentro a la hora acordada. No olvides presentarte con anticipación.";
+    const contact = lang === "en"
+      ? "If you have any questions, feel free to contact us via WhatsApp."
+      : "Si tienes alguna duda, puedes contactarnos directamente en WhatsApp.";
+    const downloadBtn = lang === "en" ? "Download Invoice (PDF)" : "Descargar Factura (PDF)";
 
     const adminMailOptions = {
       from: `"Soraya y Leonardo Tours" <${process.env.EMAIL_USER}>`,
-      to: process.env.EMAIL_RECEIVER,
+      to: [process.env.EMAIL_RECEIVER, process.env.EMAIL_RECEIVER_TWO].filter(Boolean).join(','),
       subject: `Nueva reserva: ${data.name} (${data.reservationCode})`,
       html: `
         <div style="font-family: Arial, sans-serif; background-color: #f8fafc; padding: 20px; border-radius: 10px;">
@@ -37,6 +57,7 @@ export async function POST(request: Request) {
           <p><strong>Hora:</strong> ${data.selectedTime}</p>
           <p><strong>Adultos:</strong> ${data.adults}</p>
           <p><strong>Niños:</strong> ${data.children}</p>
+          <p><strong>Total Pagado:</strong> $${data.amount} USD</p>
           <hr style="margin: 20px 0;" />
           <p style="font-size: 14px; color: #475569;">
             Puedes contactar al cliente directamente o revisar el panel interno para más detalles.
@@ -48,35 +69,29 @@ export async function POST(request: Request) {
     const clientMailOptions = {
       from: `"Soraya y Leonardo Tours" <${process.env.EMAIL_USER}>`,
       to: data.email,
-      subject: "Confirmación de tu reserva",
+      subject,
       html: `
   <div style="font-family: Arial, sans-serif; background-color: #f9fafb; padding: 30px;">
-    <!-- LOGO CENTRADO -->
     <div style="text-align: center; margin-bottom: 20px;">
       <img src="https://sorayayleonardotours.com/images/logo.png" alt="Logo Soraya y Leonardo Tours" style="height: 60px;" />
     </div>
 
     <div style="background-color: #ffffff; padding: 25px 30px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-      <h2 style="color: #0f172a; text-align: center;">¡Gracias por tu reserva, ${clientName}!</h2>
+      <h2 style="color: #0f172a; text-align: center;">${thanksTitle}</h2>
 
-      <p style="font-size: 15px; margin-top: 20px;"><strong>Código de Reserva:</strong> ${data.reservationCode}</p>
+      <p style="font-size: 15px; margin-top: 20px;"><strong>${reservationLabel}:</strong> ${data.reservationCode}</p>
       <p><strong>Tour:</strong> ${data.tourName}</p>
-      <p><strong>Fecha:</strong> ${data.selectedDate}</p>
-      <p><strong>Hora:</strong> ${data.selectedTime}</p>
-      <p><strong>Adultos:</strong> ${data.adults}</p>
-      <p><strong>Niños:</strong> ${data.children}</p>
+      <p><strong>${date}:</strong> ${data.selectedDate}</p>
+      <p><strong>${time}:</strong> ${data.selectedTime}</p>
+      <p><strong>${adults}:</strong> ${data.adults}</p>
+      <p><strong>${children}:</strong> ${data.children}</p>
+      <p><strong>${totalPaid}:</strong> $${data.amount} USD</p>
 
       <hr style="margin: 20px 0;" />
 
-      <p style="font-size: 14px; color: #334155;">
-        Te esperamos en el punto de encuentro a la hora acordada. No olvides presentarte con anticipación.
-      </p>
+      <p style="font-size: 14px; color: #334155;">${note}</p>
+      <p style="font-size: 13px; color: #64748b; margin-top: 10px;">${contact}</p>
 
-      <p style="font-size: 13px; color: #64748b; margin-top: 10px;">
-        Si tienes alguna duda, puedes contactarnos directamente en WhatsApp.
-      </p>
-
-      <!-- BOTÓN WHATSAPP -->
       <div style="text-align: center; margin-top: 20px;">
         <a href="https://wa.me/18099616343" target="_blank" style="text-decoration: none;">
           <button style="
@@ -97,10 +112,25 @@ export async function POST(request: Request) {
           </button>
         </a>
       </div>
+
+      <div style="text-align: center; margin-top: 25px;">
+        <a href="https://sorayayleonardotours.com/api/invoice/${data.reservationCode}?data=${encodedData}" target="_blank">
+          <button style="
+            background-color: #0ea5e9;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            font-size: 15px;
+            cursor: pointer;
+          ">
+            ${downloadBtn}
+          </button>
+        </a>
+      </div>
     </div>
   </div>
-`,
-
+      `,
     };
 
     const [adminResult, clientResult] = await Promise.allSettled([

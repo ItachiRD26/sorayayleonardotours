@@ -13,10 +13,10 @@ export default function CustomDatePicker({
   const minDate = getMinDate()
 
   useEffect(() => {
-    if (selectedDate && selectedDate.getTime() < minDate.getTime()) {
-      setSelectedDate(null) // borra fechas inválidas si el usuario retrocede
-    }
-  }, [selectedDate])
+  if (selectedDate && selectedDate.getTime() < minDate.getTime()) {
+    setSelectedDate(null);
+  }
+}, [selectedDate, minDate, setSelectedDate]);
 
   return (
     <div className="flex flex-col items-center">
