@@ -199,11 +199,14 @@ export async function generateProfessionalPDFBuffer(reservation: ReservationData
   doc.setFont("helvetica", "normal");
   doc.setFontSize(9);
   const terms = [t("term-1"), t("term-2"), t("term-4"), t("term-5")];
-  terms.forEach((term) => {
-    const wrapped = doc.splitTextToSize(term, 170);
-    doc.text(wrapped, 20, y + 8);
-    y += wrapped.length * 6;
-  });
+let ty = y + 8; // Línea inicial para los términos
+
+terms.forEach((term) => {
+  const lines = doc.splitTextToSize(term, 170);
+  doc.text(lines, 20, ty);
+  ty += lines.length * 6; // Aumenta según las líneas
+});
+
 
   const footerYStart = 265;
   doc.setFillColor(...primaryColor);
