@@ -240,6 +240,8 @@
 },
 "Reservations": {
   "reservation-title": "Reservation Form",
+  "terms-note": "By completing this booking, you agree to our",
+  "terms-link": "Terms and Conditions",
   "reservation-subtitle": "Please complete the following information to reserve your excursion.",
   "name-label": "Name *",
   "name-placeholder": "Full name",

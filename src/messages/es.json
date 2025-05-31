@@ -235,6 +235,8 @@
 "Reservations": {
   "reservation-title": "Formulario de Reservación",
   "reservation-subtitle": "Por favor completa la siguiente información para reservar tu excursión.",
+  "terms-note": "Al completar esta reserva, aceptas nuestros",
+  "terms-link": "Términos y Condiciones",
   "name-label": "Nombre *",
   "name-placeholder": "Nombre Completo",
   "email-label": "Correo Electrónico",

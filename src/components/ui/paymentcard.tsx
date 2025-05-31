@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { PayPalScriptProvider } from "@paypal/react-paypal-js";
 import PaypalButton from "../paypalbutton";
 import { useTranslations } from "next-intl";
+import { useLocale } from "next-intl";
 
 interface PaymentCardProps {
   name: string;
@@ -60,6 +61,7 @@ export default function PaymentCard({
   pricingNote,
 }: PaymentCardProps) {
   const t = useTranslations("Reservations");
+  const locale = useLocale();
   const total = price.toFixed(2);
 
   const formatDate = () => {
@@ -117,6 +119,18 @@ export default function PaymentCard({
           {t("total-label")} {`$${total} USD`}
         </p>
       </div>
+      <div className="text-sm text-center text-gray-600 mb-4">
+    {t("terms-note")}{" "}
+      <a
+    href={`/${locale}/terms-conditions`}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-blue-600 underline hover:text-blue-800"
+  >
+    {t("terms-link")}
+  </a>
+</div>
+
 
       <PayPalScriptProvider
         options={{
