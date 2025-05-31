@@ -75,5 +75,27 @@ export const allExcursions = [
     duration: "4 horas",
     location: "Monte Cristi",
     groupSize: "1-12"
+  },
+  {
+    id: "tour-8",
+    title: "Avistamiento de Aves",
+    description:
+      "Montecristi es un paraíso para los observadores de aves, con una gran variedad de especies endémicas y migratorias. Desde flamencos hasta pelícanos, la diversidad aviar aquí es impresionante, lo que lo convierte en un destino ideal para los amantes de la naturaleza.",
+    image: "/images/avistamiento-aves.webp",
+    price: 30,
+    duration: "3 horas",
+    location: "Monte Cristi",
+    groupSize: "1-12"
+  },
+  {id: "tour-9",
+    title: "Excursion en la Ciudad",
+    description:
+      "Explora la rica historia y cultura de Montecristi con un recorrido por sus monumentos, plazas y museos. Desde el Faro de Montecristi hasta la Plaza Juan Pablo Duarte, cada rincón cuenta una historia fascinante que te transportará al pasado.",
+    image: "/images/parque-reloj.webp",
+    price: 15,
+    duration: "2 horas",
+    location: "Monte Cristi",
+    groupSize: "1-50" 
   }
+
 ]

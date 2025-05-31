@@ -64,19 +64,19 @@
     "title": "Great Grosier Sandbank",
     "description": "Explore coral reefs and swim among tropical fish on one of Montecristi's most beautiful beaches.",
     "duration": "4 hours",
-    "group-size": "1-12 people"
+    "group-size": "1-200 people"
   },
   "tour-3": {
     "title": "Seven Brothers Islands",
     "description": "Enjoy an unforgettable trip to this archipelago of seven small islands with crystal-clear waters and breathtaking landscapes.",
     "duration": "6 hours",
-    "group-size": "1-12 people"
+    "group-size": "1-50 people"
   },
   "tour-2": {
     "title": "Goat Island",
     "description": "Venture to this small island paradise with white sand beaches and turquoise waters perfect for swimming and relaxing.",
     "duration": "5 hours",
-    "group-size": "1-12 people"
+    "group-size": "1-200 people"
   }
   },
   "Header": {
@@ -121,48 +121,62 @@
     "section-subtitle": "Choose from a variety of options to enjoy Monte Cristi at its best.",
     "book-button": "Book Now",
 
-    "tour-1": {
-      "title": "Great Grossier Sandbank",
-      "description": "Relax and swim in crystal-clear shallow waters at this hidden paradise.",
-      "duration": "4 hours",
-      "group-size": "1-12 people"
-    },
-    "tour-2": {
-      "title": "Goat Island",
-      "description": "Enjoy a peaceful escape with turquoise beaches and a scenic lighthouse.",
-      "duration": "5 hours",
-      "group-size": "1-12 people"
-    },
-    "tour-3": {
-      "title": "Seven Brothers Islands",
-      "description": "Discover virgin beaches and wildlife across seven untouched islets.",
-      "duration": "6 hours",
-      "group-size": "1-12 people"
-    },
-    "tour-4": {
-      "title": "Ecotourism Platform",
-      "description": "Walk through mangroves and take in the views from this scenic wooden platform.",
-      "duration": "3 hours",
-      "group-size": "1-12 people"
-    },
-    "tour-5": {
-      "title": "Natural Pool",
-      "description": "Bathe in peaceful, shallow waters hidden among the mangroves.",
-      "duration": "3 hours",
-      "group-size": "1-12 people"
-    },
-    "tour-6": {
-      "title": "Sport Fishing",
-      "description": "Catch sailfish, dorado, and more in one of DR’s top fishing spots.",
-      "duration": "5 hours",
-      "group-size": "1-4 people"
-    },
-    "tour-7": {
-      "title": "Snorkeling Adventure",
-      "description": "Explore vibrant coral reefs and marine life near Isla Cabra.",
-      "duration": "4 hours",
-      "group-size": "1-12 people"
-    }
+"tour-1": {
+    "title": "Great Grossier Sandbank",
+    "description": "Dive into a hidden paradise with crystal-clear, shallow waters. Relax on the white sand and enjoy the serenity of this unique sandbank.",
+    "duration": "4 hours",
+    "group-size": "1-200 people"
+  },
+  "tour-2": {
+    "title": "Goat Island",
+    "description": "Explore a pristine island with turquoise beaches and a picturesque lighthouse. Ideal for a peaceful getaway and nature appreciation.",
+    "duration": "5 hours",
+    "group-size": "1-200 people"
+  },
+  "tour-3": {
+    "title": "Seven Brothers Islands",
+    "description": "Discover seven untouched islets, home to rich marine and bird biodiversity. Perfect for nature lovers and photography enthusiasts.",
+    "duration": "6 hours",
+    "group-size": "1-50 people"
+  },
+  "tour-4": {
+    "title": "Ecotourism Platform",
+    "description": "Walk through mangroves and admire the views from a wooden platform offering a unique perspective of the local ecosystem.",
+    "duration": "3 hours",
+    "group-size": "1-200 people"
+  },
+  "tour-5": {
+    "title": "Natural Pool",
+    "description": "Bathe in peaceful, shallow waters among the mangroves. A perfect spot to relax and connect with nature.",
+    "duration": "3 hours",
+    "group-size": "1-200 people"
+  },
+  "tour-6": {
+    "title": "Sport Fishing",
+    "description": "Catch sailfish, dorado, and more in one of the country's top fishing destinations, guided by local experts.",
+    "duration": "5 hours",
+    "group-size": "1-4 people"
+  },
+  "tour-7": {
+    "title": "Snorkeling Adventure",
+    "description": "Explore vibrant coral reefs and marine life near Goat Island. An unforgettable underwater experience for all levels.",
+    "duration": "4 hours",
+    "group-size": "1-12 people"
+  },
+  "tour-8": {
+    "title": "Bird Watching Tour",
+    "description": "Observe diverse bird species in their natural habitat, guided by experts who will help you identify and appreciate the local avifauna.",
+    "duration": "4 hours",
+    "group-size": "1-8 people"
+  },
+  "tour-9": {
+    "title": "City Tour",
+    "description": "Discover the history and culture of Montecristi with a guided tour through its monuments and landmarks.",
+    "duration": "3 hours",
+    "group-size": "1-12 people"
+  }
+
+    
   },
   "SobreNosotros": {
   "badge": "OUR STORY",
@@ -283,7 +297,6 @@
   "payment-processing": "Processing payment...",
   "payment-success": "Reservation completed successfully!",
   "payment-error": "There was an error processing your payment.",
-  "dynamic-rate-note":"Rate calculated according to group size and age.",
   "select-date":"Select a date:",
   "select-time":"Select an arrive time:",
   "important-info-title":"Important Information",
@@ -304,7 +317,16 @@
   "remove":"Remove Child",
   "select-people-label":"Select the number of people",
   "children-button":"Add Child",
-  "totalPaid": "Total Paid"
+  "totalPaid": "Total Paid",
+  "discount-note-gran-grosier": "🎉 Discount applied for large group at Great Grossier Sandbank",
+"discount-note-isla-cabra": "🎉 Discount applied for large group at Goat Island",
+"discount-note-cayos-hermanos": "🎉 Discount applied for large group at Seven Brothers Islands",
+"discount-note-ecoturistica": "🎉 Discount applied for large group at Ecotourism Platform",
+"discount-note-piscina-natural": "🎉 Discount applied for large group at Natural Pool",
+"dynamic-rate-note": "Includes dynamic rate for children over 4 years old.",
+"max-people-reached": "You have reached the maximum number of people allowed for this tour."
+
+
 },
 "TermsConditions": {
   "title": "📄 Terms and Conditions",
@@ -411,35 +433,42 @@
   },
   "Tours": {
   "tour-1": {
-    "title": "Great Grosier Sandbank",
-    "description": "Relax and swim in shallow, crystal-clear waters in this hidden paradise."
+    "title": "Great Grossier Sandbank",
+    "description": "Dive into a hidden paradise with crystal-clear, shallow waters. Relax on the white sand and enjoy the serenity of this unique sandbank."
   },
   "tour-2": {
     "title": "Goat Island",
-    "description": "Explore this island paradise with white sandy beaches and turquoise waters."
+    "description": "Explore a pristine island with turquoise beaches and a picturesque lighthouse. Ideal for a peaceful getaway and nature appreciation."
   },
   "tour-3": {
-    "title": "7 Brothers Islands",
-    "description": "Unforgettable trip to this archipelago of seven crystal-clear islets."
+    "title": "Seven Brothers Islands",
+    "description": "Discover seven untouched islets, home to rich marine and bird biodiversity. Perfect for nature lovers and photography enthusiasts."
   },
   "tour-4": {
     "title": "Ecotourism Platform",
-    "description": "Experience guided nature tours in unique landscapes."
+    "description": "Walk through mangroves and admire the views from a wooden platform offering a unique perspective of the local ecosystem."
   },
   "tour-5": {
     "title": "Natural Pool",
-    "description": "Relax in a giant natural pool surrounded by mangroves and clear water."
+    "description": "Bathe in peaceful, shallow waters among the mangroves. A perfect spot to relax and connect with nature."
   },
   "tour-6": {
     "title": "Sport Fishing",
-    "description": "Exciting fishing experience with expert guides and top gear."
+    "description": "Catch sailfish, dorado, and more in one of the country's top fishing destinations, guided by local experts."
   },
   "tour-7": {
     "title": "Snorkeling Adventure",
-    "description": "Dive into a colorful underwater world with vibrant marine life."
+    "description": "Explore vibrant coral reefs and marine life near Goat Island. An unforgettable underwater experience for all levels."
+  },
+  "tour-8": {
+    "title": "Bird Watching Tour",
+    "description": "Observe diverse bird species in their natural habitat, guided by experts who will help you identify and appreciate the local avifauna."
+  },
+  "tour-9": {
+    "title": "City Tour",
+    "description": "Discover the history and culture of Montecristi with a guided tour through its monuments and landmarks."
   }
 }
-
 
 
 }

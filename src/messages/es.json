@@ -60,19 +60,19 @@
       "title": "Banco de Arenas Gran Grossier",
       "description": "Explora arrecifes de coral y nada entre peces tropicales en una de las playas más hermosas de Montecristi.",
       "duration": "4 horas",
-      "group-size": "1-12 personas"
+      "group-size": "1-200 personas"
     },
     "tour-3": {
       "title": "Cayos 7 Hermanos",
       "description": "Disfruta de un viaje inolvidable por este archipiélago con aguas cristalinas y paisajes impresionantes.",
       "duration": "6 horas",
-      "group-size": "1-12 personas"
+      "group-size": "1-50 personas"
     },
     "tour-2": {
       "title": "Isla Cabra",
       "description": "Aventúrate en esta isla paradisíaca con playas de arena blanca y aguas turquesas para relajarte o nadar.",
       "duration": "2 horas",
-      "group-size": "1-12 personas"
+      "group-size": "1-200 personas"
     }
   },
   "Header": {
@@ -117,48 +117,60 @@
     "section-subtitle": "Elige entre una variedad de opciones para disfrutar al máximo de Monte Cristi.",
     "book-button": "Reservar Ahora",
 
-    "tour-1": {
-      "title": "Banco de Arenas Gran Grossier",
-      "description": "Relájate y nada en aguas poco profundas y cristalinas en este paraíso escondido.",
-      "duration": "4 horas",
-      "group-size": "1-12 personas"
-    },
-    "tour-2": {
-      "title": "Isla Cabra",
-      "description": "Escápate a esta isla con playas turquesa y un pintoresco faro.",
-      "duration": "5 horas",
-      "group-size": "1-12 personas"
-    },
-    "tour-3": {
-      "title": "Cayos 7 Hermanos",
-      "description": "Descubre playas vírgenes y fauna marina en siete islotes únicos.",
-      "duration": "6 horas",
-      "group-size": "1-12 personas"
-    },
-    "tour-4": {
-      "title": "Plataforma Ecoturística",
-      "description": "Recorre los manglares y admira las vistas desde esta plataforma de madera.",
-      "duration": "3 horas",
-      "group-size": "1-12 personas"
-    },
-    "tour-5": {
-      "title": "Piscina Natural",
-      "description": "Báñate en aguas tranquilas y poco profundas entre los manglares.",
-      "duration": "3 horas",
-      "group-size": "1-12 personas"
-    },
-    "tour-6": {
-      "title": "Pesca Deportiva",
-      "description": "Captura peces vela, dorados y más en uno de los mejores destinos de pesca del país.",
-      "duration": "5 horas",
-      "group-size": "1-4 personas"
-    },
-    "tour-7": {
-      "title": "Aventura de Snorkeling",
-      "description": "Explora vibrantes arrecifes y vida marina cerca de Isla Cabra.",
-      "duration": "4 horas",
-      "group-size": "1-12 personas"
-    }
+   "tour-1": {
+    "title": "Banco de Arenas Gran Gossier",
+    "description": "Sumérgete en un paraíso escondido con aguas cristalinas y poco profundas. Relájate en la arena blanca y disfruta de la serenidad que ofrece este banco de arena único.",
+    "duration": "4 horas",
+    "group-size": "1-200 personas"
+  },
+  "tour-2": {
+    "title": "Isla Cabra",
+    "description": "Explora una isla virgen con playas de aguas turquesa y un pintoresco faro. Ideal para una escapada tranquila y para disfrutar de la naturaleza en su máxima expresión.",
+    "duration": "5 horas",
+    "group-size": "1-200 personas"
+  },
+  "tour-3": {
+    "title": "Cayos Siete Hermanos",
+    "description": "Descubre siete islotes vírgenes, hogar de una rica biodiversidad marina y aviar. Perfecto para los amantes de la naturaleza y la fotografía.",
+    "duration": "6 horas",
+    "group-size": "1-50 personas"
+  },
+  "tour-4": {
+    "title": "Plataforma Ecoturística",
+    "description": "Recorre los manglares y admira las vistas desde una plataforma de madera que ofrece una perspectiva única del ecosistema local.",
+    "duration": "3 horas",
+    "group-size": "1-200 personas"
+  },
+  "tour-5": {
+    "title": "Piscina Natural",
+    "description": "Báñate en aguas tranquilas y poco profundas entre los manglares. Un lugar perfecto para relajarse y conectar con la naturaleza.",
+    "duration": "3 horas",
+    "group-size": "1-200 personas"
+  },
+  "tour-6": {
+    "title": "Pesca Deportiva",
+    "description": "Captura peces vela, dorados y más en uno de los mejores destinos de pesca del país, acompañado por expertos locales.",
+    "duration": "5 horas",
+    "group-size": "1-4 personas"
+  },
+  "tour-7": {
+    "title": "Aventura de Snorkeling",
+    "description": "Explora vibrantes arrecifes y vida marina cerca de Isla Cabra. Una experiencia submarina inolvidable para todos los niveles.",
+    "duration": "4 horas",
+    "group-size": "1-20 personas"
+  },
+  "tour-8": {
+    "title": "Tour de Avistamiento de Aves",
+    "description": "Observa diversas especies de aves en su hábitat natural, guiado por expertos que te ayudarán a identificar y apreciar la avifauna local.",
+    "duration": "4 horas",
+    "group-size": "1-8 personas"
+  },
+  "tour-9": {
+    "title": "Excursión en la Ciudad",
+    "description": "Descubre la historia y cultura de Montecristi con un recorrido guiado por sus monumentos y sitios emblemáticos.",
+    "duration": "3 horas",
+    "group-size": "1-50 personas"
+  }
   },
   "SobreNosotros": {
   "badge": "NUESTRA HISTORIA",
@@ -279,7 +291,6 @@
   "payment-processing": "Procesando pago...",
   "payment-success": "¡Reserva completada con éxito!",
   "payment-error": "Hubo un error al procesar el pago.",
-  "dynamic-rate-note":"Tarifa calculada según tamaño del grupo y edades.",
   "select-date":"Selecciona una fecha:",
   "select-time":"Selecciona una hora de salida:",
   "important-info-title":"Información Importante",
@@ -300,7 +311,16 @@
   "remove":"Eliminar niño",
   "select-people-label":"Selecciona el número de personas",
   "children-button":"Agregar Niño",
-  "totalPaid": "Total Pagado"
+  "totalPaid": "Total Pagado",
+  "discount-note-gran-grosier": "🎉 Descuento aplicado por grupo grande en Banco de Arenas Gran Grossier",
+"discount-note-isla-cabra": "🎉 Descuento aplicado por grupo grande en Isla Cabra",
+"discount-note-cayos-hermanos": "🎉 Descuento aplicado por grupo grande en Cayos 7 Hermanos",
+"discount-note-ecoturistica": "🎉 Descuento aplicado por grupo grande en Plataforma Ecoturística",
+"discount-note-piscina-natural": "🎉 Descuento aplicado por grupo grande en Piscina Natural",
+"dynamic-rate-note": "Incluye tarifa dinámica para niños mayores de 4 años.",
+"max-people-reached": "Has alcanzado el número máximo permitido de personas para este tour."
+
+
 
 },
 "TermsConditions": {
@@ -406,33 +426,41 @@
   },
   "Tours": {
   "tour-1": {
-    "title": "Banco de Arenas Gran Grosier",
-    "description": "Relájate y nada en aguas poco profundas y cristalinas en este paraíso escondido."
+    "title": "Banco de Arenas Gran Gossier",
+    "description": "Sumérgete en un paraíso escondido con aguas cristalinas y poco profundas. Relájate en la arena blanca y disfruta de la serenidad que ofrece este banco de arena único."
   },
   "tour-2": {
     "title": "Isla Cabra",
-    "description": "Explora esta isla paradisíaca con playas de arena blanca y aguas turquesas."
+    "description": "Explora una isla virgen con playas de aguas turquesa y un pintoresco faro. Ideal para una escapada tranquila y para disfrutar de la naturaleza en su máxima expresión."
   },
   "tour-3": {
-    "title": "Cayos 7 Hermanos",
-    "description": "Viaje inolvidable al archipiélago de siete islas con aguas cristalinas."
+    "title": "Cayos Siete Hermanos",
+    "description": "Descubre siete islotes vírgenes, hogar de una rica biodiversidad marina y aviar. Perfecto para los amantes de la naturaleza y la fotografía."
   },
   "tour-4": {
     "title": "Plataforma Ecoturística",
-    "description": "Vive el ecoturismo con recorridos guiados por paisajes naturales únicos."
+    "description": "Recorre los manglares y admira las vistas desde una plataforma de madera que ofrece una perspectiva única del ecosistema local."
   },
   "tour-5": {
     "title": "Piscina Natural",
-    "description": "Relájate en una gigantesca piscina natural rodeada de manglares."
+    "description": "Báñate en aguas tranquilas y poco profundas entre los manglares. Un lugar perfecto para relajarse y conectar con la naturaleza."
   },
   "tour-6": {
     "title": "Pesca Deportiva",
-    "description": "Aventura emocionante de pesca con guías expertos y buen equipo."
+    "description": "Captura peces vela, dorados y más en uno de los mejores destinos de pesca del país, acompañado por expertos locales."
   },
   "tour-7": {
     "title": "Aventura de Snorkeling",
-    "description": "Sumérgete en un mundo submarino lleno de arrecifes y vida marina."
+    "description": "Explora vibrantes arrecifes y vida marina cerca de Isla Cabra. Una experiencia submarina inolvidable para todos los niveles."
+  },
+  "tour-8": {
+    "title": "Tour de Avistamiento de Aves",
+    "description": "Observa diversas especies de aves en su hábitat natural, guiado por expertos que te ayudarán a identificar y apreciar la avifauna local."
+  },
+  "tour-9": {
+    "title": "Excursión en la Ciudad",
+    "description": "Descubre la historia y cultura de Montecristi con un recorrido guiado por sus monumentos y sitios emblemáticos."
   }
-}
 
+}
 }

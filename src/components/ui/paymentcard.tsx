@@ -36,6 +36,10 @@ const translateTourNameToSpanish = (name: string): string => {
       return "Pesca Deportiva";
     case "Snorkeling Adventure":
       return "Aventura de Snorkeling";
+    case "Birdwatching Tour":
+      return "Avistamiento de Aves";
+    case "City Tour":
+      return "Excursión en la Ciudad";
     default:
       return name;
   }

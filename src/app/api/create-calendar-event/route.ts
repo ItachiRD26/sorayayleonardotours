@@ -4,31 +4,27 @@ import { google } from "googleapis";
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-
-    const {
-      name,
-      tourName,
-      selectedDate,
-      selectedTime,
-    } = body;
+    const { name, tourName, selectedDate, selectedTime } = body;
 
     if (!name || !selectedDate || !selectedTime || !tourName) {
       console.warn("❌ Faltan campos requeridos:", body);
       return NextResponse.json({ error: "Datos incompletos" }, { status: 400 });
     }
 
-    // ✅ Parse fecha y hora
+    // 📅 Parse fecha y hora desde formato "dd/mm/yyyy" y "hh:mm AM/PM"
     const [day, month, year] = selectedDate.split("/");
-    const [timeRaw, period] = selectedTime.split(" "); // Ej: "08:00 AM"
-    const [rawHour, minute] = timeRaw.split(":").map(Number) as [number, number];
+    const [timeRaw, period] = selectedTime.split(" ");
+    const [rawHour, minute] = timeRaw.split(":").map(Number);
 
     let hour = rawHour;
     if (period === "PM" && hour < 12) hour += 12;
     if (period === "AM" && hour === 12) hour = 0;
 
     const formattedDate = `${year}-${month.padStart(2, "0")}-${day.padStart(2, "0")}`;
-    const formattedTime = `${hour.toString().padStart(2, "0")}:${minute.toString().padStart(2, "0")}`;
-    const dateTime = `${formattedDate}T${formattedTime}:00`;
+    const startDateTime = new Date(`${formattedDate}T${hour.toString().padStart(2, "0")}:${minute.toString().padStart(2, "0")}:00-04:00`);
+
+    // ⏱ Asegura duración de al menos 1 hora
+    const endDateTime = new Date(startDateTime.getTime() + 60 * 60 * 1000);
 
     const oAuth2Client = new google.auth.OAuth2(
       process.env.GOOGLE_CLIENT_ID,
@@ -46,11 +42,11 @@ export async function POST(req: Request) {
       summary: `Reserva tour - ${name}`,
       description: tourName,
       start: {
-        dateTime,
+        dateTime: startDateTime.toISOString(),
         timeZone: "America/Santo_Domingo",
       },
       end: {
-        dateTime,
+        dateTime: endDateTime.toISOString(),
         timeZone: "America/Santo_Domingo",
       },
     };

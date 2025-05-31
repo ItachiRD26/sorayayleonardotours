@@ -64,7 +64,22 @@ const tours = [
     price: 100,
     image: "/images/scuba-diving.webp",
     duration: "4 horas",
-  }
+  },
+  { id: "tour-8",
+    name: "Avistamiento de Aves",
+    description: "Descubre la biodiversidad de aves en su hábitat natural.",
+    price: 80,
+    image: "/images/avistamiento-aves2.webp",
+    duration: "3 horas",
+  },
+  {
+    id: "tour-9",
+    name: "Excursión en la Ciudad",
+    description: "Recorrido por los principales puntos turísticos de la ciudad.",
+    price: 90,
+    image: "/images/parque-reloj.webp",
+    duration: "3 horas",
+  },
 ];
 
 export default function ReservacionesPage() {

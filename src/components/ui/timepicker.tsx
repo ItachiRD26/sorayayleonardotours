@@ -5,6 +5,7 @@ import { useEffect, useState } from "react"
 import { useTranslations } from "next-intl"
 
 export default function TimePicker({
+  tourName,
   selectedHour,
   setSelectedHour,
   selectedMinute,
@@ -12,6 +13,7 @@ export default function TimePicker({
   selectedPeriod,
   setSelectedPeriod,
 }: {
+  tourName: string
   selectedHour: number | null
   setSelectedHour: (value: number) => void
   selectedMinute: number | null
@@ -21,6 +23,47 @@ export default function TimePicker({
 }) {
   const t = useTranslations("Reservations")
   const [timeValue, setTimeValue] = useState("07:00")
+
+  const tourKey = tourName.trim().toLowerCase()
+
+  let allowedTimes
+  let minTime = "07:00"
+  let maxTime = "15:30"
+
+  if (tourKey === "avistamiento de aves" || tourKey === "birdwatching tour") {
+    allowedTimes = [
+      { label: "6:00 AM", value: "06:00" },
+      { label: "7:00 AM", value: "07:00" },
+      { label: "8:00 AM", value: "08:00" },
+      { label: "9:00 AM", value: "09:00" },
+      { label: "5:00 PM", value: "17:00" },
+      { label: "6:00 PM", value: "18:00" },
+      { label: "7:00 PM", value: "19:00" }
+    ]
+    minTime = "06:00"
+    maxTime = "19:00"
+  } else if (tourKey === "cayos 7 hermanos" || tourKey === "seven brothers islands") {
+    allowedTimes = [
+      { label: "6:00 AM", value: "06:00" },
+      { label: "7:00 AM", value: "07:00" },
+      { label: "8:00 AM", value: "08:00" }
+    ]
+    minTime = "06:00"
+    maxTime = "08:00"
+  } else {
+    allowedTimes = [
+      { label: "7:00 AM", value: "07:00" },
+      { label: "8:00 AM", value: "08:00" },
+      { label: "9:00 AM", value: "09:00" },
+      { label: "10:00 AM", value: "10:00" },
+      { label: "11:00 AM", value: "11:00" },
+      { label: "12:00 PM", value: "12:00" },
+      { label: "1:00 PM", value: "13:00" },
+      { label: "2:00 PM", value: "14:00" },
+      { label: "3:00 PM", value: "15:00" },
+      { label: "3:30 PM", value: "15:30" }
+    ]
+  }
 
   useEffect(() => {
     if (selectedHour !== null && selectedMinute !== null) {
@@ -43,26 +86,32 @@ export default function TimePicker({
     const minute = Number.parseInt(minuteStr)
 
     const isPM = hour24 >= 12
-    let hour12 = hour24 % 12 === 0 ? 12 : hour24 % 12
+    const hour12 = hour24 % 12 === 0 ? 12 : hour24 % 12
     const period: "AM" | "PM" = isPM ? "PM" : "AM"
 
-    // ⛔ Validación AM: mínimo 7:00 AM
-    if (period === "AM" && hour24 < 7) {
-      hour12 = 7
-      setSelectedHour(7)
+    // Validaciones por tour
+    if (
+      (tourKey === "avistamiento de aves" || tourKey === "birdwatching tour") &&
+      !(
+        (hour24 >= 6 && hour24 <= 9) ||
+        (hour24 >= 17 && hour24 <= 19)
+      )
+    ) {
+      setSelectedHour(6)
       setSelectedMinute(0)
       setSelectedPeriod("AM")
-      setTimeValue("07:00")
+      setTimeValue("06:00")
       return
     }
 
-    // ⛔ Validación PM: máximo 3:30 PM
-    if (period === "PM" && (hour12 > 3 || (hour12 === 3 && minute > 30))) {
-      hour12 = 3
-      setSelectedHour(3)
-      setSelectedMinute(30)
-      setSelectedPeriod("PM")
-      setTimeValue("15:30")
+    if (
+      (tourKey === "cayos 7 hermanos" || tourKey === "seven brothers islands") &&
+      (hour24 < 6 || hour24 > 8)
+    ) {
+      setSelectedHour(6)
+      setSelectedMinute(0)
+      setSelectedPeriod("AM")
+      setTimeValue("06:00")
       return
     }
 
@@ -72,25 +121,11 @@ export default function TimePicker({
     setSelectedPeriod(period)
   }
 
-  // Opciones de tiempo predefinidas
-  const timeOptions = [
-    { label: "7:00 AM", value: "07:00" },
-    { label: "8:00 AM", value: "08:00" },
-    { label: "9:00 AM", value: "09:00" },
-    { label: "10:00 AM", value: "10:00" },
-    { label: "11:00 AM", value: "11:00" },
-    { label: "12:00 PM", value: "12:00" },
-    { label: "1:00 PM", value: "13:00" },
-    { label: "2:00 PM", value: "14:00" },
-    { label: "3:00 PM", value: "15:00" },
-    { label: "3:30 PM", value: "15:30" }
-  ]
-
   return (
     <div className="flex flex-col items-center">
       <div className="w-full max-w-xs">
         <div className="grid grid-cols-2 gap-2 mb-4">
-          {timeOptions.map((option) => (
+          {allowedTimes.map((option) => (
             <button
               key={option.value}
               type="button"
@@ -132,8 +167,8 @@ export default function TimePicker({
               id="time"
               value={timeValue}
               onChange={handleTimeChange}
-              min="07:00"
-              max="15:30"
+              min={minTime}
+              max={maxTime}
               required
               className="bg-white border border-blue-200 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
             />

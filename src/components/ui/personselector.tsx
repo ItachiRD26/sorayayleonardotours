@@ -37,7 +37,16 @@ export default function PersonSelector({
 }: PersonSelectorProps) {
   const t = useTranslations("Reservations")
   const totalPeople = adults + childGuests.length
-  const maxPeople = tourName === "Pesca Deportiva" ? 4 : 30
+  const maxPeople =
+  tourName === "Pesca Deportiva"
+    ? 4
+    : tourName === "Avistamiento de Aves"
+    ? 8
+    : tourName === "Excursion en la Ciudad"
+    ? 50
+        : tourName === "Cayos 7 Hermanos"
+    ? 50
+    : 200;
   const showLimitMsg = totalPeople >= maxPeople
 
   const addChild = () => {
@@ -159,7 +168,7 @@ export default function PersonSelector({
 
         {showLimitMsg && (
           <p className="text-sm text-red-600 font-medium mt-4">
-            Máximo permitido: {maxPeople} personas para este tour.
+            {t("max-people-reached")} ({maxPeople})
           </p>
         )}
       </div>

@@ -11,7 +11,7 @@ import { useTranslations } from "next-intl"
 import { useLocale } from 'next-intl'
 import { useEffect } from "react"
 
-const excursions = [1, 2, 3, 4, 5, 6, 7].map((id) => ({
+const excursions = [1, 2, 3, 4, 5, 6, 7,8,9].map((id) => ({
   id,
   image: [
     "/images/gran-grocier.webp",
@@ -20,9 +20,11 @@ const excursions = [1, 2, 3, 4, 5, 6, 7].map((id) => ({
     "/images/plataforma-ecoturistica.webp",
     "/images/piscina-natural.webp",
     "/images/pesca-deportiva.webp",
-    "/images/scuba-diving.webp"
+    "/images/scuba-diving.webp",
+    "/images/avistamiento-aves.webp",
+    "/images/parque-reloj.webp"
   ][id - 1],
-  price: [25, 10, 50, 20, 20, 70, 80][id - 1]
+  price: [23, 8, 50, 15, 15, 35, 30,60,40][id - 1]
 }))
 
 const fadeIn = {
