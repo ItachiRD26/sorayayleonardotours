@@ -28,7 +28,7 @@ export default function TermsPage() {
         </ul>
       </section>
 
-      <section>
+      <section className="mb-8">
         <h2 className="text-xl font-semibold text-sky-700 mb-3">{t("additional-title")}</h2>
         <ul className="list-disc list-inside text-gray-600 space-y-2">
           {t.raw("additional-list").map((item: string, idx: number) => (
@@ -36,6 +36,16 @@ export default function TermsPage() {
           ))}
         </ul>
       </section>
+
+  <section>
+  <h2 className="text-xl font-semibold text-sky-700 mb-3">{t("cancellations-title")}</h2>
+  <ul className="list-disc list-inside text-gray-600 space-y-2">
+    {t.raw("cancellations-list").map((item: string, idx: number) => (
+      <li key={idx}>{item}</li>
+    ))}
+  </ul>
+</section>
+
     </div>
   )
 }

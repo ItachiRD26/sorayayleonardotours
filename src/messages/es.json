@@ -341,7 +341,13 @@
   "additional-list": [
     "👨‍👩‍👧‍👦 Algunos tours pueden tener requisitos de edad o condición física.",
     "🕒 Se recomienda llegar al punto de encuentro con al menos 15 minutos de antelación."
-  ]
+  ],
+  "cancellations-title": "❌ Cancelaciones y Reprogramaciones",
+"cancellations-list": [
+  "❗ Las cancelaciones deben solicitarse con al menos 48 horas de antelación a la fecha del tour e incluir una razón válida.",
+  "🔄 Si no se cumplen estas condiciones, la reserva podrá ser reprogramada  para otra fecha disponible dentro del mismo año calendario, sujeta a disponibilidad."
+]
+
 },
 "PrivacyPolicy": {
   "title": "🔒 Política de Privacidad",

@@ -346,7 +346,12 @@
   "additional-list": [
     "👨‍👩‍👧‍👦 Some tours may have age or physical condition requirements.",
     "🕒 We recommend arriving at the meeting point at least 15 minutes early."
-  ]
+  ],
+  "cancellations-title": "❌ Cancellations and Rescheduling",
+  "cancellations-list": [
+  "❗ Cancellations must be requested at least 48 hours before the tour date and must include a valid reason.",
+  "🔄 If these conditions are not met, the reservation will be eligible for  rescheduling to another available date within the same calendar year, subject to availability."
+]
 },
 "PrivacyPolicy": {
   "title": "🔒 Privacy Policy",
