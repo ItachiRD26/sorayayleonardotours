@@ -1,21 +1,21 @@
-import type { Metadata } from "next"
-import { Inter } from "next/font/google"
-import { notFound } from "next/navigation"
-import { NextIntlClientProvider } from "next-intl"
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import { notFound } from "next/navigation";
+import { NextIntlClientProvider } from "next-intl";
 
-import { ThemeProvider } from "@/components/theme-provider"
-import Header from "@/components/header"
-import Footer from "@/components/footer"
-import LoadingScreenWrapper from "@/components/loadingscreen-wrapper"
-import CookieBanner from "@/components/cookiebanner"
-import WhatsAppButton from "@/components/whatsappbutton"
+import { ThemeProvider } from "@/components/theme-provider";
+import Header from "@/components/header";
+import Footer from "@/components/footer";
+import LoadingScreenWrapper from "@/components/loadingscreen-wrapper";
+import CookieBanner from "@/components/cookiebanner";
+import WhatsAppButton from "@/components/whatsappbutton";
 
-import "./globals.css"
+import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] })
+const inter = Inter({ subsets: ["latin"] });
 
 export function generateStaticParams() {
-  return [{ locale: "es" }, { locale: "en" }]
+  return [{ locale: "es" }, { locale: "en" }];
 }
 
 export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
@@ -42,22 +42,22 @@ export async function generateMetadata({ params }: { params: { locale: string } 
           "snorkeling Dominican Republic",
           "Soraya y Leonardo Tours",
           "Goat Island",
-          "Gran Grosier Sandbank"
+          "Gran Grosier Sandbank",
         ]
       : [
           "excursiones en Montecristi",
           "snorkel República Dominicana",
           "Soraya y Leonardo Tours",
           "Isla Cabra",
-          "Banco de Arena Gran Grosier"
+          "Banco de Arena Gran Grosier",
         ],
     metadataBase: new URL(baseUrl),
     alternates: {
       canonical: url,
       languages: {
         en: `${baseUrl}/en`,
-        es: `${baseUrl}/es`
-      }
+        es: `${baseUrl}/es`,
+      },
     },
     openGraph: {
       title,
@@ -71,7 +71,7 @@ export async function generateMetadata({ params }: { params: { locale: string } 
           url: `${baseUrl}/images/og-default.webp`,
           alt: "Soraya y Leonardo Tours",
         },
-      ]
+      ],
     },
     twitter: {
       card: "summary_large_image",
@@ -80,17 +80,17 @@ export async function generateMetadata({ params }: { params: { locale: string } 
       images: [`${baseUrl}/images/og-default.webp`],
     },
     icons: {
-      icon: "/images/logo.webp"
-    }
+      icon: "/images/logo.webp",
+    },
   };
 }
 
 export default async function LocaleLayout({
   children,
-  params
+  params,
 }: {
-  children: React.ReactNode
-  params: { locale: string }
+  children: React.ReactNode;
+  params: { locale: string };
 }) {
   if (!["es", "en"].includes(params.locale)) notFound();
   const messages = (await import(`@/messages/${params.locale}.json`)).default;
@@ -99,7 +99,6 @@ export default async function LocaleLayout({
     <html lang={params.locale} className="overflow-x-hidden">
       <head>
         <meta name="google-adsense-account" content="ca-pub-6618092093224881" />
-        {/* JSON-LD SEO Structured Data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -114,23 +113,17 @@ export default async function LocaleLayout({
               address: {
                 "@type": "PostalAddress",
                 addressLocality: "Montecristi",
-                addressCountry: "DO"
+                addressCountry: "DO",
               },
               sameAs: [
                 "https://www.facebook.com/sorayayleonardotours",
-                "https://www.instagram.com/sorayayleonardotours"
-              ]
-            })
+                "https://www.instagram.com/sorayayleonardotours",
+              ],
+            }),
           }}
         />
       </head>
       <body className={`${inter.className} overflow-x-hidden`}>
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6618092093224881"
-          crossOrigin="anonymous"
-        ></script>
-
         <NextIntlClientProvider locale={params.locale} messages={messages}>
           <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
             <LoadingScreenWrapper>
@@ -144,6 +137,12 @@ export default async function LocaleLayout({
             </LoadingScreenWrapper>
           </ThemeProvider>
         </NextIntlClientProvider>
+
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6618092093224881"
+          crossOrigin="anonymous"
+        ></script>
       </body>
     </html>
   );
