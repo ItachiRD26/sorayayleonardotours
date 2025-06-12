@@ -14,80 +14,64 @@ import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export function generateStaticParams() {
-  return [{ locale: "es" }, { locale: "en" }];
-}
-
 export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
   const locale = params?.locale || "es";
   const isEnglish = locale === "en";
-  const baseUrl = "https://sorayayleonardotours.com";
-
-  const title = isEnglish
-    ? "Soraya y Leonardo Tours | Maritime Excursions in Montecristi"
-    : "Soraya y Leonardo Tours | Excursiones Marítimas en Montecristi";
-
-  const description = isEnglish
-    ? "Discover Montecristi like never before with Soraya y Leonardo Tours. Enjoy boat tours, snorkeling, mangrove visits, and more."
-    : "Explora Montecristi con Soraya y Leonardo Tours. Disfruta excursiones en bote, snorkel, manglares y más.";
-
-  const url = `${baseUrl}/${locale}`;
 
   return {
-    title,
-    description,
+    title: isEnglish
+      ? "Soraya y Leonardo Tours | Maritime Excursions in Montecristi"
+      : "Soraya y Leonardo Tours | Excursiones Marítimas en Montecristi",
+    description: isEnglish
+      ? "Discover Montecristi like never before with Soraya y Leonardo Tours. Enjoy boat tours, snorkeling, mangrove visits, and more."
+      : "Explora Montecristi con Soraya y Leonardo Tours. Disfruta excursiones en bote, snorkel, manglares y más.",
     keywords: isEnglish
       ? [
           "Montecristi boat tours",
           "snorkeling Dominican Republic",
           "Soraya y Leonardo Tours",
           "Goat Island",
-          "Gran Grosier Sandbank",
+          "Gran Grosier Sandbank"
         ]
       : [
           "excursiones en Montecristi",
           "snorkel República Dominicana",
           "Soraya y Leonardo Tours",
           "Isla Cabra",
-          "Banco de Arena Gran Grosier",
+          "Banco de Arena Gran Grosier"
         ],
-    metadataBase: new URL(baseUrl),
-    alternates: {
-      canonical: url,
-      languages: {
-        en: `${baseUrl}/en`,
-        es: `${baseUrl}/es`,
-      },
-    },
     openGraph: {
-      title,
-      description,
-      url,
-      type: "website",
-      locale: isEnglish ? "en_US" : "es_DO",
-      siteName: "Soraya y Leonardo Tours",
+      title: isEnglish
+        ? "Soraya y Leonardo Tours | Maritime Excursions in Montecristi"
+        : "Soraya y Leonardo Tours | Excursiones Marítimas en Montecristi",
+      description: isEnglish
+        ? "Best maritime tours in Montecristi, Dominican Republic."
+        : "Las mejores excursiones marítimas en Montecristi, República Dominicana.",
       images: [
         {
-          url: `${baseUrl}/images/og-default.webp`,
+          url: "/images/og-default.webp",
           alt: "Soraya y Leonardo Tours",
-        },
+        }
       ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description,
-      images: [`${baseUrl}/images/og-default.webp`],
+      locale: isEnglish ? "en_US" : "es_DO",
+      type: "website",
+      url: isEnglish
+        ? "https://sorayayleonardotours.com/en"
+        : "https://sorayayleonardotours.com",
     },
     icons: {
-      icon: "/images/logo.webp",
-    },
+      icon: "/images/logo.webp"
+    }
   };
+}
+
+export function generateStaticParams() {
+  return [{ locale: "es" }, { locale: "en" }];
 }
 
 export default async function LocaleLayout({
   children,
-  params,
+  params
 }: {
   children: React.ReactNode;
   params: { locale: string };
@@ -98,7 +82,6 @@ export default async function LocaleLayout({
   return (
     <html lang={params.locale} className="overflow-x-hidden">
       <head>
-        <meta name="google-adsense-account" content="ca-pub-6618092093224881" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -106,20 +89,38 @@ export default async function LocaleLayout({
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
               name: "Soraya y Leonardo Tours",
+              image: "https://sorayayleonardotours.com/images/logo.webp",
+              "@id": "https://sorayayleonardotours.com",
               url: "https://sorayayleonardotours.com",
-              logo: "https://sorayayleonardotours.com/images/logo.webp",
-              image: "https://sorayayleonardotours.com/images/og-default.webp",
-              telephone: "+1-809-962-2259",
+              telephone: "+1-829-679-3734",
               address: {
                 "@type": "PostalAddress",
-                addressLocality: "Montecristi",
-                addressCountry: "DO",
+                streetAddress: "Montecristi",
+                addressLocality: "Monte Cristi",
+                addressRegion: "Monte Cristi",
+                postalCode: "62000",
+                addressCountry: "DO"
+              },
+              openingHoursSpecification: {
+                "@type": "OpeningHoursSpecification",
+                dayOfWeek: [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday",
+                  "Saturday",
+                  "Sunday"
+                ],
+                opens: "08:00",
+                closes: "18:00"
               },
               sameAs: [
-                "https://www.facebook.com/sorayayleonardotours",
-                "https://www.instagram.com/sorayayleonardotours",
-              ],
-            }),
+                "https://www.facebook.com/sorayayleonardo/",
+                "https://www.instagram.com/sorayayleonardotours/",
+                "https://www.tiktok.com/@sorayaleonardotou"
+              ]
+            })
           }}
         />
       </head>
@@ -137,12 +138,6 @@ export default async function LocaleLayout({
             </LoadingScreenWrapper>
           </ThemeProvider>
         </NextIntlClientProvider>
-
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6618092093224881"
-          crossOrigin="anonymous"
-        ></script>
       </body>
     </html>
   );
