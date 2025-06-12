@@ -1,0 +1,23 @@
+import type { MetadataRoute } from "next";
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  const locales = ["es", "en"];
+  const baseUrl = "https://sorayayleonardotours.com";
+
+  const urls: MetadataRoute.Sitemap = locales.map((locale) => ({
+    url: `${baseUrl}/${locale}`,
+    lastModified: new Date(),
+    changeFrequency: "weekly",
+    priority: 0.8,
+  }));
+
+  // Agrega otras rutas fijas o dinámicas según el caso
+  urls.push({
+    url: `${baseUrl}/`,
+    lastModified: new Date(),
+    changeFrequency: "weekly",
+    priority: 1.0,
+  });
+
+  return urls;
+}

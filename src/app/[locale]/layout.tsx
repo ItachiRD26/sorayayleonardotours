@@ -14,18 +14,28 @@ import "./globals.css"
 
 const inter = Inter({ subsets: ["latin"] })
 
-export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
-  const locale = params?.locale || "es"; // ✅ seguro
+export function generateStaticParams() {
+  return [{ locale: "es" }, { locale: "en" }]
+}
 
+export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
+  const locale = params?.locale || "es";
   const isEnglish = locale === "en";
+  const baseUrl = "https://sorayayleonardotours.com";
+
+  const title = isEnglish
+    ? "Soraya y Leonardo Tours | Maritime Excursions in Montecristi"
+    : "Soraya y Leonardo Tours | Excursiones Marítimas en Montecristi";
+
+  const description = isEnglish
+    ? "Discover Montecristi like never before with Soraya y Leonardo Tours. Enjoy boat tours, snorkeling, mangrove visits, and more."
+    : "Explora Montecristi con Soraya y Leonardo Tours. Disfruta excursiones en bote, snorkel, manglares y más.";
+
+  const url = `${baseUrl}/${locale}`;
 
   return {
-    title: isEnglish
-      ? "Soraya y Leonardo Tours | Maritime Excursions in Montecristi"
-      : "Soraya y Leonardo Tours | Excursiones Marítimas en Montecristi",
-    description: isEnglish
-      ? "Discover Montecristi like never before with Soraya y Leonardo Tours. Enjoy boat tours, snorkeling, mangrove visits, and more."
-      : "Explora Montecristi con Soraya y Leonardo Tours. Disfruta excursiones en bote, snorkel, manglares y más.",
+    title,
+    description,
     keywords: isEnglish
       ? [
           "Montecristi boat tours",
@@ -41,34 +51,38 @@ export async function generateMetadata({ params }: { params: { locale: string } 
           "Isla Cabra",
           "Banco de Arena Gran Grosier"
         ],
+    metadataBase: new URL(baseUrl),
+    alternates: {
+      canonical: url,
+      languages: {
+        en: `${baseUrl}/en`,
+        es: `${baseUrl}/es`
+      }
+    },
     openGraph: {
-      title: isEnglish
-        ? "Soraya y Leonardo Tours | Maritime Excursions in Montecristi"
-        : "Soraya y Leonardo Tours | Excursiones Marítimas en Montecristi",
-      description: isEnglish
-        ? "Best maritime tours in Montecristi, Dominican Republic."
-        : "Las mejores excursiones marítimas en Montecristi, República Dominicana.",
+      title,
+      description,
+      url,
+      type: "website",
+      locale: isEnglish ? "en_US" : "es_DO",
+      siteName: "Soraya y Leonardo Tours",
       images: [
         {
-          url: "/images/og-default.webp",
+          url: `${baseUrl}/images/og-default.webp`,
           alt: "Soraya y Leonardo Tours",
-        }
-      ],
-      locale: isEnglish ? "en_US" : "es_DO",
-      type: "website",
-      url: isEnglish
-        ? "https://sorayayleonardotours.com/en"
-        : "https://sorayayleonardotours.com",
+        },
+      ]
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [`${baseUrl}/images/og-default.webp`],
     },
     icons: {
       icon: "/images/logo.webp"
     }
   };
-}
-
-
-export function generateStaticParams() {
-  return [{ locale: "es" }, { locale: "en" }]
 }
 
 export default async function LocaleLayout({
@@ -83,7 +97,33 @@ export default async function LocaleLayout({
 
   return (
     <html lang={params.locale} className="overflow-x-hidden">
-      <meta name="google-adsense-account" content="ca-pub-6618092093224881" />
+      <head>
+        <meta name="google-adsense-account" content="ca-pub-6618092093224881" />
+        {/* JSON-LD SEO Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              name: "Soraya y Leonardo Tours",
+              url: "https://sorayayleonardotours.com",
+              logo: "https://sorayayleonardotours.com/images/logo.webp",
+              image: "https://sorayayleonardotours.com/images/og-default.webp",
+              telephone: "+1-809-962-2259",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Montecristi",
+                addressCountry: "DO"
+              },
+              sameAs: [
+                "https://www.facebook.com/sorayayleonardotours",
+                "https://www.instagram.com/sorayayleonardotours"
+              ]
+            })
+          }}
+        />
+      </head>
       <body className={`${inter.className} overflow-x-hidden`}>
         <script
           async
@@ -108,4 +148,3 @@ export default async function LocaleLayout({
     </html>
   );
 }
-
