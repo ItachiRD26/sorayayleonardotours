@@ -77,7 +77,7 @@ const tours = [
     price: 100,
     image: "/images/parque-reloj.webp",
     duration: "3 horas",
-  }
+  },
 ];
 
 export default function ReservationForm() {
@@ -86,9 +86,6 @@ export default function ReservationForm() {
   const searchParams = useSearchParams();
   const tourId = searchParams.get("tourId");
   const selectedTour = tours.find((tour) => tour.id === tourId);
-  console.log("Tour ID:", tourId);
-  console.log("Selected tour:", selectedTour);
-  console.log("Tour title:", tt(`${tourId}.title`));
 
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
@@ -100,29 +97,32 @@ export default function ReservationForm() {
   const [selectedMinute, setSelectedMinute] = useState<number | null>(null);
   const [selectedPeriod, setSelectedPeriod] = useState<"AM" | "PM">("AM");
 
-  if (!selectedTour || !tourId) return <p className="text-center mt-20 text-red-600">Tour no encontrado</p>;
+  if (!selectedTour || !tourId)
+    return (
+      <p className="text-center mt-20 text-red-600">Tour no encontrado</p>
+    );
 
   const getBasePrice = (tour: string, adults: number): number => {
     switch (tour) {
-case "Banco de Arenas Gran Grossier":
-  if (adults <= 4) return 140;
-  if (adults <= 7) return 170;
-  if (adults < 30) return 170 + (adults - 7) * 23;
-  return adults * 20;
-case "Isla Cabra":
-  if (adults <= 4) return 60;
-  if (adults <= 8) return 70;
-  if (adults < 10) return 70 + (adults - 8) * 8;
-  return adults * 7;
-case "Cayos 7 Hermanos":
-  if (adults <= 4) return 200;
-  if (adults < 20) return 200 + (adults - 4) * 50;
-  return adults * 45;
-case "Plataforma Ecoturística":
-  if (adults <= 4) return 100;
-  if (adults <= 8) return 130;
-  if (adults < 20) return 130 + (adults - 8) * 15;
-  return adults * 12;
+      case "Banco de Arenas Gran Grossier":
+        if (adults <= 4) return 140;
+        if (adults <= 7) return 170;
+        if (adults < 30) return 170 + (adults - 7) * 23;
+        return adults * 20;
+      case "Isla Cabra":
+        if (adults <= 4) return 60;
+        if (adults <= 8) return 70;
+        if (adults < 10) return 70 + (adults - 8) * 8;
+        return adults * 7;
+      case "Cayos 7 Hermanos":
+        if (adults <= 4) return 200;
+        if (adults < 20) return 200 + (adults - 4) * 50;
+        return adults * 45;
+      case "Plataforma Ecoturística":
+        if (adults <= 4) return 100;
+        if (adults <= 8) return 130;
+        if (adults < 20) return 130 + (adults - 8) * 15;
+        return adults * 12;
       case "Piscina Natural":
         if (adults <= 4) return 130;
         if (adults <= 9) return 150;
@@ -131,80 +131,84 @@ case "Plataforma Ecoturística":
         if (adults <= 2) return 220;
         if (adults === 3) return 320;
         if (adults <= 5) return 420;
+        return adults * 100;
       case "Aventura de Snorkeling":
         if (adults <= 2) return 130;
         if (adults === 3) return 140;
         if (adults <= 5) return 150;
         return 150 + (adults - 5) * 30;
-      case"Avistamiento de Aves":
+      case "Avistamiento de Aves":
         if (adults <= 4) return 100;
         if (adults <= 8) return 175;
-      case"Excursion en la Ciudad":  
+        return adults * 20;
+      case "Excursion en la Ciudad":
         if (adults <= 10) return 70;
         if (adults <= 20) return 100;
         if (adults <= 50) return 150;
+        return adults * 10;
       default:
         return adults * selectedTour.price;
     }
   };
 
-const calculateDynamicPrice = (): { total: number; note: string } => {
-  // 1. Calcular cuántos niños suman como adultos parciales
-  const fullAdultsFromKids = childGuests.filter(c => c.age !== null && c.age > 6).length;
-  const halfAdultsFromKids = childGuests.filter(c => c.age !== null && c.age > 4 && c.age <= 6).length;
+  const calculateDynamicPrice = (): { total: number; note: string } => {
+    const fullAdultsFromKids = childGuests.filter(
+      (c) => c.age !== null && c.age > 6
+    ).length;
+    const halfAdultsFromKids = childGuests.filter(
+      (c) => c.age !== null && c.age > 4 && c.age <= 6
+    ).length;
 
-  const rawEffectiveAdults = adults + fullAdultsFromKids + halfAdultsFromKids * 0.5;
+    const rawEffectiveAdults =
+      adults + fullAdultsFromKids + halfAdultsFromKids * 0.5;
 
-  // 🔢 Separar parte entera y decimal
-  const baseAdults = Math.floor(rawEffectiveAdults);  // para getBasePrice
-  const remainingFraction = rawEffectiveAdults - baseAdults; // lo que sobra (0.5 típicamente)
+    const baseAdults = Math.floor(rawEffectiveAdults);
+    const remainingFraction = rawEffectiveAdults - baseAdults;
 
-  // 2. Calcular precio base con adultos enteros
-  const basePrice = getBasePrice(selectedTour.name, baseAdults);
-  const priceWithExtraAdult = getBasePrice(selectedTour.name, baseAdults + 1);
-  const priceDiffPerAdult = priceWithExtraAdult - basePrice;
+    const basePrice = getBasePrice(selectedTour.name, baseAdults);
+    const priceWithExtraAdult = getBasePrice(selectedTour.name, baseAdults + 1);
+    const priceDiffPerAdult = priceWithExtraAdult - basePrice;
 
-  let total = basePrice;
+    const total = basePrice + priceDiffPerAdult * remainingFraction;
 
-  // 3. Sumar el restante decimal (por niños que no llegaron a 1 adulto entero)
-  total += priceDiffPerAdult * remainingFraction;
+    let discountNoteKey: string | null = null;
+    switch (selectedTour.name) {
+      case "Banco de Arenas Gran Grossier":
+        if (rawEffectiveAdults >= 30)
+          discountNoteKey = "discount-note-gran-grosier";
+        break;
+      case "Isla Cabra":
+        if (rawEffectiveAdults >= 10)
+          discountNoteKey = "discount-note-isla-cabra";
+        break;
+      case "Cayos 7 Hermanos":
+        if (rawEffectiveAdults >= 20)
+          discountNoteKey = "discount-note-cayos-hermanos";
+        break;
+      case "Plataforma Ecoturística":
+        if (rawEffectiveAdults >= 20)
+          discountNoteKey = "discount-note-ecoturistica";
+        break;
+      case "Piscina Natural":
+        if (rawEffectiveAdults > 9)
+          discountNoteKey = "discount-note-piscina-natural";
+        break;
+    }
 
-  // 4. Nota por descuento
-  let discountNoteKey: string | null = null;
-  switch (selectedTour.name) {
-    case "Banco de Arenas Gran Grossier":
-      if (rawEffectiveAdults >= 30) discountNoteKey = "discount-note-gran-grosier";
-      break;
-    case "Isla Cabra":
-      if (rawEffectiveAdults >= 10) discountNoteKey = "discount-note-isla-cabra";
-      break;
-    case "Cayos 7 Hermanos":
-      if (rawEffectiveAdults >= 20) discountNoteKey = "discount-note-cayos-hermanos";
-      break;
-    case "Plataforma Ecoturística":
-      if (rawEffectiveAdults >= 20) discountNoteKey = "discount-note-ecoturistica";
-      break;
-    case "Piscina Natural":
-      if (rawEffectiveAdults > 9) discountNoteKey = "discount-note-piscina-natural";
-      break;
-  }
-
-  const note = discountNoteKey ? t(discountNoteKey) : t("dynamic-rate-note");
-  return { total: Math.round(total), note };
-};
-
-
-
+    const note = discountNoteKey ? t(discountNoteKey) : t("dynamic-rate-note");
+    return { total: Math.round(total), note };
+  };
 
   const { total, note } = calculateDynamicPrice();
-
   const tourTitle = tt(`${tourId}.title`);
   const tourDescription = tt(`${tourId}.description`);
 
-
-
   return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      className="grid grid-cols-1 lg:grid-cols-2 gap-10"
+    >
       <div className="flex flex-col gap-6">
         <h1 className="text-3xl font-bold">{tourTitle}</h1>
         <p className="text-gray-600">{tourDescription}</p>
@@ -222,12 +226,22 @@ const calculateDynamicPrice = (): { total: number; note: string } => {
           childGuests={childGuests}
           setChildGuests={setChildGuests}
         />
-        <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="bg-white rounded-xl shadow-lg overflow-hidden">
+
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="bg-white rounded-xl shadow-lg overflow-hidden"
+        >
           <div className="bg-gradient-to-r from-blue-600 to-blue-800 p-4">
-            <h2 className="text-2xl font-bold text-center text-white">{t("departure-datetime-title")}</h2>
+            <h2 className="text-2xl font-bold text-center text-white">
+              {t("departure-datetime-title")}
+            </h2>
           </div>
           <div className="p-6 grid grid-cols-1 md:grid-cols-2 gap-8">
-            <DatePickerWrapper selectedDate={selectedDate} setSelectedDate={setSelectedDate} />
+            <DatePickerWrapper
+              selectedDate={selectedDate}
+              setSelectedDate={setSelectedDate}
+            />
             <TimePicker
               tourName={selectedTour.name}
               selectedHour={selectedHour}
@@ -240,6 +254,7 @@ const calculateDynamicPrice = (): { total: number; note: string } => {
           </div>
         </motion.div>
       </div>
+
       <div className="flex flex-col items-center justify-start">
         <PaymentCard
           name={name}
@@ -247,7 +262,9 @@ const calculateDynamicPrice = (): { total: number; note: string } => {
           phone={phone}
           tourName={selectedTour.name}
           adults={adults}
-          childrenData={childGuests.map((child) => ({ age: child.age ?? 0 }))}
+          childrenData={childGuests.map((child) => ({
+            age: child.age ?? 0,
+          }))}
           selectedDate={selectedDate}
           selectedHour={selectedHour !== null ? selectedHour.toString() : ""}
           selectedMinute={selectedMinute !== null ? selectedMinute.toString() : ""}

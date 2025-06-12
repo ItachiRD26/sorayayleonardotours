@@ -3,7 +3,10 @@
 import { PayPalButtons } from "@paypal/react-paypal-js";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { useLocale } from "next-intl"; // ✅ importar el locale actual
+import { useLocale } from "next-intl";
+import { saveReservation } from "@/lib/save-reservation";
+import { getFirebaseDatabase } from "@/lib/firebase";
+import { ref, get } from "firebase/database";
 
 interface PaypalButtonProps {
   amount: number;
@@ -15,20 +18,34 @@ interface PaypalButtonProps {
     selectedDate: string;
     selectedTime: string;
     adults: number;
-    children: number;
+    children: { age: number }[];
   };
 }
 
 export default function PaypalButton({ amount, tourData }: PaypalButtonProps) {
   const router = useRouter();
-  const locale = useLocale(); // ✅ idioma actual
+  const locale = useLocale();
   const [loading] = useState(false);
 
   const handleApprove = async () => {
     try {
+      router.push(`/${locale}/excursions/reservations/loading`);
+
       const reservationCode = `R-${Date.now().toString().slice(-5)}-${Math.random().toString(36).substring(2, 6).toUpperCase()}`;
-      const reservationData = { reservationCode, ...tourData, amount, locale };
+
+      const reservationData = {
+        reservationCode,
+        ...tourData,
+        amount,
+        locale,
+      };
+
       localStorage.setItem("reservationData", JSON.stringify(reservationData));
+
+      await saveReservation({
+        ...reservationData,
+        children: tourData.children,
+      });
 
       const [res1, res2] = await Promise.allSettled([
         fetch("/api/create-calendar-event", {
@@ -47,9 +64,30 @@ export default function PaypalButton({ amount, tourData }: PaypalButtonProps) {
         calendarFailed: res1.status === "rejected",
         emailFailed: res2.status === "rejected",
       };
+
       localStorage.setItem("reservationWarnings", JSON.stringify(warnings));
 
-      router.push(`/${locale}/excursions/reservations/success`);
+      // 🔁 Esperar a que Firebase propague el dato antes de redirigir
+      const db = getFirebaseDatabase();
+      const maxRetries = 5;
+      let confirmed = false;
+
+      for (let i = 0; i < maxRetries; i++) {
+        const snapshot = await get(ref(db, "reservations/" + reservationCode));
+        if (snapshot.exists()) {
+          confirmed = true;
+          break;
+        }
+        await new Promise((res) => setTimeout(res, 800)); // esperar 800ms
+      }
+
+      if (!confirmed) {
+        console.error("⚠️ Firebase aún no devolvió la reserva tras varios intentos");
+        router.push(`/${locale}/excursions/reservations/error`);
+      } else {
+        router.push(`/${locale}/excursions/reservations/success/${reservationCode}`);
+      }
+
     } catch (error) {
       console.error("Error inesperado al procesar reserva:", error);
       router.push(`/${locale}/excursions/reservations/error`);
@@ -87,12 +125,7 @@ export default function PaypalButton({ amount, tourData }: PaypalButtonProps) {
           try {
             const captured = await actions.order.capture();
             console.log("Orden capturada:", captured);
-
-          
-            router.push(`/${locale}/excursions/reservations/loading`);
-
-          
-          await handleApprove();
+            await handleApprove();
           } catch (error) {
             console.error("Error después de capturar orden:", error);
             router.push(`/${locale}/excursions/reservations/error`);

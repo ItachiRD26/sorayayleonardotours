@@ -19,7 +19,6 @@ export async function POST(request: Request) {
     });
 
     const clientName = data.name?.split?.(" ")?.[0] || "Cliente";
-    const encodedData = encodeURIComponent(JSON.stringify(data));
     const lang = data.locale === "en" ? "en" : "es";
 
     // Traducciones dinámicas
@@ -56,7 +55,13 @@ export async function POST(request: Request) {
           <p><strong>Fecha:</strong> ${data.selectedDate}</p>
           <p><strong>Hora:</strong> ${data.selectedTime}</p>
           <p><strong>Adultos:</strong> ${data.adults}</p>
-          <p><strong>Niños:</strong> ${data.children}</p>
+          <p><strong>${children}:</strong> ${
+  Array.isArray(data.children) && data.children.length > 0
+    ? data.children
+        .map((child: { age: number }, i: number) => `#${i + 1}: ${child.age} ${lang === "en" ? "years" : "años"}`)
+        .join(", ")
+    : "0"
+}</p>
           <p><strong>Total Pagado:</strong> $${data.amount} USD</p>
           <hr style="margin: 20px 0;" />
           <p style="font-size: 14px; color: #475569;">
@@ -84,7 +89,14 @@ export async function POST(request: Request) {
       <p><strong>${date}:</strong> ${data.selectedDate}</p>
       <p><strong>${time}:</strong> ${data.selectedTime}</p>
       <p><strong>${adults}:</strong> ${data.adults}</p>
-      <p><strong>${children}:</strong> ${data.children}</p>
+      <p><strong>${children}:</strong> ${
+  Array.isArray(data.children) && data.children.length > 0
+    ? data.children
+        .map((child: { age: number }, i: number) => `#${i + 1}: ${child.age} ${lang === "en" ? "years" : "años"}`)
+        .join(", ")
+    : "0"
+}</p>
+
       <p><strong>${totalPaid}:</strong> $${data.amount} USD</p>
 
       <hr style="margin: 20px 0;" />
@@ -114,7 +126,7 @@ export async function POST(request: Request) {
       </div>
 
       <div style="text-align: center; margin-top: 25px;">
-        <a href="https://sorayayleonardotours.com/api/invoice/${data.reservationCode}?data=${encodedData}" target="_blank">
+        <a href="https://sorayayleonardotours.com/api/invoice/${data.reservationCode}" target="_blank">
           <button style="
             background-color: #0ea5e9;
             color: white;

@@ -3,8 +3,7 @@
 import { motion } from "framer-motion";
 import { PayPalScriptProvider } from "@paypal/react-paypal-js";
 import PaypalButton from "../paypalbutton";
-import { useTranslations } from "next-intl";
-import { useLocale } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 
 interface PaymentCardProps {
   name: string;
@@ -72,7 +71,6 @@ export default function PaymentCard({
   const formatTime = () => {
     const validHour = selectedHour?.trim();
     const validMinute = selectedMinute?.trim();
-
     if (!validHour || !validMinute) return t("unspecified-time");
     return `${validHour.padStart(2, "0")}:${validMinute.padStart(2, "0")} ${selectedPeriod}`;
   };
@@ -99,38 +97,26 @@ export default function PaymentCard({
       <h2 className="text-2xl font-bold text-primary mb-6 text-center">{t("summary-title")}</h2>
 
       <div className="space-y-4 text-gray-700 text-center mb-6">
-        <p>
-          <strong>{t("tour-label")}</strong> {tourName}
-        </p>
-        <p>
-          <strong>{t("date-label")}</strong> {formatDate()}
-        </p>
-        <p>
-          <strong>{t("time-label")}</strong> {formatTime()}
-        </p>
-        <p>
-          <strong>{t("adults-label")}</strong> {adults}
-        </p>
-        <p>
-          <strong>{t("children-label")}</strong> {childrenData.length}
-        </p>
+        <p><strong>{t("tour-label")}</strong> {tourName}</p>
+        <p><strong>{t("date-label")}</strong> {formatDate()}</p>
+        <p><strong>{t("time-label")}</strong> {formatTime()}</p>
+        <p><strong>{t("adults-label")}</strong> {adults}</p>
+        <p><strong>{t("children-label")}</strong> {childrenData.length}</p>
         {pricingNote && <p className="text-sm text-blue-600">{pricingNote}</p>}
-        <p className="text-xl font-bold mt-4">
-          {t("total-label")} {`$${total} USD`}
-        </p>
+        <p className="text-xl font-bold mt-4">{t("total-label")} {`$${total} USD`}</p>
       </div>
-      <div className="text-sm text-center text-gray-600 mb-4">
-    {t("terms-note")}{" "}
-      <a
-    href={`/${locale}/terms-conditions`}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="text-blue-600 underline hover:text-blue-800"
-  >
-    {t("terms-link")}
-  </a>
-</div>
 
+      <div className="text-sm text-center text-gray-600 mb-4">
+        {t("terms-note")}{" "}
+        <a
+          href={`/${locale}/terms-conditions`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-600 underline hover:text-blue-800"
+        >
+          {t("terms-link")}
+        </a>
+      </div>
 
       <PayPalScriptProvider
         options={{
@@ -151,7 +137,7 @@ export default function PaymentCard({
               selectedDate: formatDate(),
               selectedTime: formatTime(),
               adults,
-              children: childrenData.length,
+              children: childrenData, // ✅ Enviamos edades completas
             }}
           />
         </div>

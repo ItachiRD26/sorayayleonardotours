@@ -15,7 +15,9 @@ import "./globals.css"
 const inter = Inter({ subsets: ["latin"] })
 
 export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
-  const isEnglish = params.locale === "en";
+  const locale = params?.locale || "es"; // ✅ seguro
+
+  const isEnglish = locale === "en";
 
   return {
     title: isEnglish
