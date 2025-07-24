@@ -32,12 +32,15 @@ export default function DatePickerClient({
         calendarClassName="border border-blue-200 shadow-sm !font-sans"
         dayClassName={(date) => (date.getDay() === 0 || date.getDay() === 6 ? "text-blue-500 hover:bg-blue-100" : "")}
       />
+            <div className="flex flex-col items-center">
+        <span className="text-blue-600 font-mono">24hrs Antes/Before</span>
+      </div>
     </div>
   )
 }
 
 function getMinDate(): Date {
   const date = new Date()
-  date.setDate(date.getDate() + 2)
+  date.setDate(date.getDate() + 1)
   return date
 }

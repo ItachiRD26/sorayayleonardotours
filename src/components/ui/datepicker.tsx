@@ -41,6 +41,6 @@ export default function CustomDatePicker({
 
 function getMinDate(): Date {
   const date = new Date()
-  date.setDate(date.getDate() + 2) // Mínimo 48 horas
+  date.setDate(date.getDate() + 1) // Mínimo 48 horas
   return date
 }
