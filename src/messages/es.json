@@ -59,7 +59,7 @@
     "tour-1": {
       "title": "Banco de Arenas Gran Grossier",
       "description": "Explora arrecifes de coral y nada entre peces tropicales en una de las playas más hermosas de Montecristi.",
-      "duration": "4 horas",
+      "duration": "3 horas",
       "group-size": "1-200 personas"
     },
     "tour-3": {
@@ -120,7 +120,7 @@
    "tour-1": {
     "title": "Banco de Arenas Gran Gossier",
     "description": "Sumérgete en un paraíso escondido con aguas cristalinas y poco profundas. Relájate en la arena blanca y disfruta de la serenidad que ofrece este banco de arena único.",
-    "duration": "4 horas",
+    "duration": "3 horas",
     "group-size": "1-200 personas"
   },
   "tour-2": {
@@ -432,26 +432,28 @@
   "questions": "Si tienes alguna pregunta, no dudes en contactarnos por WhatsApp o email.",
   "loading": "Cargando información de la reserva..."
   },
+
+
   "Tours": {
   "tour-1": {
     "title": "Banco de Arenas Gran Gossier",
-    "description": "Sumérgete en un paraíso escondido con aguas cristalinas y poco profundas. Relájate en la arena blanca y disfruta de la serenidad que ofrece este banco de arena único."
+    "description": "Comenzamos con un recorrido en bote a través del mágico bosque de manglar, haciendo una breve parada en la Plataforma Ecoturística para disfrutar de sus vistas únicas. Desde allí nos dirigimos a nuestro destino principal: la playa de Gran Gossier, donde pasaremos unos 40 minutos nadando en sus aguas cristalinas y descansando en su arena blanca. Luego rodearemos el majestuoso Morro de Montecristi y finalizaremos en la encantadora Isla Cabra."
   },
   "tour-2": {
     "title": "Isla Cabra",
-    "description": "Explora una isla virgen con playas de aguas turquesa y un pintoresco faro. Ideal para una escapada tranquila y para disfrutar de la naturaleza en su máxima expresión."
+    "description": "Una excursión directa a la Isla Cabra, una joya natural junto al Morro de Montecristi. Disfruta de sus impresionantes vistas y playas paradisíacas de aguas turquesa durante 2 a 4 horas, perfectas para nadar, relajarte y explorar este entorno único."
   },
   "tour-3": {
     "title": "Cayos Siete Hermanos",
-    "description": "Descubre siete islotes vírgenes, hogar de una rica biodiversidad marina y aviar. Perfecto para los amantes de la naturaleza y la fotografía."
+    "description": "Aventura a los Cayos Siete Hermanos con salida a más tardar a las 7:00 AM. Visitamos tres islas principales: Tuna, Cayo Muerto y Montechico, ya que las demás están rodeadas de rocas y corales que impiden el acceso. Cada isla ofrece paisajes vírgenes, aguas cristalinas y una rica vida marina."
   },
   "tour-4": {
     "title": "Plataforma Ecoturística",
-    "description": "Recorre los manglares y admira las vistas desde una plataforma de madera que ofrece una perspectiva única del ecosistema local."
+    "description": "Zarpamos para recorrer los canales del bosque de manglar, observando su fauna y vegetación únicas. Hacemos una parada en la Plataforma Ecoturística para disfrutar de sus vistas panorámicas. Después, navegamos bordeando el Morro de Montecristi para apreciar su espectacular silueta desde el mar, y finalizamos la excursión en la Isla Cabra, donde podrás relajarte en sus playas y disfrutar de un entorno natural incomparable."
   },
   "tour-5": {
     "title": "Piscina Natural",
-    "description": "Báñate en aguas tranquilas y poco profundas entre los manglares. Un lugar perfecto para relajarse y conectar con la naturaleza."
+    "description": "La aventura comienza navegando entre los manglares hasta llegar a la Plataforma Ecoturística, un punto perfecto para admirar el paisaje. Desde allí nos adentramos más en el corazón del manglar para llegar a la Piscina Natural, una zona de aguas claras y arena dorada con una textura única, ideal para nadar y relajarse. El recorrido continúa bordeando el Morro de Montecristi para contemplar su imponente presencia desde el mar, y finaliza en la Isla Cabra, donde podrás disfrutar de sus aguas tranquilas y su belleza natural."
   },
   "tour-6": {
     "title": "Pesca Deportiva",

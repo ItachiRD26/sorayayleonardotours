@@ -20,7 +20,7 @@ const tours = [
     name: "Banco de Arenas Gran Grossier",
     price: 135,
     image: "/images/gran-grocier.webp",
-    duration: "4 horas",
+    duration: "3 horas",
   },
   {
     id: "tour-2",
@@ -82,7 +82,6 @@ const tours = [
 
 export default function ReservationForm() {
   const t = useTranslations("Reservations");
-  const tt = useTranslations("Tours");
   const searchParams = useSearchParams();
   const tourId = searchParams.get("tourId");
   const selectedTour = tours.find((tour) => tour.id === tourId);
@@ -200,8 +199,6 @@ export default function ReservationForm() {
   };
 
   const { total, note } = calculateDynamicPrice();
-  const tourTitle = tt(`${tourId}.title`);
-  const tourDescription = tt(`${tourId}.description`);
 
   return (
     <motion.div
@@ -210,8 +207,6 @@ export default function ReservationForm() {
       className="grid grid-cols-1 lg:grid-cols-2 gap-10"
     >
       <div className="flex flex-col gap-6">
-        <h1 className="text-3xl font-bold">{tourTitle}</h1>
-        <p className="text-gray-600">{tourDescription}</p>
 
         <PersonSelector
           tourName={selectedTour.name}

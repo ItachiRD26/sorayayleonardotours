@@ -63,7 +63,7 @@
     "tour-1": {
     "title": "Great Grosier Sandbank",
     "description": "Explore coral reefs and swim among tropical fish on one of Montecristi's most beautiful beaches.",
-    "duration": "4 hours",
+    "duration": "3 hours",
     "group-size": "1-200 people"
   },
   "tour-3": {
@@ -124,7 +124,7 @@
 "tour-1": {
     "title": "Great Grossier Sandbank",
     "description": "Dive into a hidden paradise with crystal-clear, shallow waters. Relax on the white sand and enjoy the serenity of this unique sandbank.",
-    "duration": "4 hours",
+    "duration": "3 hours",
     "group-size": "1-200 people"
   },
   "tour-2": {
@@ -441,23 +441,23 @@
   "Tours": {
   "tour-1": {
     "title": "Great Grossier Sandbank",
-    "description": "Dive into a hidden paradise with crystal-clear, shallow waters. Relax on the white sand and enjoy the serenity of this unique sandbank."
+    "description": "The journey begins with a boat ride through the mangroves, a thriving ecosystem full of life and natural beauty. We’ll make a brief stop at the Ecotourism Platform to take in the scenery and capture photos. Next, we head to Gran Gossier Beach, spending about 40 minutes enjoying its crystal-clear waters and soft white sand. We then sail around the majestic Morro of Montecristi to admire its impressive view from the sea and end the day at Goat Island, a paradise for relaxation."
   },
   "tour-2": {
     "title": "Goat Island",
-    "description": "Explore a pristine island with turquoise beaches and a picturesque lighthouse. Ideal for a peaceful getaway and nature appreciation."
+    "description": "A direct excursion to Goat Island, a natural gem located beside the Morro of Montecristi. Spend between 2 and 4 hours on its white sand beaches and turquoise waters, perfect for swimming, unwinding, or exploring its untouched shoreline."
   },
   "tour-3": {
     "title": "Seven Brothers Islands",
-    "description": "Discover seven untouched islets, home to rich marine and bird biodiversity. Perfect for nature lovers and photography enthusiasts."
+    "description": "We depart early, no later than 7:00 AM, toward the Seven Brothers Cays archipelago. We visit three accessible islands: Tuna, Cayo Muerto, and Montechico. Each offers pristine landscapes, crystal-clear waters, and abundant marine life. The remaining cays, surrounded by rocks and coral, are admired from the boat for their natural beauty."
   },
   "tour-4": {
     "title": "Ecotourism Platform",
-    "description": "Walk through mangroves and admire the views from a wooden platform offering a unique perspective of the local ecosystem."
+    "description": "We set sail to explore the channels of the mangrove forest, observing its unique wildlife and vegetation. We stop at the Ecotourism Platform to enjoy panoramic views. Afterward, we navigate around the Morro of Montecristi to admire its spectacular silhouette from the sea and end the trip at Goat Island, where you can relax on its beaches and enjoy an unparalleled natural setting."
   },
   "tour-5": {
     "title": "Natural Pool",
-    "description": "Bathe in peaceful, shallow waters among the mangroves. A perfect spot to relax and connect with nature."
+    "description": "The adventure begins with a ride through the mangroves to the Ecotourism Platform, a perfect spot to take in the landscape. From there, we venture deeper into the mangrove heart to reach the Natural Pool, an area of clear waters and golden sand with a unique texture—ideal for swimming and relaxing. The route continues around the Morro of Montecristi to appreciate its imposing presence from the sea and ends at Goat Island, where you can enjoy calm waters and natural beauty."
   },
   "tour-6": {
     "title": "Sport Fishing",

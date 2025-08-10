@@ -6,7 +6,7 @@ export const allExcursions = [
       "Descubre un paraíso escondido en medio del océano: el Banco de Arena Grand Grossier. Este banco de arena, rodeado por aguas cristalinas y poco profundas, es perfecto para relajarse, nadar y tomar fotografías inolvidables. Un lugar ideal para escapar del bullicio y conectar con la naturaleza en su estado más puro.",
     image: "/images/gran-grocier.webp",
     price: 25,
-    duration: "4 horas",
+    duration: "3 horas",
     location: "Monte Cristi",
     groupSize: "1-12"
   },

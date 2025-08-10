@@ -1,20 +1,25 @@
-"use client"
+"use client";
 
-import { usePathname, useRouter } from "next/navigation"
-import { useLocale } from "next-intl"
-import { ChangeEvent } from "react"
-import { Globe } from "lucide-react"
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useLocale } from "next-intl";
+import { ChangeEvent } from "react";
+import { Globe } from "lucide-react";
 
 export default function LanguageSwitcher() {
-  const router = useRouter()
-  const pathname = usePathname()
-  const currentLocale = useLocale()
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams(); // 👈 capturamos ?tourId=...
+  const currentLocale = useLocale();
 
   const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
-    const newLocale = e.target.value
-    const newPathname = pathname.replace(/^\/\w{2}/, `/${newLocale}`)
-    router.push(newPathname)
-  }
+    const newLocale = e.target.value;
+    const newPathname = pathname.replace(/^\/\w{2}/, `/${newLocale}`);
+
+    const queryString = searchParams.toString();
+    const href = queryString ? `${newPathname}?${queryString}` : newPathname;
+
+    router.push(href);
+  };
 
   return (
     <div className="flex items-center gap-2 bg-white border border-gray-300 px-3 py-1.5 rounded-full shadow-sm hover:shadow-md transition-all duration-300">
@@ -28,5 +33,5 @@ export default function LanguageSwitcher() {
         <option value="en">English</option>
       </select>
     </div>
-  )
+  );
 }
